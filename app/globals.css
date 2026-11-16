@@ -1,26 +1,364 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --font-sans: var(--font-inter), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-inter), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Brand blue, taken from the background's sky field. Violet (Tailwind's own scale) is the second color. */
+  --color-brand-50: #f0f6ff;
+  --color-brand-100: #e0edff;
+  --color-brand-200: #c4dcfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  /* Second color and cool neutrals, pinned to hex so translucent borders blend cleanly */
+  --color-violet-50: #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-300: #c4b5fd;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-500: #6366f1;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-700: #334155;
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+
+  /* Cool light surfaces */
+  --color-canvas: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f6f8fc;
+  --color-surface-sunken: #eef2f9;
+  --color-line: #e2e8f0;
+
+  /* Text */
+  --color-ink: #0f172a;
+  --color-ink-soft: #1e293b;
+  --color-ink-muted: #475569;
+  /* Text on the blue-violet gradient badges and buttons: white in both themes */
+  --color-on-brand: #ffffff;
+  /* Bottom of the page background gradient */
+  --color-canvas-end: #f5f3ff;
+
+  --animate-fade-up: fade-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-slide-progress: slide-progress linear forwards;
+  --animate-orb-a: orb-a 22s ease-in-out infinite alternate;
+  --animate-orb-b: orb-b 26s ease-in-out infinite alternate;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes slide-progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Two light color fields (violet and sky blue) drifting slowly across the page */
+  @keyframes orb-a {
+    0% {
+      transform: translate(-10%, -10%) scale(1);
+    }
+    50% {
+      transform: translate(25%, 15%) scale(1.15);
+    }
+    100% {
+      transform: translate(45%, -5%) scale(0.95);
+    }
+  }
+
+  @keyframes orb-b {
+    0% {
+      transform: translate(10%, 10%) scale(1.05);
+    }
+    50% {
+      transform: translate(-25%, -15%) scale(0.9);
+    }
+    100% {
+      transform: translate(-45%, 10%) scale(1.15);
+    }
   }
 }
 
+/* ---------- Dark theme: black and purple ----------
+   Set by the theme toggle (class "dark" on <html>). Every utility reads these variables,
+   so components switch without their own dark styles. Light theme values above stay untouched. */
+html.dark {
+  color-scheme: dark;
+
+  /* Surfaces: near-black with a purple cast. "white" is the card color, so bg-white/80 cards turn dark. */
+  --color-canvas: #0b0814;
+  --color-canvas-end: #150b26;
+  --color-surface: #151022;
+  --color-surface-muted: #1a1430;
+  --color-surface-sunken: #110c1d;
+  --color-line: #2e2549;
+  --color-white: #161026;
+
+  /* Text */
+  --color-ink: #f5f3ff;
+  --color-ink-soft: #e2ddf3;
+  --color-ink-muted: #b0a7cc;
+
+  /* The accent scale turns purple. Light steps become dark tints, dark steps become light text colors. */
+  --color-brand-50: #1e1535;
+  --color-brand-100: #271b46;
+  --color-brand-200: #3a2866;
+  --color-brand-300: #8b6fe0;
+  --color-brand-400: #9f7aea;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #b69cfb;
+  --color-brand-700: #cdbcfd;
+  --color-brand-800: #e2d9fe;
+  --color-brand-900: #f1ecff;
+
+  --color-violet-50: #1e1535;
+  --color-violet-100: #271b46;
+  --color-violet-200: #3a2866;
+  --color-violet-300: #7c5fd0;
+  --color-violet-400: #c4a1fb;
+  --color-violet-500: #a855f7;
+  --color-violet-600: #d0a8fd;
+  --color-violet-700: #e0c3fe;
+  --color-indigo-300: #c4b5fd;
+  --color-indigo-500: #9061f9;
+
+  --color-slate-50: #1a1430;
+  --color-slate-100: #211936;
+  --color-slate-200: #2e2549;
+  --color-slate-300: #40345f;
+  --color-slate-400: #6f6391;
+  --color-slate-700: #8a7fae;
+
+  --color-emerald-50: #0e2420;
+  --color-emerald-200: #166146;
+  --color-emerald-600: #34d399;
+  --color-emerald-700: #6ee7b7;
+  --color-red-600: #fca5a5;
+}
+
+html.dark .bg-orb-violet {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.32) 0%, rgba(124, 58, 237, 0) 70%);
+}
+html.dark .bg-orb-sky {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(168, 85, 247, 0) 70%);
+}
+html.dark .brand-text-gradient {
+  background: linear-gradient(120deg, #c4b5fd 0%, #a78bfa 50%, #e879f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+html.dark .luxury-card {
+  background: rgba(22, 16, 38, 0.72);
+  border-color: rgba(167, 139, 250, 0.18);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+html.dark .bg-blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(167, 139, 250, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(167, 139, 250, 0.1) 1px, transparent 1px);
+}
+html.dark .bg-radial-aurora {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 65%);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #3a2866;
+}
+
+/* Chrome draws the native slider track white next to a purple accent, so dark mode gets its own track. */
+html.dark input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.25rem;
+  background: transparent;
+}
+html.dark input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #33285a;
+}
+html.dark input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  border-radius: 9999px;
+  border: 2px solid #cdbcfd;
+  background: #8b5cf6;
+}
+html.dark input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #33285a;
+}
+html.dark input[type="range"]::-moz-range-progress {
+  height: 6px;
+  border-radius: 9999px;
+  background: #8b5cf6;
+}
+html.dark input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid #cdbcfd;
+  background: #8b5cf6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  letter-spacing: -0.011em;
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+}
+
+/* Visible keyboard focus everywhere. Kept in the base layer so a component's own focus style
+   (e.g. an input inside a bordered box using focus:outline-none) wins and no second border appears. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+  }
+}
+
+/* Animated two-color background */
+.bg-orb {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+.bg-orb-violet {
+  top: -25vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.6) 0%, rgba(196, 181, 253, 0) 70%);
+}
+.bg-orb-sky {
+  bottom: -25vmax;
+  right: -20vmax;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.55) 0%, rgba(147, 197, 253, 0) 70%);
+}
+
+/* Text gradient in the two background colors, deep enough to read on white */
+.brand-text-gradient {
+  background: linear-gradient(120deg, #2563eb 0%, #6366f1 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Frosted white cards */
+.luxury-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  box-shadow: 0 18px 40px -18px rgba(30, 41, 82, 0.16), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Blueprint grid */
+.bg-blueprint-grid {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+}
+
+.bg-radial-aurora {
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.10) 0%, transparent 65%);
+}
+
+/* Hide horizontal scrollbars on chip rows while keeping them scrollable */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Number inputs: hide spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="range"] {
+  accent-color: var(--color-brand-500);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-sunken);
+}
+::-webkit-scrollbar-thumb {
+  background: #c7d2e5;
+  border-radius: 6px;
+  border: 2px solid var(--color-surface-sunken);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
