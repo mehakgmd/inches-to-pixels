@@ -43,8 +43,8 @@ export const fr: Messages = {
     footer: { languages: "Langues" },
     faq: { eyebrow: "Questions fréquentes", title: "CONSEILS", highlight: "D’EXPERT" },
     hero: {
-      badge: "La haute horlogerie de l’échelle numérique",
-      badgeRule: "1 PO = 96 PX (W3C)",
+      badge: "L’art de l’échelle numérique",
+      badgeRule: "1 PO = 96 PX",
       h1Before: "Calculateur de pouces en ",
       h1Highlight: "pixels",
       h1After: "",
@@ -104,7 +104,7 @@ export const fr: Messages = {
       copyCss: "Copier le CSS",
     },
     visual: {
-      eyebrow: "Studio visuel en temps réel",
+      eyebrow: "Vue en temps réel",
       title: "LA FENÊTRE",
       highlight: "ARCHITECTURALE",
       description:
@@ -340,39 +340,38 @@ export const fr: Messages = {
         "Convertisseur gratuit de pouces en pixels pour l’écran et l’impression. Convertissez n’importe quelle taille à n’importe quel DPI, vérifiez les formats d’impression et retrouvez les valeurs courantes au même endroit.",
       openConverter: "Ouvrir le convertisseur",
       pages: "Pages",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "RETOUR EN HAUT",
     },
     home: {
       intro:
-        "Pour convertir des pouces en pixels, multipliez la mesure par la résolution en pixels par pouce (PPI). À 300 PPI, 1 pouce vaut 300 pixels. Le résultat dépend du PPI choisi : il n’existe pas de facteur de conversion unique valable pour toutes les images.",
+        "Ce calculateur convertit une mesure en pouces en pixels selon la résolution d’image choisie, exprimée en pixels par pouce (PPI). Le résultat dépend de ce réglage : à 300 PPI, 1 pouce vaut 300 pixels.",
       howTo: {
         heading: "Comment convertir des pouces en pixels",
         steps: [
           "Saisissez la longueur à convertir, mesurée en pouces.",
-          "Utilisez le PPI requis par votre projet. Pour l’impression, vérifiez la résolution d’image demandée par votre imprimeur.",
-          "Calculez le nombre de pixels. Pour la largeur et la hauteur d’une image, convertissez chaque dimension séparément avec le même PPI.",
+          "Choisissez la résolution d’image requise par votre projet. Pour l’impression, renseignez-vous auprès de votre imprimeur.",
+          "Calculez le nombre de pixels. Pour convertir la largeur et la hauteur, répétez le calcul pour chaque dimension avec le même réglage.",
         ],
-        note: "Indiquez toujours le PPI avec le résultat : « 1 200 pixels à 300 PPI » renseigne bien mieux sur la taille d’impression prévue que « 1 200 pixels » seuls.",
+        note: "Conservez la résolution avec votre résultat pour pouvoir vérifier plus tard la taille d’impression prévue.",
       },
       formula: {
         heading: "Formule et exemples",
         main: "Pixels = pouces × PPI",
-        explain:
-          "Ici, les pouces sont la longueur physique et le PPI le nombre de pixels d’image par pouce. Leur produit donne le nombre de pixels sur cette dimension.",
+        explain: "Multipliez la longueur physique en pouces par le nombre de pixels par pouce pour obtenir le nombre de pixels sur cette dimension.",
         backwardLead: "Pour le calcul inverse :",
         backward: "Pouces = pixels ÷ PPI",
         examples: [
           {
-            heading: "Exemple : une seule longueur",
+            heading: "Exemple d’une seule longueur",
             lead: "À 96 PPI, une longueur de 2 pouces donne :",
             math: ["2 × 96 = 192 pixels"],
             after: [
-              "Ce résultat est exact pour le PPI indiqué. Il ne signifie pas que chaque écran affiche 192 pixels sur deux pouces physiques.",
+              "Ce résultat est exact pour la résolution choisie. Il ne signifie pas que chaque écran affiche 192 pixels sur deux pouces physiques.",
             ],
           },
           {
-            heading: "Exemple : largeur et hauteur pour un tirage",
+            heading: "Exemple de largeur et de hauteur pour un tirage",
             lead: "Pour une image de 8,5 × 11 pouces à 300 PPI :",
             math: ["Largeur : 8,5 × 300 = 2 550 pixels", "Hauteur : 11 × 300 = 3 300 pixels"],
             after: [
@@ -380,22 +379,21 @@ export const fr: Messages = {
             ],
           },
           {
-            heading: "Exemple : un résultat décimal",
+            heading: "Exemple d’un résultat décimal",
             lead: "Pour 2,33 pouces à 150 PPI :",
             math: ["2,33 × 150 = 349,5 pixels"],
             after: [
-              "Le résultat mathématique est exact, mais une image matricielle exige des dimensions en pixels entiers. En arrondissant au pixel entier le plus proche, moitiés vers le haut, on obtient 350 pixels. À 150 PPI, cela correspond à environ 2,333 pouces.",
+              "Les images matricielles exigent des dimensions en pixels entiers. En arrondissant 349,5 au pixel entier le plus proche, moitiés vers le haut, on obtient 350 pixels. À la même résolution, cela correspond à environ 2,333 pouces.",
             ],
           },
         ],
-        closing:
-          "Les exemples présentent des résultats exacts sauf mention d’un arrondi. N’arrondissez qu’à la dernière étape, selon les exigences de votre projet.",
+        closing: "N’arrondissez qu’à la dernière étape, selon les exigences de votre projet.",
       },
       reference: {
         heading: "Tableau de référence pouces-pixels",
         intro:
-          "Chaque valeur est une longueur en pixels au PPI indiqué. Ce sont des résolutions d’exemple, pas des exigences universelles.",
-        table: homeTable("fr", { corner: "Longueur (pouces)", col: "Pixels à {ppi} PPI" }),
+          "Les en-têtes de colonne indiquent la résolution d’image en PPI ; les valeurs en dessous sont des nombres de pixels. Ces réglages sont des exemples, pas des exigences universelles.",
+        table: homeTable("fr", { corner: "Longueur (pouces)", col: "{ppi}" }),
         caption: "Pouces en pixels à 72, 96, 150 et 300 PPI",
         footnote: "Toutes les valeurs du tableau sont exactes pour les données indiquées.",
       },
@@ -404,20 +402,20 @@ export const fr: Messages = {
         {
           heading: "Pixels d’image, taille d’impression et pixels CSS",
           paragraphs: [
-            "Les dimensions d’une image décrivent sa largeur et sa hauteur en pixels. Les dimensions d’impression décrivent sa taille physique en pouces. Le PPI relie les deux : les mêmes dimensions en pixels donnent des tailles d’impression différentes selon la résolution.",
-            "Le CSS utilise une relation fixe distincte : 1in = 96px. Ce sont des unités de référence CSS. Un pixel CSS n’est pas forcément un pixel physique de l’appareil, et un pouce CSS affiché à l’écran ne mesure pas forcément un vrai pouce. Utilisez cette relation pour le dimensionnement CSS, sans supposer que tous les écrans ont une densité de 96 PPI.",
+            "Les dimensions en pixels décrivent la largeur et la hauteur d’une image en pixels. Les dimensions d’impression décrivent sa taille physique en pouces. La résolution d’image relie les deux : les mêmes dimensions en pixels peuvent donner des tailles d’impression différentes.",
+            "Le CSS utilise une relation fixe : 1in = 96px. Ce sont des unités de référence CSS : un pixel CSS n’est donc pas forcément un pixel physique de l’appareil, et un pouce CSS à l’écran peut ne pas mesurer un vrai pouce. Utilisez cette relation pour le dimensionnement CSS, sans supposer qu’elle décrit la densité physique de pixels d’un écran.",
           ],
         },
         {
-          heading: "PPI et DPI désignent des choses différentes",
+          heading: "Résolution d’image et résolution d’imprimante",
           paragraphs: [
-            "PPI signifie pixels par pouce dans une image. DPI signifie points par pouce produits par une imprimante. Ils sont liés dans la chaîne d’impression, mais ne sont pas interchangeables. Pour calculer des pixels d’image, utilisez le PPI requis plutôt que la résolution DPI matérielle de l’imprimante.",
+            "Le PPI décrit les pixels d’image par pouce ; le DPI décrit les points par pouce produits par une imprimante. Ils sont liés dans la chaîne d’impression, mais ne sont pas interchangeables. Pour ce calculateur, utilisez la résolution d’image exigée plutôt que les caractéristiques matérielles de l’imprimante.",
           ],
         },
         {
-          heading: "Changer le PPI n’ajoute pas de détail",
+          heading: "Changer la résolution n’ajoute pas de détail",
           paragraphs: [
-            "Modifier seulement les métadonnées PPI laisse le nombre de pixels inchangé ; cela change la relation prévue entre ces pixels et la taille d’impression. Le rééchantillonnage, lui, modifie le nombre de pixels. Attribuer un PPI plus élevé ne crée aucun détail nouveau.",
+            "Modifier seulement les métadonnées de résolution d’une image laisse son nombre de pixels inchangé et modifie sa taille d’impression prévue. Le rééchantillonnage, lui, modifie le nombre de pixels. Attribuer une résolution plus élevée ne crée aucun détail nouveau.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const fr: Messages = {
       faqDescription: "Réponses aux questions fréquentes sur la conversion de pouces en pixels.",
       faqs: [
         {
-          question: "Quel PPI utiliser ?",
+          question: "Quelle résolution utiliser ?",
           answer:
-            "Utilisez la valeur exigée par le support final. Pour l’impression, demandez à l’imprimeur le PPI d’image requis à la taille finale. Pour un envoi numérique qui précise des dimensions en pixels, suivez directement ces dimensions. Les valeurs 72, 96, 150 et 300 PPI sont des exemples, pas des règles pour tous les projets.",
+            "Utilisez la valeur exigée par le support final. Pour l’impression, demandez à l’imprimeur la résolution d’image nécessaire à la taille finale. Si un envoi numérique précise des dimensions en pixels, suivez directement ces dimensions.",
         },
         {
           question: "La conversion en pixels modifie-t-elle le format de l’image ?",
           answer:
-            "Utiliser le même PPI pour la largeur et la hauteur conserve leur rapport avant arrondi. Une image 1:1 a une largeur égale à sa hauteur : par exemple, 4 × 4 pouces à 300 PPI donnent 1 200 × 1 200 pixels. Le rapport décrit la forme, pas la résolution.",
+            "Utiliser la même résolution pour la largeur et la hauteur conserve leur rapport avant arrondi. Par exemple, une image de 4 × 4 pouces à 300 PPI devient 1 200 × 1 200 pixels. Les deux sont carrées : le rapport décrit la forme, pas la résolution.",
         },
         {
           question: "Puis-je calculer la taille d’impression d’une image existante ?",
           answer:
-            "Oui. Divisez chaque dimension en pixels par le PPI prévu. Une image de 1 800 × 1 200 pixels à 300 PPI correspond à 6 × 4 pouces. Un recadrage ou une mise à l’échelle à l’impression peut modifier la taille finale.",
+            "Oui. Divisez chaque dimension en pixels par la résolution d’image prévue. À 300 PPI, une image de 1 800 × 1 200 pixels correspond à 6 × 4 pouces. Un recadrage ou une mise à l’échelle à l’impression peut modifier la taille finale.",
         },
       ],
     },

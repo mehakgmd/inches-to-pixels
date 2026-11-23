@@ -43,8 +43,8 @@ export const id: Messages = {
     footer: { languages: "Bahasa" },
     faq: { eyebrow: "Pertanyaan umum", title: "PANDUAN", highlight: "AHLI" },
     hero: {
-      badge: "Seni jam tangan mewah untuk skala digital",
-      badgeRule: "1 INCI = 96 PX (W3C)",
+      badge: "Seni skala digital",
+      badgeRule: "1 INCI = 96 PX",
       h1Before: "Kalkulator inci ke ",
       h1Highlight: "piksel",
       h1After: "",
@@ -104,7 +104,7 @@ export const id: Messages = {
       copyCss: "Salin CSS",
     },
     visual: {
-      eyebrow: "Studio visual waktu nyata",
+      eyebrow: "Tampilan waktu nyata",
       title: "VIEWPORT",
       highlight: "ARSITEKTURAL",
       description:
@@ -340,39 +340,38 @@ export const id: Messages = {
         "Konverter inci ke piksel gratis untuk layar dan cetak. Konversi ukuran apa pun pada DPI apa pun, periksa ukuran cetak, dan temukan nilai umum di satu tempat.",
       openConverter: "Buka konverter",
       pages: "Halaman",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "KEMBALI KE ATAS",
     },
     home: {
       intro:
-        "Konversi inci ke piksel dengan mengalikan ukuran Anda dengan resolusi dalam piksel per inci (PPI). Pada 300 PPI, 1 inci sama dengan 300 piksel. Hasilnya bergantung pada PPI yang Anda gunakan—tidak ada satu faktor konversi untuk semua gambar.",
+        "Gunakan kalkulator ini untuk mengonversi ukuran dalam inci ke piksel pada resolusi gambar pilihan Anda, yang diukur dalam piksel per inci (PPI). Hasilnya bergantung pada pengaturan ini: pada 300 PPI, 1 inci sama dengan 300 piksel.",
       howTo: {
         heading: "Cara mengonversi inci ke piksel",
         steps: [
           "Masukkan panjang yang ingin dikonversi, dalam satuan inci.",
-          "Gunakan PPI yang dibutuhkan proyek Anda. Untuk cetak, periksa persyaratan resolusi gambar dari percetakan Anda.",
-          "Hitung jumlah pikselnya. Untuk lebar dan tinggi gambar, konversi setiap dimensi secara terpisah dengan PPI yang sama.",
+          "Pilih resolusi gambar yang dibutuhkan proyek Anda. Untuk cetak, tanyakan kepada percetakan Anda.",
+          "Hitung jumlah pikselnya. Untuk mengonversi lebar dan tinggi, ulangi perhitungan untuk setiap dimensi dengan pengaturan yang sama.",
         ],
-        note: "Selalu cantumkan PPI bersama hasilnya: “1.200 piksel pada 300 PPI” memberi informasi ukuran cetak yang jauh lebih jelas daripada sekadar “1.200 piksel”.",
+        note: "Simpan resolusi bersama hasilnya agar Anda bisa memeriksa ukuran cetak yang dimaksud nanti.",
       },
       formula: {
         heading: "Rumus dan contoh",
         main: "Piksel = inci × PPI",
-        explain:
-          "Di sini, inci adalah panjang fisik dan PPI adalah jumlah piksel gambar per inci. Mengalikan keduanya menghasilkan jumlah piksel di sepanjang dimensi tersebut.",
+        explain: "Kalikan panjang fisik dalam inci dengan jumlah piksel per inci untuk mendapatkan jumlah piksel di sepanjang dimensi tersebut.",
         backwardLead: "Untuk menghitung sebaliknya:",
         backward: "Inci = piksel ÷ PPI",
         examples: [
           {
-            heading: "Contoh: satu panjang",
+            heading: "Contoh satu panjang",
             lead: "Pada 96 PPI, panjang 2 inci menjadi:",
             math: ["2 × 96 = 192 piksel"],
             after: [
-              "Hasil ini tepat untuk PPI yang disebutkan. Bukan berarti setiap layar menampilkan 192 piksel di sepanjang dua inci fisik.",
+              "Hasil ini tepat untuk resolusi yang dipilih. Bukan berarti setiap layar menampilkan 192 piksel di sepanjang dua inci fisik.",
             ],
           },
           {
-            heading: "Contoh: lebar dan tinggi untuk cetak",
+            heading: "Contoh lebar dan tinggi untuk cetak",
             lead: "Untuk gambar 8,5 × 11 inci pada 300 PPI:",
             math: ["Lebar: 8,5 × 300 = 2.550 piksel", "Tinggi: 11 × 300 = 3.300 piksel"],
             after: [
@@ -380,22 +379,21 @@ export const id: Messages = {
             ],
           },
           {
-            heading: "Contoh: hasil piksel desimal",
+            heading: "Contoh hasil piksel desimal",
             lead: "Untuk 2,33 inci pada 150 PPI:",
             math: ["2,33 × 150 = 349,5 piksel"],
             after: [
-              "Hasil matematisnya tepat, tetapi gambar raster membutuhkan dimensi piksel bulat. Dibulatkan ke piksel bulat terdekat, dengan setengah dibulatkan ke atas, hasilnya 350 piksel. Pada 150 PPI, itu setara dengan sekitar 2,333 inci.",
+              "Gambar raster membutuhkan dimensi piksel bulat. Membulatkan 349,5 ke piksel bulat terdekat, dengan setengah dibulatkan ke atas, menghasilkan 350 piksel. Pada resolusi yang sama, itu setara dengan sekitar 2,333 inci.",
             ],
           },
         ],
-        closing:
-          "Contoh di sini menunjukkan hasil yang tepat kecuali pembulatan disebutkan. Bulatkan hanya di langkah terakhir, sesuai kebutuhan proyek Anda.",
+        closing: "Bulatkan hanya di langkah terakhir, sesuai kebutuhan proyek Anda.",
       },
       reference: {
         heading: "Tabel acuan inci ke piksel",
         intro:
-          "Setiap nilai di bawah adalah panjang dalam piksel pada PPI yang disebutkan. Ini contoh resolusi, bukan ketentuan universal.",
-        table: homeTable("id", { corner: "Panjang (inci)", col: "Piksel pada {ppi} PPI" }),
+          "Judul kolom menunjukkan resolusi gambar dalam PPI; nilai di bawahnya adalah jumlah piksel. Pengaturan ini hanyalah contoh, bukan ketentuan universal.",
+        table: homeTable("id", { corner: "Panjang (inci)", col: "{ppi}" }),
         caption: "Inci ke piksel pada 72, 96, 150, dan 300 PPI",
         footnote: "Semua nilai tabel tepat untuk masukan yang tercantum.",
       },
@@ -404,20 +402,20 @@ export const id: Messages = {
         {
           heading: "Piksel gambar, ukuran cetak, dan piksel CSS",
           paragraphs: [
-            "Dimensi gambar menggambarkan lebar dan tinggi gambar dalam piksel. Dimensi cetak menggambarkan ukuran fisiknya dalam inci. PPI menghubungkan keduanya: dimensi piksel yang sama bisa menghasilkan ukuran cetak berbeda pada resolusi berbeda.",
-            "CSS memakai hubungan tetap yang terpisah: 1in = 96px. Ini adalah satuan acuan CSS. Piksel CSS belum tentu sama dengan satu piksel fisik perangkat, dan inci CSS di layar belum tentu benar-benar satu inci. Gunakan hubungan ini untuk ukuran CSS, tanpa menganggap setiap layar berkerapatan 96 PPI.",
+            "Dimensi piksel menggambarkan lebar dan tinggi gambar dalam piksel. Dimensi cetak menggambarkan ukuran fisiknya dalam inci. Resolusi gambar menghubungkan keduanya: dimensi piksel yang sama bisa menghasilkan ukuran cetak yang berbeda.",
+            "CSS memakai hubungan tetap: 1in = 96px. Ini adalah satuan acuan CSS, sehingga piksel CSS belum tentu sama dengan satu piksel fisik perangkat, dan inci CSS di layar mungkin tidak benar-benar berukuran satu inci. Gunakan hubungan ini untuk ukuran CSS; jangan menganggapnya menggambarkan kerapatan piksel fisik layar.",
           ],
         },
         {
-          heading: "PPI dan DPI menjelaskan hal yang berbeda",
+          heading: "Resolusi gambar dan resolusi printer",
           paragraphs: [
-            "PPI berarti piksel per inci dalam gambar. DPI berarti titik per inci yang dihasilkan printer. Keduanya berkaitan dalam alur kerja cetak, tetapi tidak dapat dipertukarkan. Untuk menghitung piksel gambar, gunakan PPI yang diminta, bukan resolusi DPI perangkat keras printer.",
+            "PPI menggambarkan piksel gambar per inci; DPI menggambarkan titik per inci yang dihasilkan printer. Keduanya berkaitan dalam alur kerja cetak, tetapi tidak dapat dipertukarkan. Untuk kalkulator ini, gunakan persyaratan resolusi gambar, bukan spesifikasi perangkat keras printer.",
           ],
         },
         {
-          heading: "Mengubah PPI tidak menambah detail gambar",
+          heading: "Mengubah resolusi tidak menambah detail gambar",
           paragraphs: [
-            "Mengubah metadata PPI saja tidak mengubah jumlah piksel gambar; yang berubah hanyalah hubungan antara piksel tersebut dan ukuran cetak. Resampling mengubah jumlah piksel. Sekadar menetapkan PPI lebih tinggi tidak menciptakan detail baru.",
+            "Mengubah metadata resolusi gambar saja tidak mengubah jumlah pikselnya, tetapi mengubah ukuran cetak yang dimaksud. Resampling mengubah jumlah piksel. Sekadar menetapkan resolusi lebih tinggi tidak menciptakan detail baru.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const id: Messages = {
       faqDescription: "Jawaban atas pertanyaan umum tentang konversi inci ke piksel.",
       faqs: [
         {
-          question: "PPI berapa yang sebaiknya saya gunakan?",
+          question: "Resolusi berapa yang sebaiknya saya gunakan?",
           answer:
-            "Gunakan nilai yang dibutuhkan hasil akhir Anda. Untuk cetak, tanyakan kepada percetakan PPI gambar yang diperlukan pada ukuran akhir. Untuk unggahan digital yang menyebutkan dimensi piksel, ikuti dimensi tersebut secara langsung. Nilai seperti 72, 96, 150, dan 300 PPI hanyalah contoh, bukan aturan untuk setiap proyek.",
+            "Gunakan nilai yang dibutuhkan hasil akhir Anda. Untuk cetak, tanyakan kepada percetakan resolusi gambar yang diperlukan pada ukuran akhir. Jika unggahan digital menyebutkan dimensi piksel, ikuti dimensi tersebut secara langsung.",
         },
         {
           question: "Apakah konversi ke piksel mengubah rasio aspek?",
           answer:
-            "Menggunakan PPI yang sama untuk lebar dan tinggi menjaga rasionya sebelum pembulatan. Gambar 1:1 memiliki lebar dan tinggi yang sama: misalnya, 4 × 4 inci pada 300 PPI menjadi 1.200 × 1.200 piksel. Rasio menggambarkan bentuk, bukan resolusi.",
+            "Menggunakan resolusi yang sama untuk lebar dan tinggi menjaga rasionya sebelum pembulatan. Misalnya, gambar 4 × 4 inci pada 300 PPI menjadi 1.200 × 1.200 piksel. Keduanya persegi: rasio menggambarkan bentuk, bukan resolusi.",
         },
         {
           question: "Bisakah saya menghitung ukuran cetak dari gambar yang sudah ada?",
           answer:
-            "Bisa. Bagi setiap dimensi piksel dengan PPI yang dimaksud. Gambar 1.800 × 1.200 piksel pada 300 PPI setara dengan 6 × 4 inci. Pemangkasan atau penskalaan saat mencetak dapat mengubah ukuran akhir.",
+            "Bisa. Bagi setiap dimensi piksel dengan resolusi gambar yang dimaksud. Pada 300 PPI, gambar 1.800 × 1.200 piksel setara dengan 6 × 4 inci. Pemangkasan atau penskalaan saat mencetak dapat mengubah ukuran akhir.",
         },
       ],
     },

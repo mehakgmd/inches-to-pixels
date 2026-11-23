@@ -43,8 +43,8 @@ export const de: Messages = {
     footer: { languages: "Sprachen" },
     faq: { eyebrow: "Häufige Fragen", title: "EXPERTEN-", highlight: "ANTWORTEN" },
     hero: {
-      badge: "Die Haute Horlogerie des digitalen Maßstabs",
-      badgeRule: "1 ZOLL = 96 PX (W3C)",
+      badge: "Die Kunst des digitalen Maßstabs",
+      badgeRule: "1 ZOLL = 96 PX",
       h1Before: "Zoll-in-",
       h1Highlight: "Pixel",
       h1After: "-Rechner",
@@ -104,7 +104,7 @@ export const de: Messages = {
       copyCss: "CSS kopieren",
     },
     visual: {
-      eyebrow: "Visuelles Echtzeit-Studio",
+      eyebrow: "Echtzeitansicht",
       title: "DER ARCHITEKTONISCHE",
       highlight: "VIEWPORT",
       description:
@@ -340,39 +340,38 @@ export const de: Messages = {
         "Kostenloser Zoll-in-Pixel-Rechner für Bildschirm und Druck. Rechnen Sie jede Größe mit jeder DPI um, prüfen Sie Druckformate und finden Sie gängige Werte an einem Ort.",
       openConverter: "Rechner öffnen",
       pages: "Seiten",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "NACH OBEN",
     },
     home: {
       intro:
-        "Zoll rechnen Sie in Pixel um, indem Sie das Maß mit der Auflösung in Pixeln pro Zoll (PPI) multiplizieren. Bei 300 PPI entspricht 1 Zoll 300 Pixeln. Das Ergebnis hängt vom verwendeten PPI ab – es gibt keinen einheitlichen Umrechnungsfaktor für jedes Bild.",
+        "Mit diesem Rechner wandeln Sie ein Maß in Zoll bei der gewählten Bildauflösung in Pixel um, gemessen in Pixeln pro Zoll (PPI). Das Ergebnis hängt von dieser Einstellung ab: Bei 300 PPI entspricht 1 Zoll 300 Pixeln.",
       howTo: {
         heading: "So rechnen Sie Zoll in Pixel um",
         steps: [
           "Geben Sie die umzurechnende Länge in Zoll ein.",
-          "Verwenden Sie den PPI-Wert, den Ihr Projekt verlangt. Für Druckaufträge prüfen Sie die Bildauflösung, die Ihre Druckerei vorgibt.",
-          "Berechnen Sie die Pixelanzahl. Rechnen Sie Breite und Höhe eines Bildes jeweils getrennt mit demselben PPI um.",
+          "Wählen Sie die Bildauflösung, die Ihr Projekt verlangt. Für den Druck fragen Sie Ihre Druckerei.",
+          "Berechnen Sie die Pixelanzahl. Um Breite und Höhe umzurechnen, wiederholen Sie die Berechnung für jede Abmessung mit derselben Einstellung.",
         ],
-        note: "Notieren Sie den PPI-Wert zum Ergebnis: „1.200 Pixel bei 300 PPI“ sagt viel mehr über die geplante Druckgröße aus als nur „1.200 Pixel“.",
+        note: "Speichern Sie die Auflösung zusammen mit dem Ergebnis, damit Sie die geplante Druckgröße später prüfen können.",
       },
       formula: {
         heading: "Formel und Beispiele",
         main: "Pixel = Zoll × PPI",
-        explain:
-          "Dabei ist Zoll die physische Länge und PPI die Zahl der Bildpixel pro Zoll. Das Produkt ergibt die Pixelanzahl entlang dieser Abmessung.",
+        explain: "Multiplizieren Sie die physische Länge in Zoll mit der Zahl der Pixel pro Zoll, um die Pixelanzahl entlang dieser Abmessung zu erhalten.",
         backwardLead: "Für die Rückrechnung:",
         backward: "Zoll = Pixel ÷ PPI",
         examples: [
           {
-            heading: "Beispiel: Eine einzelne Länge",
+            heading: "Beispiel für eine einzelne Länge",
             lead: "Bei 96 PPI ergibt eine Länge von 2 Zoll:",
             math: ["2 × 96 = 192 Pixel"],
             after: [
-              "Das ist für den angegebenen PPI-Wert exakt. Es bedeutet nicht, dass jeder Bildschirm 192 Pixel auf zwei physischen Zoll anzeigt.",
+              "Dieses Ergebnis ist für die gewählte Auflösung exakt. Es bedeutet nicht, dass jeder Bildschirm 192 Pixel auf zwei physischen Zoll anzeigt.",
             ],
           },
           {
-            heading: "Beispiel: Breite und Höhe für einen Druck",
+            heading: "Beispiel für Breite und Höhe eines Drucks",
             lead: "Für ein Bild mit 8,5 × 11 Zoll bei 300 PPI:",
             math: ["Breite: 8,5 × 300 = 2.550 Pixel", "Höhe: 11 × 300 = 3.300 Pixel"],
             after: [
@@ -380,22 +379,21 @@ export const de: Messages = {
             ],
           },
           {
-            heading: "Beispiel: Ein Ergebnis mit Nachkommastellen",
+            heading: "Beispiel für ein Ergebnis mit Nachkommastellen",
             lead: "Für 2,33 Zoll bei 150 PPI:",
             math: ["2,33 × 150 = 349,5 Pixel"],
             after: [
-              "Das mathematische Ergebnis ist exakt, aber ein Rasterbild braucht ganze Pixel. Auf den nächsten ganzen Pixel gerundet (Hälften aufgerundet) ergeben sich 350 Pixel. Bei 150 PPI entspricht das etwa 2,333 Zoll.",
+              "Rasterbilder brauchen ganze Pixel. Rundet man 349,5 auf den nächsten ganzen Pixel (Hälften aufgerundet), ergeben sich 350 Pixel. Bei derselben Auflösung entspricht das etwa 2,333 Zoll.",
             ],
           },
         ],
-        closing:
-          "Die Beispiele zeigen exakte Ergebnisse, sofern keine Rundung angegeben ist. Runden Sie erst im letzten Schritt und nach den Vorgaben Ihres Projekts.",
+        closing: "Runden Sie erst im letzten Schritt und nach den Vorgaben Ihres Projekts.",
       },
       reference: {
         heading: "Referenztabelle Zoll in Pixel",
         intro:
-          "Jeder Wert ist eine Länge in Pixeln beim angegebenen PPI. Es sind Beispielauflösungen, keine allgemeingültigen Vorgaben.",
-        table: homeTable("de", { corner: "Länge (Zoll)", col: "Pixel bei {ppi} PPI" }),
+          "Die Spaltenüberschriften zeigen die Bildauflösung in PPI; die Werte darunter sind Pixelanzahlen. Diese Einstellungen sind Beispiele, keine allgemeingültigen Vorgaben.",
+        table: homeTable("de", { corner: "Länge (Zoll)", col: "{ppi}" }),
         caption: "Zoll in Pixel bei 72, 96, 150 und 300 PPI",
         footnote: "Alle Tabellenwerte sind für die angegebenen Eingaben exakt.",
       },
@@ -404,20 +402,20 @@ export const de: Messages = {
         {
           heading: "Bildpixel, Druckgröße und CSS-Pixel",
           paragraphs: [
-            "Bildmaße beschreiben Breite und Höhe eines Bildes in Pixeln. Druckmaße beschreiben seine physische Größe in Zoll. PPI verbindet beides: Dieselben Pixelmaße ergeben je nach Auflösung unterschiedliche Druckgrößen.",
-            "CSS nutzt ein eigenes festes Verhältnis: 1in = 96px. Das sind CSS-Referenzeinheiten. Ein CSS-Pixel ist nicht unbedingt ein physischer Gerätepixel, und ein CSS-Zoll auf dem Bildschirm ist nicht unbedingt ein echter Zoll. Nutzen Sie dieses Verhältnis für CSS-Größen, statt anzunehmen, dass jedes Display 96 PPI hat.",
+            "Pixelmaße beschreiben Breite und Höhe eines Bildes in Pixeln. Druckmaße beschreiben seine physische Größe in Zoll. Die Bildauflösung verbindet beides: Dieselben Pixelmaße können unterschiedliche Druckgrößen ergeben.",
+            "CSS nutzt ein festes Verhältnis: 1in = 96px. Das sind CSS-Referenzeinheiten – ein CSS-Pixel ist also nicht unbedingt ein physischer Gerätepixel, und ein CSS-Zoll auf dem Bildschirm misst nicht unbedingt einen echten Zoll. Nutzen Sie dieses Verhältnis für CSS-Größen, aber gehen Sie nicht davon aus, dass es die physische Pixeldichte eines Displays beschreibt.",
           ],
         },
         {
-          heading: "PPI und DPI beschreiben Unterschiedliches",
+          heading: "Bildauflösung und Druckerauflösung",
           paragraphs: [
-            "PPI bedeutet Pixel pro Zoll in einem Bild. DPI bedeutet Punkte pro Zoll, die ein Drucker erzeugt. Im Druckablauf hängen sie zusammen, sind aber nicht austauschbar. Verwenden Sie für Bildpixel-Berechnungen den geforderten PPI-Wert statt der Hardware-DPI des Druckers.",
+            "PPI beschreibt Bildpixel pro Zoll; DPI beschreibt Punkte pro Zoll, die ein Drucker erzeugt. Im Druckablauf hängen sie zusammen, sind aber nicht austauschbar. Verwenden Sie für diesen Rechner die geforderte Bildauflösung statt der Hardwareangabe des Druckers.",
           ],
         },
         {
-          heading: "Ein anderer PPI-Wert fügt keine Details hinzu",
+          heading: "Eine andere Auflösung fügt keine Bilddetails hinzu",
           paragraphs: [
-            "Ändern Sie nur die PPI-Metadaten, bleibt die Pixelzahl des Bildes gleich; es ändert sich nur das vorgesehene Verhältnis zwischen Pixeln und Druckgröße. Neuberechnung (Resampling) ändert die Pixelzahl. Ein höherer PPI-Wert allein erzeugt keine neuen Details.",
+            "Ändern Sie nur die Auflösungs-Metadaten eines Bildes, bleibt seine Pixelzahl gleich und nur die geplante Druckgröße ändert sich. Neuberechnung (Resampling) ändert die Pixelzahl. Eine höhere Auflösung allein erzeugt keine neuen Details.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const de: Messages = {
       faqDescription: "Antworten auf häufige Fragen zur Umrechnung von Zoll in Pixel.",
       faqs: [
         {
-          question: "Welchen PPI-Wert soll ich verwenden?",
+          question: "Welche Auflösung soll ich verwenden?",
           answer:
-            "Verwenden Sie den Wert, den Ihre Ausgabe verlangt. Für den Druck fragen Sie die Druckerei nach dem erforderlichen Bild-PPI in der Endgröße. Gibt ein digitaler Upload Pixelmaße vor, verwenden Sie diese direkt. Werte wie 72, 96, 150 und 300 PPI sind Beispiele, keine Regeln für jedes Projekt.",
+            "Verwenden Sie den Wert, den Ihre Ausgabe verlangt. Für den Druck fragen Sie die Druckerei nach der benötigten Bildauflösung in der Endgröße. Gibt ein digitaler Upload Pixelmaße vor, verwenden Sie diese direkt.",
         },
         {
           question: "Ändert die Umrechnung in Pixel das Seitenverhältnis?",
           answer:
-            "Mit demselben PPI für Breite und Höhe bleibt das Verhältnis vor dem Runden erhalten. Ein 1:1-Bild hat gleiche Breite und Höhe: Zum Beispiel ergeben 4 × 4 Zoll bei 300 PPI 1.200 × 1.200 Pixel. Das Verhältnis beschreibt die Form, nicht die Auflösung.",
+            "Mit derselben Auflösung für Breite und Höhe bleibt das Verhältnis vor dem Runden erhalten. Ein Bild mit 4 × 4 Zoll bei 300 PPI wird zum Beispiel zu 1.200 × 1.200 Pixeln. Beide sind quadratisch: Das Verhältnis beschreibt die Form, nicht die Auflösung.",
         },
         {
           question: "Kann ich die Druckgröße eines vorhandenen Bildes berechnen?",
           answer:
-            "Ja. Teilen Sie jede Pixelabmessung durch den vorgesehenen PPI-Wert. Ein Bild mit 1.800 × 1.200 Pixeln bei 300 PPI entspricht 6 × 4 Zoll. Beschneiden oder Skalieren beim Drucken kann die Endgröße verändern.",
+            "Ja. Teilen Sie jede Pixelabmessung durch die vorgesehene Bildauflösung. Bei 300 PPI entspricht ein Bild mit 1.800 × 1.200 Pixeln 6 × 4 Zoll. Beschneiden oder Skalieren beim Drucken kann die Endgröße verändern.",
         },
       ],
     },

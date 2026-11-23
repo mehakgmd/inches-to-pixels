@@ -43,8 +43,8 @@ export const it: Messages = {
     footer: { languages: "Lingue" },
     faq: { eyebrow: "Domande frequenti", title: "RISPOSTE", highlight: "ESPERTE" },
     hero: {
-      badge: "L’alta orologeria della scala digitale",
-      badgeRule: "1 POLL = 96 PX (W3C)",
+      badge: "L’arte della scala digitale",
+      badgeRule: "1 POLL = 96 PX",
       h1Before: "Calcolatore da pollici a ",
       h1Highlight: "pixel",
       h1After: "",
@@ -104,7 +104,7 @@ export const it: Messages = {
       copyCss: "Copia CSS",
     },
     visual: {
-      eyebrow: "Studio visivo in tempo reale",
+      eyebrow: "Vista in tempo reale",
       title: "IL VIEWPORT",
       highlight: "ARCHITETTONICO",
       description:
@@ -340,39 +340,38 @@ export const it: Messages = {
         "Convertitore gratuito da pollici a pixel per schermo e stampa. Converti qualsiasi dimensione a qualsiasi DPI, verifica i formati di stampa e trova i valori più comuni in un unico posto.",
       openConverter: "Apri il convertitore",
       pages: "Pagine",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "TORNA SU",
     },
     home: {
       intro:
-        "Per convertire pollici in pixel, moltiplica la misura per la risoluzione in pixel per pollice (PPI). A 300 PPI, 1 pollice corrisponde a 300 pixel. Il risultato dipende dai PPI usati: non esiste un unico fattore di conversione valido per ogni immagine.",
+        "Usa questo calcolatore per convertire una misura in pollici in pixel alla risoluzione d’immagine scelta, espressa in pixel per pollice (PPI). Il risultato dipende da questa impostazione: a 300 PPI, 1 pollice corrisponde a 300 pixel.",
       howTo: {
         heading: "Come convertire pollici in pixel",
         steps: [
           "Inserisci la lunghezza da convertire, misurata in pollici.",
-          "Usa i PPI richiesti dal tuo progetto. Per la stampa, verifica la risoluzione d’immagine richiesta dal tuo stampatore.",
-          "Calcola il numero di pixel. Per larghezza e altezza di un’immagine, converti ogni dimensione separatamente con gli stessi PPI.",
+          "Scegli la risoluzione d’immagine richiesta dal tuo progetto. Per la stampa, chiedi al tuo stampatore.",
+          "Calcola il numero di pixel. Per convertire larghezza e altezza, ripeti il calcolo per ogni dimensione con la stessa impostazione.",
         ],
-        note: "Indica sempre i PPI accanto al risultato: «1.200 pixel a 300 PPI» dice molto di più sulla dimensione di stampa prevista che «1.200 pixel» da soli.",
+        note: "Salva la risoluzione insieme al risultato, così potrai verificare in seguito la dimensione di stampa prevista.",
       },
       formula: {
         heading: "Formula ed esempi",
         main: "Pixel = pollici × PPI",
-        explain:
-          "Qui i pollici sono la lunghezza fisica e i PPI il numero di pixel dell’immagine per pollice. Moltiplicandoli si ottiene il numero di pixel lungo quella dimensione.",
+        explain: "Moltiplica la lunghezza fisica in pollici per il numero di pixel per pollice per ottenere il numero di pixel lungo quella dimensione.",
         backwardLead: "Per il calcolo inverso:",
         backward: "Pollici = pixel ÷ PPI",
         examples: [
           {
-            heading: "Esempio: una sola lunghezza",
+            heading: "Esempio di una sola lunghezza",
             lead: "A 96 PPI, una lunghezza di 2 pollici diventa:",
             math: ["2 × 96 = 192 pixel"],
             after: [
-              "Il risultato è esatto per i PPI indicati. Non significa che ogni schermo mostri 192 pixel su due pollici fisici.",
+              "Questo risultato è esatto per la risoluzione scelta. Non significa che ogni schermo mostri 192 pixel su due pollici fisici.",
             ],
           },
           {
-            heading: "Esempio: larghezza e altezza per una stampa",
+            heading: "Esempio di larghezza e altezza per una stampa",
             lead: "Per un’immagine di 8,5 × 11 pollici a 300 PPI:",
             math: ["Larghezza: 8,5 × 300 = 2.550 pixel", "Altezza: 11 × 300 = 3.300 pixel"],
             after: [
@@ -380,22 +379,21 @@ export const it: Messages = {
             ],
           },
           {
-            heading: "Esempio: un risultato decimale",
+            heading: "Esempio di un risultato decimale",
             lead: "Per 2,33 pollici a 150 PPI:",
             math: ["2,33 × 150 = 349,5 pixel"],
             after: [
-              "Il risultato matematico è esatto, ma un’immagine raster richiede pixel interi. Arrotondando al pixel intero più vicino, con le metà per eccesso, si ottengono 350 pixel. A 150 PPI corrispondono a circa 2,333 pollici.",
+              "Le immagini raster richiedono pixel interi. Arrotondando 349,5 al pixel intero più vicino, con le metà per eccesso, si ottengono 350 pixel. Alla stessa risoluzione corrispondono a circa 2,333 pollici.",
             ],
           },
         ],
-        closing:
-          "Gli esempi mostrano risultati esatti, salvo dove è indicato un arrotondamento. Arrotonda solo all’ultimo passaggio, secondo i requisiti del progetto.",
+        closing: "Arrotonda solo all’ultimo passaggio, secondo i requisiti del progetto.",
       },
       reference: {
         heading: "Tabella di riferimento da pollici a pixel",
         intro:
-          "Ogni valore è una lunghezza in pixel ai PPI indicati. Sono risoluzioni di esempio, non requisiti universali.",
-        table: homeTable("it", { corner: "Lunghezza (pollici)", col: "Pixel a {ppi} PPI" }),
+          "Le intestazioni delle colonne indicano la risoluzione d’immagine in PPI; i valori sotto sono numeri di pixel. Queste impostazioni sono esempi, non requisiti universali.",
+        table: homeTable("it", { corner: "Lunghezza (pollici)", col: "{ppi}" }),
         caption: "Pollici in pixel a 72, 96, 150 e 300 PPI",
         footnote: "Tutti i valori della tabella sono esatti per i dati indicati.",
       },
@@ -404,20 +402,20 @@ export const it: Messages = {
         {
           heading: "Pixel dell’immagine, dimensione di stampa e pixel CSS",
           paragraphs: [
-            "Le dimensioni di un’immagine ne descrivono larghezza e altezza in pixel. Le dimensioni di stampa ne descrivono la grandezza fisica in pollici. I PPI collegano le due: le stesse dimensioni in pixel possono dare stampe di grandezza diversa a risoluzioni diverse.",
-            "Il CSS usa un rapporto fisso distinto: 1in = 96px. Sono unità di riferimento CSS. Un pixel CSS non è necessariamente un pixel fisico del dispositivo, e un pollice CSS sullo schermo non è necessariamente un pollice reale. Usa questo rapporto per le dimensioni CSS, senza presumere che ogni display abbia una densità di 96 PPI.",
+            "Le dimensioni in pixel descrivono larghezza e altezza di un’immagine in pixel. Le dimensioni di stampa ne descrivono la grandezza fisica in pollici. La risoluzione d’immagine collega le due: le stesse dimensioni in pixel possono dare stampe di grandezza diversa.",
+            "Il CSS usa un rapporto fisso: 1in = 96px. Sono unità di riferimento CSS, quindi un pixel CSS non è necessariamente un pixel fisico del dispositivo e un pollice CSS sullo schermo può non misurare un pollice reale. Usa questo rapporto per le dimensioni CSS, senza presumere che descriva la densità fisica dei pixel di un display.",
           ],
         },
         {
-          heading: "PPI e DPI indicano cose diverse",
+          heading: "Risoluzione dell’immagine e risoluzione della stampante",
           paragraphs: [
-            "PPI significa pixel per pollice in un’immagine. DPI significa punti per pollice prodotti da una stampante. Sono collegati nei flussi di stampa, ma non sono grandezze intercambiabili. Per calcolare i pixel di un’immagine usa i PPI richiesti, non la risoluzione DPI hardware della stampante.",
+            "I PPI indicano i pixel d’immagine per pollice; i DPI i punti per pollice prodotti da una stampante. Sono collegati nei flussi di stampa, ma non sono intercambiabili. Per questo calcolatore usa la risoluzione d’immagine richiesta, non le specifiche hardware della stampante.",
           ],
         },
         {
-          heading: "Cambiare i PPI non aggiunge dettaglio",
+          heading: "Cambiare la risoluzione non aggiunge dettaglio",
           paragraphs: [
-            "Modificare solo i metadati PPI lascia invariato il numero di pixel; cambia il rapporto previsto tra quei pixel e la dimensione di stampa. Il ricampionamento invece cambia il numero di pixel. Assegnare semplicemente PPI più alti non crea nuovo dettaglio.",
+            "Modificare solo i metadati di risoluzione di un’immagine lascia invariato il numero di pixel e cambia la dimensione di stampa prevista. Il ricampionamento invece cambia il numero di pixel. Assegnare semplicemente una risoluzione più alta non crea nuovo dettaglio.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const it: Messages = {
       faqDescription: "Risposte alle domande più comuni sulla conversione da pollici a pixel.",
       faqs: [
         {
-          question: "Quali PPI devo usare?",
+          question: "Quale risoluzione devo usare?",
           answer:
-            "Usa il valore richiesto dall’output finale. Per la stampa, chiedi allo stampatore i PPI d’immagine necessari alla dimensione finale. Per un caricamento digitale che indica dimensioni in pixel, segui direttamente quelle dimensioni. Valori come 72, 96, 150 e 300 PPI sono esempi, non regole per ogni progetto.",
+            "Usa il valore richiesto dall’output finale. Per la stampa, chiedi allo stampatore la risoluzione d’immagine necessaria alla dimensione finale. Se un caricamento digitale indica dimensioni in pixel, segui direttamente quelle dimensioni.",
         },
         {
           question: "La conversione in pixel cambia le proporzioni?",
           answer:
-            "Usare gli stessi PPI per larghezza e altezza ne conserva il rapporto prima dell’arrotondamento. Un’immagine 1:1 ha larghezza e altezza uguali: per esempio, 4 × 4 pollici a 300 PPI diventano 1.200 × 1.200 pixel. Il rapporto descrive la forma, non la risoluzione.",
+            "Usare la stessa risoluzione per larghezza e altezza ne conserva il rapporto prima dell’arrotondamento. Per esempio, un’immagine di 4 × 4 pollici a 300 PPI diventa 1.200 × 1.200 pixel. Entrambe sono quadrate: il rapporto descrive la forma, non la risoluzione.",
         },
         {
           question: "Posso calcolare la dimensione di stampa di un’immagine esistente?",
           answer:
-            "Sì. Dividi ogni dimensione in pixel per i PPI previsti. Un’immagine di 1.800 × 1.200 pixel a 300 PPI corrisponde a 6 × 4 pollici. Ritagli o ridimensionamenti in fase di stampa possono cambiare la dimensione finale.",
+            "Sì. Dividi ogni dimensione in pixel per la risoluzione d’immagine prevista. A 300 PPI, un’immagine di 1.800 × 1.200 pixel corrisponde a 6 × 4 pollici. Ritagli o ridimensionamenti in fase di stampa possono cambiare la dimensione finale.",
         },
       ],
     },

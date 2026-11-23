@@ -43,8 +43,8 @@ export const es: Messages = {
     footer: { languages: "Idiomas" },
     faq: { eyebrow: "Preguntas frecuentes", title: "RESPUESTAS DE", highlight: "EXPERTOS" },
     hero: {
-      badge: "La alta relojería de la escala digital",
-      badgeRule: "1 PULG = 96 PX (W3C)",
+      badge: "El arte de la escala digital",
+      badgeRule: "1 PULG = 96 PX",
       h1Before: "Calculadora de pulgadas a ",
       h1Highlight: "píxeles",
       h1After: "",
@@ -104,7 +104,7 @@ export const es: Messages = {
       copyCss: "Copiar CSS",
     },
     visual: {
-      eyebrow: "Estudio visual en tiempo real",
+      eyebrow: "Vista en tiempo real",
       title: "EL VISOR",
       highlight: "ARQUITECTÓNICO",
       description:
@@ -340,39 +340,38 @@ export const es: Messages = {
         "Conversor gratuito de pulgadas a píxeles para pantalla e impresión. Convierte cualquier tamaño a cualquier DPI, comprueba tamaños de impresión y consulta valores habituales en un solo lugar.",
       openConverter: "Abrir el conversor",
       pages: "Páginas",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "VOLVER ARRIBA",
     },
     home: {
       intro:
-        "Convierte pulgadas a píxeles multiplicando la medida por la resolución en píxeles por pulgada (PPI). A 300 PPI, 1 pulgada equivale a 300 píxeles. El resultado depende del PPI que uses: no existe un único factor de conversión válido para todas las imágenes.",
+        "Usa esta calculadora para convertir una medida en pulgadas a píxeles con la resolución de imagen que elijas, medida en píxeles por pulgada (PPI). El resultado depende de este ajuste: a 300 PPI, 1 pulgada equivale a 300 píxeles.",
       howTo: {
         heading: "Cómo convertir pulgadas a píxeles",
         steps: [
           "Introduce la longitud que quieres convertir, medida en pulgadas.",
-          "Usa el PPI que requiere tu proyecto. Para impresión, consulta la resolución de imagen que exige tu proveedor de impresión.",
-          "Calcula el número de píxeles. Para el ancho y el alto de una imagen, convierte cada dimensión por separado con el mismo PPI.",
+          "Elige la resolución de imagen que requiere tu proyecto. Para imprimir, consúltalo con tu proveedor de impresión.",
+          "Calcula el número de píxeles. Para convertir el ancho y el alto, repite el cálculo para cada dimensión con el mismo ajuste.",
         ],
-        note: "Indica siempre el PPI junto al resultado: «1200 píxeles a 300 PPI» dice mucho más sobre el tamaño de impresión previsto que «1200 píxeles» a secas.",
+        note: "Guarda la resolución junto con el resultado para poder comprobar después el tamaño de impresión previsto.",
       },
       formula: {
         heading: "Fórmula y ejemplos",
         main: "Píxeles = pulgadas × PPI",
-        explain:
-          "Aquí, las pulgadas son la longitud física y el PPI es el número de píxeles de imagen por pulgada. Al multiplicarlos se obtiene el número de píxeles a lo largo de esa dimensión.",
+        explain: "Multiplica la longitud física en pulgadas por el número de píxeles por pulgada para obtener el número de píxeles a lo largo de esa dimensión.",
         backwardLead: "Para hacer el cálculo inverso:",
         backward: "Pulgadas = píxeles ÷ PPI",
         examples: [
           {
-            heading: "Ejemplo: una sola longitud",
+            heading: "Ejemplo de una sola longitud",
             lead: "A 96 PPI, una longitud de 2 pulgadas se convierte en:",
             math: ["2 × 96 = 192 píxeles"],
             after: [
-              "El resultado es exacto para el PPI indicado. No significa que todas las pantallas muestren 192 píxeles en dos pulgadas físicas.",
+              "Este resultado es exacto para la resolución elegida. No significa que todas las pantallas muestren 192 píxeles en dos pulgadas físicas.",
             ],
           },
           {
-            heading: "Ejemplo: ancho y alto para una impresión",
+            heading: "Ejemplo de ancho y alto para una impresión",
             lead: "Para una imagen de 8,5 × 11 pulgadas a 300 PPI:",
             math: ["Ancho: 8,5 × 300 = 2550 píxeles", "Alto: 11 × 300 = 3300 píxeles"],
             after: [
@@ -380,22 +379,21 @@ export const es: Messages = {
             ],
           },
           {
-            heading: "Ejemplo: un resultado con decimales",
+            heading: "Ejemplo de un resultado con decimales",
             lead: "Para 2,33 pulgadas a 150 PPI:",
             math: ["2,33 × 150 = 349,5 píxeles"],
             after: [
-              "El resultado matemático es exacto, pero una imagen rasterizada necesita dimensiones en píxeles enteros. Redondeando al píxel entero más cercano, con las mitades hacia arriba, se obtienen 350 píxeles. A 150 PPI, eso equivale aproximadamente a 2,333 pulgadas.",
+              "Las imágenes rasterizadas necesitan dimensiones en píxeles enteros. Redondeando 349,5 al píxel entero más cercano, con las mitades hacia arriba, se obtienen 350 píxeles. Con la misma resolución, eso equivale aproximadamente a 2,333 pulgadas.",
             ],
           },
         ],
-        closing:
-          "Los ejemplos muestran resultados exactos salvo que se indique un redondeo. Redondea solo en el último paso, según los requisitos de tu proyecto.",
+        closing: "Redondea solo en el último paso, según los requisitos de tu proyecto.",
       },
       reference: {
         heading: "Tabla de referencia de pulgadas a píxeles",
         intro:
-          "Cada valor es una longitud en píxeles al PPI indicado. Son resoluciones de ejemplo, no requisitos universales.",
-        table: homeTable("es", { corner: "Longitud (pulgadas)", col: "Píxeles a {ppi} PPI" }),
+          "Los encabezados de columna indican la resolución de imagen en PPI; los valores debajo son números de píxeles. Estos ajustes son ejemplos, no requisitos universales.",
+        table: homeTable("es", { corner: "Longitud (pulgadas)", col: "{ppi}" }),
         caption: "Pulgadas a píxeles a 72, 96, 150 y 300 PPI",
         footnote: "Todos los valores de la tabla son exactos para los datos indicados.",
       },
@@ -404,20 +402,20 @@ export const es: Messages = {
         {
           heading: "Píxeles de imagen, tamaño de impresión y píxeles CSS",
           paragraphs: [
-            "Las dimensiones de una imagen describen su ancho y alto en píxeles. Las dimensiones de impresión describen su tamaño físico en pulgadas. El PPI relaciona ambas: las mismas dimensiones en píxeles pueden dar distintos tamaños de impresión según la resolución.",
-            "CSS usa una relación fija distinta: 1in = 96px. Son unidades de referencia de CSS. Un píxel CSS no es necesariamente un píxel físico del dispositivo, y una pulgada CSS en pantalla no mide necesariamente una pulgada real. Usa esta relación para medidas CSS, sin suponer que todas las pantallas tienen una densidad de 96 PPI.",
+            "Las dimensiones en píxeles describen el ancho y el alto de una imagen en píxeles. Las dimensiones de impresión describen su tamaño físico en pulgadas. La resolución de imagen relaciona ambas: las mismas dimensiones en píxeles pueden dar distintos tamaños de impresión.",
+            "CSS usa una relación fija: 1in = 96px. Son unidades de referencia de CSS, así que un píxel CSS no es necesariamente un píxel físico del dispositivo, y una pulgada CSS en pantalla puede no medir una pulgada real. Usa esta relación para medidas CSS; no supongas que describe la densidad física de píxeles de una pantalla.",
           ],
         },
         {
-          heading: "PPI y DPI describen cosas distintas",
+          heading: "Resolución de imagen y resolución de impresora",
           paragraphs: [
-            "PPI significa píxeles por pulgada en una imagen. DPI significa puntos por pulgada que produce una impresora. Están relacionados en los flujos de impresión, pero no son magnitudes intercambiables. Para calcular píxeles de imagen, usa el PPI requerido en lugar de la resolución DPI del hardware de la impresora.",
+            "El PPI describe los píxeles de imagen por pulgada; el DPI describe los puntos por pulgada que produce una impresora. Están relacionados en los flujos de impresión, pero no son intercambiables. En esta calculadora usa la resolución de imagen requerida, no la especificación del hardware de la impresora.",
           ],
         },
         {
-          heading: "Cambiar el PPI no añade detalle a la imagen",
+          heading: "Cambiar la resolución no añade detalle a la imagen",
           paragraphs: [
-            "Cambiar solo los metadatos de PPI deja intacto el número de píxeles de la imagen; cambia la relación prevista entre esos píxeles y el tamaño de impresión. El remuestreo sí cambia el número de píxeles. Asignar un PPI más alto no crea detalle nuevo.",
+            "Cambiar solo los metadatos de resolución de una imagen deja intacto su número de píxeles y cambia su tamaño de impresión previsto. El remuestreo sí cambia el número de píxeles. Asignar una resolución más alta no crea detalle nuevo.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const es: Messages = {
       faqDescription: "Respuestas a las preguntas más comunes sobre cómo convertir pulgadas a píxeles.",
       faqs: [
         {
-          question: "¿Qué PPI debo usar?",
+          question: "¿Qué resolución debo usar?",
           answer:
-            "Usa el valor que exija el resultado final. Para imprimir, pregunta a tu proveedor de impresión qué PPI de imagen necesita al tamaño final. Para una subida digital que indique dimensiones en píxeles, sigue esas dimensiones directamente. Valores como 72, 96, 150 y 300 PPI son ejemplos, no reglas para todos los proyectos.",
+            "Usa el valor que exija el resultado final. Para imprimir, pregunta a tu proveedor de impresión qué resolución de imagen necesita al tamaño final. Si una subida digital indica dimensiones en píxeles, sigue esas dimensiones directamente.",
         },
         {
           question: "¿Convertir a píxeles cambia la relación de aspecto?",
           answer:
-            "Usar el mismo PPI para el ancho y el alto mantiene su proporción antes de redondear. Una imagen 1:1 tiene el mismo ancho y alto: por ejemplo, 4 × 4 pulgadas a 300 PPI dan 1200 × 1200 píxeles. La proporción describe la forma, no la resolución.",
+            "Usar la misma resolución para el ancho y el alto mantiene su proporción antes de redondear. Por ejemplo, una imagen de 4 × 4 pulgadas a 300 PPI pasa a 1200 × 1200 píxeles. Ambas son cuadradas: la proporción describe la forma, no la resolución.",
         },
         {
           question: "¿Puedo calcular el tamaño de impresión de una imagen existente?",
           answer:
-            "Sí. Divide cada dimensión en píxeles entre el PPI previsto. Una imagen de 1800 × 1200 píxeles a 300 PPI corresponde a 6 × 4 pulgadas. Recortar o escalar al imprimir puede cambiar el tamaño final.",
+            "Sí. Divide cada dimensión en píxeles entre la resolución de imagen prevista. A 300 PPI, una imagen de 1800 × 1200 píxeles corresponde a 6 × 4 pulgadas. Recortar o escalar al imprimir puede cambiar el tamaño final.",
         },
       ],
     },

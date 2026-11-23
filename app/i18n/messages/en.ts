@@ -81,8 +81,8 @@ const ui = {
     highlight: "GUIDANCE",
   },
   hero: {
-    badge: "The Haute Horlogerie of Digital Scale",
-    badgeRule: "1 IN = 96 PX (W3C)",
+    badge: "The Fine Art of Digital Scale",
+    badgeRule: "1 IN = 96 PX",
     h1Before: "Inches to ",
     h1Highlight: "Pixels",
     h1After: " Calculator",
@@ -144,7 +144,7 @@ const ui = {
     copyCss: "Copy CSS",
   },
   visual: {
-    eyebrow: "Real-Time Visual Studio",
+    eyebrow: "Real-Time View",
     title: "THE ARCHITECTURAL",
     highlight: "VIEWPORT",
     description:
@@ -382,39 +382,38 @@ const content = {
       "Free inches to pixels converter for screens and print. Convert any size at any DPI, check print sizes and look up common values in one place.",
     openConverter: "Open the converter",
     pages: "Pages",
-    copyright: "© 2026 Inches to Pixel.",
+    copyright: "©2026 InchestoPixel.com",
     backToTop: "BACK TO TOP",
   },
   home: {
     intro:
-      "Convert inches to pixels by multiplying your measurement by the resolution in pixels per inch (PPI). At 300 PPI, 1 inch is equal to 300 pixels. The result depends on the PPI you use—there is no single conversion factor for every image.",
+      "Use this calculator to convert a measurement in inches to pixels at your chosen image resolution, measured in pixels per inch (PPI). The result depends on this setting: at 300 PPI, 1 inch equals 300 pixels.",
     howTo: {
       heading: "How to convert inches to pixels",
       steps: [
         "Enter the length you want to convert, measured in inches.",
-        "Use the PPI required for your project. For print work, check the image-resolution requirement supplied by your print provider.",
-        "Calculate the pixel count. For an image’s width and height, convert each dimension separately using the same PPI.",
+        "Choose the image resolution required for your project. For printing, check with your print provider.",
+        "Calculate the pixel count. To convert both width and height, repeat the calculation for each dimension using the same setting.",
       ],
-      note: "Keep the PPI alongside your result: “1,200 pixels at 300 PPI” tells you more about the intended print size than “1,200 pixels” alone.",
+      note: "Save the resolution with your result so you can check the intended print size later.",
     },
     formula: {
       heading: "Formula and examples",
       main: "Pixels = inches × PPI",
-      explain:
-        "Here, inches is the physical length and PPI is the number of image pixels per inch. Multiplying them gives the number of pixels along that dimension.",
+      explain: "Multiply the physical length in inches by the number of pixels per inch to find the pixel count along that dimension.",
       backwardLead: "To work backward:",
       backward: "Inches = pixels ÷ PPI",
       examples: [
         {
-          heading: "Example: A single length",
+          heading: "Example of a single length",
           lead: "At 96 PPI, a 2-inch length converts to:",
           math: ["2 × 96 = 192 pixels"],
           after: [
-            "This is exact for the stated PPI. It does not mean every screen displays 192 pixels across two physical inches.",
+            "This result is exact for the chosen resolution. It does not mean every screen displays 192 pixels across two physical inches.",
           ],
         },
         {
-          heading: "Example: Width and height for a print",
+          heading: "Example of width and height for a print",
           lead: "For an 8.5 × 11-inch image at 300 PPI:",
           math: ["Width: 8.5 × 300 = 2,550 pixels", "Height: 11 × 300 = 3,300 pixels"],
           after: [
@@ -422,44 +421,43 @@ const content = {
           ],
         },
         {
-          heading: "Example: A fractional pixel result",
+          heading: "Example of a fractional pixel result",
           lead: "For 2.33 inches at 150 PPI:",
           math: ["2.33 × 150 = 349.5 pixels"],
           after: [
-            "The mathematical result is exact, but a raster image needs whole-pixel dimensions. Rounding to the nearest whole pixel, with halves rounded up, gives 350 pixels. At 150 PPI, that corresponds to approximately 2.333 inches.",
+            "Raster images need whole-pixel dimensions. Rounding 349.5 to the nearest whole pixel, with halves rounded up, gives 350 pixels. At the same resolution, that corresponds to approximately 2.333 inches.",
           ],
         },
       ],
-      closing:
-        "The examples here show exact results unless rounding is explicitly stated. Round only at the final step, following your project’s requirements.",
+      closing: "Round only at the final step, following your project’s requirements.",
     },
     reference: {
-      heading: "Inches-to-pixels reference table",
+      heading: "Inches to pixels reference table",
       intro:
-        "Each value below is a length in pixels at the stated PPI. These are example resolutions, not universal requirements.",
-      table: homeTable("en", { corner: "Length (inches)", col: "Pixels at {ppi} PPI" }),
+        "The column headings show image resolution in PPI; the values below them are pixel counts. These settings are examples, not universal requirements.",
+      table: homeTable("en", { corner: "Length (inches)", col: "{ppi}" }),
       caption: "Inches to pixels at 72, 96, 150 and 300 PPI",
       footnote: "All table values are exact for the listed inputs.",
     },
     guide: { eyebrow: "Theoretical Foundations", title: "PIXELS, PRINT SIZE AND", highlight: "PPI" },
     explainers: [
       {
-        heading: "Image pixels, print size, and CSS pixels",
+        heading: "Image pixels print size and CSS pixels",
         paragraphs: [
-          "Image dimensions describe an image’s width and height in pixels. Print dimensions describe its physical size in inches. PPI connects the two: the same pixel dimensions can produce different print sizes at different resolutions.",
-          "CSS uses a separate fixed relationship: 1in = 96px. These are CSS reference units. A CSS pixel is not necessarily one physical device pixel, and a CSS inch displayed on a screen is not necessarily a literal inch. Use this relationship for CSS sizing, rather than assuming every display has a density of 96 PPI.",
+          "Pixel dimensions describe an image’s width and height in pixels. Print dimensions describe its physical size in inches. Image resolution connects the two: the same pixel dimensions can produce different print sizes.",
+          "CSS uses a fixed relationship: 1in = 96px. These are CSS reference units, so a CSS pixel is not necessarily one physical device pixel, and an on-screen CSS inch may not measure a literal inch. Use this relationship for CSS sizing; do not assume it describes a display’s physical pixel density.",
         ],
       },
       {
-        heading: "PPI and DPI describe different things",
+        heading: "Image resolution and printer resolution",
         paragraphs: [
-          "PPI means pixels per inch in an image. DPI means dots per inch produced by a printer. They are related in printing workflows but are not interchangeable quantities. For image-pixel calculations, use the required PPI rather than substituting a printer’s hardware DPI rating.",
+          "PPI describes image pixels per inch; DPI describes dots per inch produced by a printer. They are related in printing workflows but are not interchangeable. Use the image-resolution requirement for this calculator, rather than the printer’s hardware rating.",
         ],
       },
       {
-        heading: "Changing PPI does not add image detail",
+        heading: "Changing resolution does not add image detail",
         paragraphs: [
-          "Changing PPI metadata alone leaves the image’s pixel count unchanged; it changes the intended relationship between those pixels and print size. Resampling changes the number of pixels. Simply assigning a higher PPI does not create new detail.",
+          "Changing an image’s resolution metadata alone leaves its pixel count unchanged and changes its intended print size. Resampling changes the number of pixels. Simply assigning a higher resolution does not create new detail.",
         ],
       },
     ],
@@ -467,19 +465,19 @@ const content = {
     faqDescription: "Answers to common questions about converting inches to pixels.",
     faqs: [
       {
-        question: "Which PPI should I use?",
+        question: "Which resolution should I use",
         answer:
-          "Use the value required by your intended output. For printing, ask the print provider for the required image PPI at the final size. For a digital upload that specifies pixel dimensions, follow those dimensions directly. Values such as 72, 96, 150, and 300 PPI are examples, not rules for every project.",
+          "Use the value required for your intended output. For printing, ask the print provider for the image resolution needed at the final size. If a digital upload specifies pixel dimensions, follow those dimensions directly.",
       },
       {
-        question: "Does converting to pixels change the aspect ratio?",
+        question: "Does converting to pixels change the aspect ratio",
         answer:
-          "Using the same PPI for width and height preserves their ratio before rounding. A 1:1 image has equal width and height: for example, 4 × 4 inches at 300 PPI becomes 1,200 × 1,200 pixels. The ratio describes the shape, not the resolution.",
+          "Using the same resolution for width and height preserves their ratio before rounding. For example, a 4 × 4-inch image at 300 PPI becomes 1,200 × 1,200 pixels. Both are square: the ratio describes the shape, not the resolution.",
       },
       {
-        question: "Can I calculate print size from an existing image?",
+        question: "Can I calculate print size from an existing image",
         answer:
-          "Yes. Divide each pixel dimension by the intended PPI. A 1,800 × 1,200-pixel image at 300 PPI corresponds to 6 × 4 inches. Cropping or scaling during printing can change the final output size.",
+          "Yes. Divide each pixel dimension by the intended image resolution. At 300 PPI, a 1,800 × 1,200-pixel image corresponds to 6 × 4 inches. Cropping or scaling during printing can change the final output size.",
       },
     ],
   },

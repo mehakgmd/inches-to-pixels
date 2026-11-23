@@ -43,8 +43,8 @@ export const pt: Messages = {
     footer: { languages: "Idiomas" },
     faq: { eyebrow: "Perguntas frequentes", title: "RESPOSTAS DE", highlight: "ESPECIALISTA" },
     hero: {
-      badge: "A alta relojoaria da escala digital",
-      badgeRule: "1 POL = 96 PX (W3C)",
+      badge: "A arte da escala digital",
+      badgeRule: "1 POL = 96 PX",
       h1Before: "Calculadora de polegadas para ",
       h1Highlight: "píxeis",
       h1After: "",
@@ -104,7 +104,7 @@ export const pt: Messages = {
       copyCss: "Copiar CSS",
     },
     visual: {
-      eyebrow: "Estúdio visual em tempo real",
+      eyebrow: "Vista em tempo real",
       title: "A JANELA",
       highlight: "ARQUITETÓNICA",
       description:
@@ -340,39 +340,38 @@ export const pt: Messages = {
         "Conversor gratuito de polegadas para píxeis para ecrã e impressão. Converta qualquer tamanho com qualquer DPI, verifique tamanhos de impressão e consulte valores comuns num só lugar.",
       openConverter: "Abrir o conversor",
       pages: "Páginas",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "VOLTAR AO TOPO",
     },
     home: {
       intro:
-        "Para converter polegadas em píxeis, multiplique a medida pela resolução em píxeis por polegada (PPI). A 300 PPI, 1 polegada equivale a 300 píxeis. O resultado depende do PPI usado: não existe um fator de conversão único para todas as imagens.",
+        "Use esta calculadora para converter uma medida em polegadas para píxeis com a resolução de imagem que escolher, medida em píxeis por polegada (PPI). O resultado depende desta definição: a 300 PPI, 1 polegada equivale a 300 píxeis.",
       howTo: {
         heading: "Como converter polegadas em píxeis",
         steps: [
           "Introduza o comprimento que pretende converter, medido em polegadas.",
-          "Use o PPI exigido pelo seu projeto. Para impressão, confirme a resolução de imagem pedida pela sua gráfica.",
-          "Calcule o número de píxeis. Para a largura e a altura de uma imagem, converta cada dimensão separadamente com o mesmo PPI.",
+          "Escolha a resolução de imagem exigida pelo seu projeto. Para impressão, confirme com a sua gráfica.",
+          "Calcule o número de píxeis. Para converter a largura e a altura, repita o cálculo para cada dimensão com a mesma definição.",
         ],
-        note: "Indique sempre o PPI junto ao resultado: «1200 píxeis a 300 PPI» diz muito mais sobre o tamanho de impressão pretendido do que apenas «1200 píxeis».",
+        note: "Guarde a resolução junto com o resultado para poder verificar mais tarde o tamanho de impressão pretendido.",
       },
       formula: {
         heading: "Fórmula e exemplos",
         main: "Píxeis = polegadas × PPI",
-        explain:
-          "Aqui, as polegadas são o comprimento físico e o PPI é o número de píxeis da imagem por polegada. Multiplicando-os obtém-se o número de píxeis ao longo dessa dimensão.",
+        explain: "Multiplique o comprimento físico em polegadas pelo número de píxeis por polegada para obter o número de píxeis ao longo dessa dimensão.",
         backwardLead: "Para fazer o cálculo inverso:",
         backward: "Polegadas = píxeis ÷ PPI",
         examples: [
           {
-            heading: "Exemplo: um único comprimento",
+            heading: "Exemplo de um único comprimento",
             lead: "A 96 PPI, um comprimento de 2 polegadas converte-se em:",
             math: ["2 × 96 = 192 píxeis"],
             after: [
-              "O resultado é exato para o PPI indicado. Não significa que todos os ecrãs mostrem 192 píxeis em duas polegadas físicas.",
+              "Este resultado é exato para a resolução escolhida. Não significa que todos os ecrãs mostrem 192 píxeis em duas polegadas físicas.",
             ],
           },
           {
-            heading: "Exemplo: largura e altura para impressão",
+            heading: "Exemplo de largura e altura para impressão",
             lead: "Para uma imagem de 8,5 × 11 polegadas a 300 PPI:",
             math: ["Largura: 8,5 × 300 = 2550 píxeis", "Altura: 11 × 300 = 3300 píxeis"],
             after: [
@@ -380,22 +379,21 @@ export const pt: Messages = {
             ],
           },
           {
-            heading: "Exemplo: um resultado decimal",
+            heading: "Exemplo de um resultado decimal",
             lead: "Para 2,33 polegadas a 150 PPI:",
             math: ["2,33 × 150 = 349,5 píxeis"],
             after: [
-              "O resultado matemático é exato, mas uma imagem raster precisa de dimensões em píxeis inteiros. Arredondando ao píxel inteiro mais próximo, com as metades para cima, obtêm-se 350 píxeis. A 150 PPI, isso corresponde a cerca de 2,333 polegadas.",
+              "As imagens raster precisam de dimensões em píxeis inteiros. Arredondando 349,5 ao píxel inteiro mais próximo, com as metades para cima, obtêm-se 350 píxeis. Com a mesma resolução, isso corresponde a cerca de 2,333 polegadas.",
             ],
           },
         ],
-        closing:
-          "Os exemplos mostram resultados exatos, salvo indicação de arredondamento. Arredonde apenas no último passo, de acordo com os requisitos do seu projeto.",
+        closing: "Arredonde apenas no último passo, de acordo com os requisitos do seu projeto.",
       },
       reference: {
         heading: "Tabela de referência de polegadas para píxeis",
         intro:
-          "Cada valor é um comprimento em píxeis ao PPI indicado. São resoluções de exemplo, não requisitos universais.",
-        table: homeTable("pt", { corner: "Comprimento (polegadas)", col: "Píxeis a {ppi} PPI" }),
+          "Os cabeçalhos das colunas mostram a resolução de imagem em PPI; os valores por baixo são números de píxeis. Estas definições são exemplos, não requisitos universais.",
+        table: homeTable("pt", { corner: "Comprimento (polegadas)", col: "{ppi}" }),
         caption: "Polegadas para píxeis a 72, 96, 150 e 300 PPI",
         footnote: "Todos os valores da tabela são exatos para os dados indicados.",
       },
@@ -404,20 +402,20 @@ export const pt: Messages = {
         {
           heading: "Píxeis de imagem, tamanho de impressão e píxeis CSS",
           paragraphs: [
-            "As dimensões de uma imagem descrevem a sua largura e altura em píxeis. As dimensões de impressão descrevem o seu tamanho físico em polegadas. O PPI liga as duas: as mesmas dimensões em píxeis podem dar tamanhos de impressão diferentes consoante a resolução.",
-            "O CSS usa uma relação fixa distinta: 1in = 96px. São unidades de referência CSS. Um píxel CSS não é necessariamente um píxel físico do dispositivo, e uma polegada CSS no ecrã não é necessariamente uma polegada real. Use esta relação para dimensões CSS, sem presumir que todos os ecrãs têm uma densidade de 96 PPI.",
+            "As dimensões em píxeis descrevem a largura e a altura de uma imagem em píxeis. As dimensões de impressão descrevem o seu tamanho físico em polegadas. A resolução de imagem liga as duas: as mesmas dimensões em píxeis podem dar tamanhos de impressão diferentes.",
+            "O CSS usa uma relação fixa: 1in = 96px. São unidades de referência CSS, por isso um píxel CSS não é necessariamente um píxel físico do dispositivo, e uma polegada CSS no ecrã pode não medir uma polegada real. Use esta relação para dimensões CSS; não presuma que descreve a densidade física de píxeis de um ecrã.",
           ],
         },
         {
-          heading: "PPI e DPI descrevem coisas diferentes",
+          heading: "Resolução de imagem e resolução da impressora",
           paragraphs: [
-            "PPI significa píxeis por polegada numa imagem. DPI significa pontos por polegada produzidos por uma impressora. Estão relacionados nos fluxos de impressão, mas não são grandezas intercambiáveis. Para calcular píxeis de imagem, use o PPI exigido em vez da resolução DPI do hardware da impressora.",
+            "O PPI descreve os píxeis de imagem por polegada; o DPI descreve os pontos por polegada produzidos por uma impressora. Estão relacionados nos fluxos de impressão, mas não são intercambiáveis. Nesta calculadora, use a resolução de imagem exigida em vez da especificação do hardware da impressora.",
           ],
         },
         {
-          heading: "Mudar o PPI não acrescenta detalhe",
+          heading: "Mudar a resolução não acrescenta detalhe à imagem",
           paragraphs: [
-            "Alterar apenas os metadados de PPI mantém o número de píxeis da imagem; muda a relação pretendida entre esses píxeis e o tamanho de impressão. A reamostragem altera o número de píxeis. Atribuir simplesmente um PPI mais alto não cria detalhe novo.",
+            "Alterar apenas os metadados de resolução de uma imagem mantém o número de píxeis e altera o tamanho de impressão pretendido. A reamostragem altera o número de píxeis. Atribuir simplesmente uma resolução mais alta não cria detalhe novo.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const pt: Messages = {
       faqDescription: "Respostas às perguntas mais comuns sobre a conversão de polegadas em píxeis.",
       faqs: [
         {
-          question: "Que PPI devo usar?",
+          question: "Que resolução devo usar?",
           answer:
-            "Use o valor exigido pelo resultado final. Para imprimir, pergunte à gráfica qual o PPI de imagem necessário no tamanho final. Para um envio digital que indique dimensões em píxeis, siga essas dimensões diretamente. Valores como 72, 96, 150 e 300 PPI são exemplos, não regras para todos os projetos.",
+            "Use o valor exigido pelo resultado final. Para imprimir, pergunte à gráfica qual a resolução de imagem necessária no tamanho final. Se um envio digital indicar dimensões em píxeis, siga essas dimensões diretamente.",
         },
         {
           question: "Converter para píxeis altera a proporção?",
           answer:
-            "Usar o mesmo PPI para a largura e a altura mantém a proporção antes do arredondamento. Uma imagem 1:1 tem largura e altura iguais: por exemplo, 4 × 4 polegadas a 300 PPI dão 1200 × 1200 píxeis. A proporção descreve a forma, não a resolução.",
+            "Usar a mesma resolução para a largura e a altura mantém a proporção antes do arredondamento. Por exemplo, uma imagem de 4 × 4 polegadas a 300 PPI passa a 1200 × 1200 píxeis. Ambas são quadradas: a proporção descreve a forma, não a resolução.",
         },
         {
           question: "Posso calcular o tamanho de impressão de uma imagem existente?",
           answer:
-            "Sim. Divida cada dimensão em píxeis pelo PPI pretendido. Uma imagem de 1800 × 1200 píxeis a 300 PPI corresponde a 6 × 4 polegadas. Recortar ou redimensionar na impressão pode alterar o tamanho final.",
+            "Sim. Divida cada dimensão em píxeis pela resolução de imagem pretendida. A 300 PPI, uma imagem de 1800 × 1200 píxeis corresponde a 6 × 4 polegadas. Recortar ou redimensionar na impressão pode alterar o tamanho final.",
         },
       ],
     },

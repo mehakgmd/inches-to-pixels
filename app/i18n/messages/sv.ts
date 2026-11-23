@@ -43,8 +43,8 @@ export const sv: Messages = {
     footer: { languages: "Språk" },
     faq: { eyebrow: "Vanliga frågor", title: "EXPERT-", highlight: "SVAR" },
     hero: {
-      badge: "Den digitala skalans finurmakeri",
-      badgeRule: "1 TUM = 96 PX (W3C)",
+      badge: "Konsten att skala digitalt",
+      badgeRule: "1 TUM = 96 PX",
       h1Before: "Räknare för tum till ",
       h1Highlight: "pixlar",
       h1After: "",
@@ -104,7 +104,7 @@ export const sv: Messages = {
       copyCss: "Kopiera CSS",
     },
     visual: {
-      eyebrow: "Visuell studio i realtid",
+      eyebrow: "Realtidsvy",
       title: "DEN ARKITEKTONISKA",
       highlight: "VYPORTEN",
       description:
@@ -340,39 +340,38 @@ export const sv: Messages = {
         "Kostnadsfri omvandlare från tum till pixlar för skärm och tryck. Omvandla valfri storlek vid valfri DPI, kontrollera tryckformat och hitta vanliga värden på ett ställe.",
       openConverter: "Öppna omvandlaren",
       pages: "Sidor",
-      copyright: "© 2026 Inches to Pixel.",
+      copyright: "©2026 InchestoPixel.com",
       backToTop: "TILL TOPPEN",
     },
     home: {
       intro:
-        "Omvandla tum till pixlar genom att multiplicera måttet med upplösningen i pixlar per tum (PPI). Vid 300 PPI motsvarar 1 tum 300 pixlar. Resultatet beror på vilken PPI du använder – det finns ingen enskild omräkningsfaktor för alla bilder.",
+        "Använd räknaren för att omvandla ett mått i tum till pixlar vid den bildupplösning du väljer, mätt i pixlar per tum (PPI). Resultatet beror på inställningen: vid 300 PPI motsvarar 1 tum 300 pixlar.",
       howTo: {
         heading: "Så omvandlar du tum till pixlar",
         steps: [
           "Ange längden du vill omvandla, mätt i tum.",
-          "Använd den PPI som ditt projekt kräver. För tryckjobb, kontrollera kravet på bildupplösning från ditt tryckeri.",
-          "Räkna ut antalet pixlar. För en bilds bredd och höjd omvandlar du varje mått för sig med samma PPI.",
+          "Välj den bildupplösning ditt projekt kräver. För tryck, fråga ditt tryckeri.",
+          "Räkna ut antalet pixlar. För att omvandla både bredd och höjd upprepar du beräkningen för varje mått med samma inställning.",
         ],
-        note: "Ange alltid PPI tillsammans med resultatet: ”1 200 pixlar vid 300 PPI” säger mycket mer om den tänkta tryckstorleken än bara ”1 200 pixlar”.",
+        note: "Spara upplösningen tillsammans med resultatet så att du senare kan kontrollera den tänkta tryckstorleken.",
       },
       formula: {
         heading: "Formel och exempel",
         main: "Pixlar = tum × PPI",
-        explain:
-          "Här är tum den fysiska längden och PPI antalet bildpixlar per tum. Produkten ger antalet pixlar längs det måttet.",
+        explain: "Multiplicera den fysiska längden i tum med antalet pixlar per tum för att få antalet pixlar längs det måttet.",
         backwardLead: "För att räkna baklänges:",
         backward: "Tum = pixlar ÷ PPI",
         examples: [
           {
-            heading: "Exempel: En enskild längd",
+            heading: "Exempel med en enskild längd",
             lead: "Vid 96 PPI blir en längd på 2 tum:",
             math: ["2 × 96 = 192 pixlar"],
             after: [
-              "Det är exakt för den angivna PPI:n. Det betyder inte att varje skärm visar 192 pixlar över två fysiska tum.",
+              "Resultatet är exakt för den valda upplösningen. Det betyder inte att varje skärm visar 192 pixlar över två fysiska tum.",
             ],
           },
           {
-            heading: "Exempel: Bredd och höjd för ett tryck",
+            heading: "Exempel med bredd och höjd för ett tryck",
             lead: "För en bild på 8,5 × 11 tum vid 300 PPI:",
             math: ["Bredd: 8,5 × 300 = 2 550 pixlar", "Höjd: 11 × 300 = 3 300 pixlar"],
             after: [
@@ -380,22 +379,21 @@ export const sv: Messages = {
             ],
           },
           {
-            heading: "Exempel: Ett resultat med decimaler",
+            heading: "Exempel med ett resultat med decimaler",
             lead: "För 2,33 tum vid 150 PPI:",
             math: ["2,33 × 150 = 349,5 pixlar"],
             after: [
-              "Det matematiska resultatet är exakt, men en rasterbild kräver hela pixlar. Avrundat till närmaste hela pixel, med halvor uppåt, blir det 350 pixlar. Vid 150 PPI motsvarar det ungefär 2,333 tum.",
+              "Rasterbilder kräver hela pixlar. Avrundar man 349,5 till närmaste hela pixel, med halvor uppåt, blir det 350 pixlar. Vid samma upplösning motsvarar det ungefär 2,333 tum.",
             ],
           },
         ],
-        closing:
-          "Exemplen visar exakta resultat om inget annat anges om avrundning. Avrunda först i sista steget, enligt projektets krav.",
+        closing: "Avrunda först i sista steget, enligt projektets krav.",
       },
       reference: {
         heading: "Referenstabell för tum till pixlar",
         intro:
-          "Varje värde nedan är en längd i pixlar vid angiven PPI. Det är exempelupplösningar, inte allmänna krav.",
-        table: homeTable("sv", { corner: "Längd (tum)", col: "Pixlar vid {ppi} PPI" }),
+          "Kolumnrubrikerna visar bildupplösning i PPI; värdena under dem är antal pixlar. Inställningarna är exempel, inte allmänna krav.",
+        table: homeTable("sv", { corner: "Längd (tum)", col: "{ppi}" }),
         caption: "Tum till pixlar vid 72, 96, 150 och 300 PPI",
         footnote: "Alla tabellvärden är exakta för de angivna värdena.",
       },
@@ -404,20 +402,20 @@ export const sv: Messages = {
         {
           heading: "Bildpixlar, tryckstorlek och CSS-pixlar",
           paragraphs: [
-            "Bildmått beskriver en bilds bredd och höjd i pixlar. Tryckmått beskriver dess fysiska storlek i tum. PPI kopplar ihop dem: samma pixelmått kan ge olika tryckstorlekar vid olika upplösningar.",
-            "CSS använder ett separat fast förhållande: 1in = 96px. Det är CSS-referensenheter. En CSS-pixel är inte nödvändigtvis en fysisk pixel i enheten, och en CSS-tum på skärmen är inte nödvändigtvis en verklig tum. Använd förhållandet för storlekar i CSS i stället för att anta att varje skärm har en täthet på 96 PPI.",
+            "Pixelmått beskriver en bilds bredd och höjd i pixlar. Tryckmått beskriver dess fysiska storlek i tum. Bildupplösningen kopplar ihop dem: samma pixelmått kan ge olika tryckstorlekar.",
+            "CSS använder ett fast förhållande: 1in = 96px. Det är CSS-referensenheter, så en CSS-pixel är inte nödvändigtvis en fysisk pixel i enheten, och en CSS-tum på skärmen mäter kanske inte en verklig tum. Använd förhållandet för storlekar i CSS, men anta inte att det beskriver en skärms fysiska pixeltäthet.",
           ],
         },
         {
-          heading: "PPI och DPI beskriver olika saker",
+          heading: "Bildupplösning och skrivarupplösning",
           paragraphs: [
-            "PPI betyder pixlar per tum i en bild. DPI betyder punkter per tum som en skrivare producerar. De hänger ihop i tryckflödet men är inte utbytbara storheter. När du räknar bildpixlar ska du använda den PPI som krävs i stället för skrivarens hårdvaru-DPI.",
+            "PPI beskriver bildpixlar per tum; DPI beskriver punkter per tum som en skrivare producerar. De hänger ihop i tryckflödet men är inte utbytbara. Använd kravet på bildupplösning i den här räknaren, inte skrivarens hårdvaruspecifikation.",
           ],
         },
         {
-          heading: "Att ändra PPI ger inga fler detaljer",
+          heading: "Att ändra upplösningen ger inga fler bilddetaljer",
           paragraphs: [
-            "Om du bara ändrar PPI-metadata är bildens pixelantal oförändrat; det som ändras är det tänkta förhållandet mellan pixlarna och tryckstorleken. Omsampling ändrar antalet pixlar. Att bara ange en högre PPI skapar inga nya detaljer.",
+            "Om du bara ändrar en bilds upplösningsmetadata är pixelantalet oförändrat och den tänkta tryckstorleken ändras. Omsampling ändrar antalet pixlar. Att bara ange en högre upplösning skapar inga nya detaljer.",
           ],
         },
       ],
@@ -425,19 +423,19 @@ export const sv: Messages = {
       faqDescription: "Svar på vanliga frågor om att omvandla tum till pixlar.",
       faqs: [
         {
-          question: "Vilken PPI ska jag använda?",
+          question: "Vilken upplösning ska jag använda?",
           answer:
-            "Använd det värde som slutresultatet kräver. För tryck, fråga tryckeriet vilken bild-PPI som krävs i slutstorleken. För en digital uppladdning som anger pixelmått, följ de måtten direkt. Värden som 72, 96, 150 och 300 PPI är exempel, inte regler för alla projekt.",
+            "Använd det värde som slutresultatet kräver. För tryck, fråga tryckeriet vilken bildupplösning som behövs i slutstorleken. Om en digital uppladdning anger pixelmått, följ de måtten direkt.",
         },
         {
           question: "Ändrar omvandlingen till pixlar bildförhållandet?",
           answer:
-            "Samma PPI för bredd och höjd behåller förhållandet före avrundning. En 1:1-bild har lika bredd och höjd: till exempel blir 4 × 4 tum vid 300 PPI 1 200 × 1 200 pixlar. Förhållandet beskriver formen, inte upplösningen.",
+            "Samma upplösning för bredd och höjd behåller förhållandet före avrundning. En bild på 4 × 4 tum vid 300 PPI blir till exempel 1 200 × 1 200 pixlar. Båda är kvadratiska: förhållandet beskriver formen, inte upplösningen.",
         },
         {
           question: "Kan jag räkna ut tryckstorleken för en befintlig bild?",
           answer:
-            "Ja. Dela varje pixelmått med den avsedda PPI:n. En bild på 1 800 × 1 200 pixlar vid 300 PPI motsvarar 6 × 4 tum. Beskärning eller skalning vid tryck kan ändra slutstorleken.",
+            "Ja. Dela varje pixelmått med den avsedda bildupplösningen. Vid 300 PPI motsvarar en bild på 1 800 × 1 200 pixlar 6 × 4 tum. Beskärning eller skalning vid tryck kan ändra slutstorleken.",
         },
       ],
     },
