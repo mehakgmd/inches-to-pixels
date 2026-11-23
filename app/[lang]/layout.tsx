@@ -60,11 +60,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0814" },
-  ],
-  colorScheme: "light dark",
+  // The site opens light on every device; dark mode only comes from the toggle.
+  themeColor: "#f8fafc",
+  colorScheme: "light",
 };
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
