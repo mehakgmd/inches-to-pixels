@@ -3,8 +3,8 @@ import { LOCALES, localePath } from "./i18n/config";
 import { INFO_KEYS, INFO_PATH, INFO_UPDATED, PAGE_KEYS, PAGE_PATH, SITEMAP_PATH } from "./lib/hubs";
 import { SITE_URL } from "./lib/site";
 
-/** Live domain for absolute URLs. NEXT_PUBLIC_SITE_URL wins when it is set. */
-const BASE = (SITE_URL ?? "https://inchestopixel.com").replace(/\/$/, "");
+/** Live domain for absolute URLs (app/lib/site.ts). */
+const BASE = SITE_URL;
 
 /**
  * /sitemap.xml for search engines: every page in every language, each listing its other-language

@@ -10,17 +10,17 @@ export const SITE_NAME = "Inches to Pixel";
 export const CONTACT_EMAIL = "contact@inchestopixel.com";
 
 /**
- * Public URL of the live site, e.g. https://inchestopixel.com. Set NEXT_PUBLIC_SITE_URL when deploying
- * so canonical, hreflang and Open Graph URLs are absolute. Left unset, those URL tags are simply omitted.
+ * Public URL of the live site, used for canonical, hreflang, Open Graph and sitemap URLs.
+ * NEXT_PUBLIC_SITE_URL overrides it (for example on a staging domain). No trailing slash.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://inchestopixel.com").replace(/\/$/, "");
 
 /**
- * Search engine indexing switch. While false, every page sends "noindex, nofollow" in both a
- * robots meta tag and an X-Robots-Tag header, so the site stays out of Google.
- * Set to true at launch.
+ * Search engine indexing switch. True: pages can appear in Google and Bing.
+ * Set to false to hide the whole site again: every page then sends "noindex, nofollow" in both a
+ * robots meta tag and an X-Robots-Tag header, and robots.txt blocks crawling.
  */
-export const ALLOW_INDEXING = false;
+export const ALLOW_INDEXING = true;
 
 /**
  * Google Search Console ownership check. Rendered on every page as

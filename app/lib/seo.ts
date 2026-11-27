@@ -5,7 +5,7 @@ import { SITE_URL } from "./site";
 
 /**
  * Canonical URL plus one hreflang link per language (and x-default → English), so search engines
- * show each visitor the right language. Only emitted once the live domain (SITE_URL) is known.
+ * show each visitor the right language. Built from the live domain in SITE_URL.
  */
 export function alternates(locale: Locale, path: string): Metadata["alternates"] | undefined {
   if (!SITE_URL) return undefined;
