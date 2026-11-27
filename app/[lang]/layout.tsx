@@ -7,7 +7,7 @@ import { I18nProvider } from "../i18n/client";
 import { LOCALES, LOCALE_INFO, isLocale } from "../i18n/config";
 import { getMessages } from "../i18n/messages";
 import { THEME_INIT_SCRIPT } from "../lib/theme";
-import { ALLOW_INDEXING, SITE_NAME, SITE_URL } from "../lib/site";
+import { ALLOW_INDEXING, BING_SITE_VERIFICATION, GOOGLE_SITE_VERIFICATION, SITE_NAME, SITE_URL } from "../lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -56,6 +56,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     },
     twitter: { card: "summary", title: meta.siteTitle, description: meta.siteDescription },
     robots,
+    // Search engine ownership tags, on every page: Google Search Console and Bing Webmaster Tools
+    verification: {
+      google: GOOGLE_SITE_VERIFICATION,
+      other: { "msvalidate.01": BING_SITE_VERIFICATION },
+    },
   };
 }
 

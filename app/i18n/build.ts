@@ -51,6 +51,19 @@ export function homeTable(locale: Locale, t: { corner: string; col: string }): T
   };
 }
 
+/** Print page: common print sizes at 150, 300 and 600 PPI. `row` uses {w} and {h}. */
+export function printTable(locale: Locale, t: { corner: string; cols: [string, string, string]; row: string }): Table {
+  const f = numberFormat(locale);
+  return {
+    corner: t.corner,
+    cols: t.cols,
+    rows: PRINT_SIZES.map(([w, h]) => ({
+      label: fill(t.row, { w: f.dec(w), h: f.dec(h) }),
+      cells: [150, 300, 600].map((d) => `${f.px(w, d)} × ${f.px(h, d)}`),
+    })),
+  };
+}
+
 /* ---------- pages that are mostly computed ---------- */
 
 interface PageWords {
@@ -61,11 +74,6 @@ interface PageWords {
   description: string;
   answer: string;
   faq: FaqEntry[];
-}
-
-export interface PrintText extends PageWords {
-  printing: { heading: string; body: string; corner: string; /** {w} and {h} */ row: string };
-  photos: { heading: string; body: string };
 }
 
 export interface SizesText extends PageWords {
@@ -91,28 +99,6 @@ const words = ({ nav, h1, title, seoTitle, description, answer, faq }: PageWords
   answer,
   faq,
 });
-
-export function printHub(locale: Locale, t: PrintText): HubText {
-  const f = numberFormat(locale);
-  return {
-    ...words(t),
-    sections: [
-      {
-        heading: t.printing.heading,
-        body: t.printing.body,
-        table: {
-          corner: t.printing.corner,
-          cols: ["150 DPI", "300 DPI"],
-          rows: PRINT_SIZES.map(([w, h]) => ({
-            label: fill(t.printing.row, { w, h }),
-            cells: [150, 300].map((d) => `${f.px(w, d)} × ${f.px(h, d)}`),
-          })),
-        },
-      },
-      { heading: t.photos.heading, body: t.photos.body },
-    ],
-  };
-}
 
 export function sizesHub(locale: Locale, t: SizesText, sizeLabels: string[]): HubText {
   const f = numberFormat(locale);

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUp } from "lucide-react";
+import { ArrowRight, ArrowUp, Map } from "lucide-react";
 import { localePath, type Locale } from "../i18n/config";
 import { getMessages } from "../i18n/messages";
-import { PAGE_KEYS, PAGE_PATH } from "../lib/hubs";
+import { INFO_KEYS, INFO_PATH, PAGE_KEYS, PAGE_PATH, SITEMAP_PATH } from "../lib/hubs";
+import { INFO_ICONS } from "./hub/icons";
 import { PAGE_ICONS } from "./hub/parts";
 import { LanguageLinks } from "./LanguageMenu";
 
@@ -59,6 +60,24 @@ export default function Footer({ locale }: { locale: Locale }) {
                   </li>
                 );
               })}
+              {INFO_KEYS.map((key) => {
+                const Icon = INFO_ICONS[key];
+                return (
+                  <li key={key}>
+                    <Link href={localePath(locale, INFO_PATH[key])} className={`inline-flex items-center gap-2 ${linkClass}`}>
+                      <Icon className="h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden="true" />
+                      {ui.nav.info[key]}
+                    </Link>
+                  </li>
+                );
+              })}
+              {/* Sitemap is linked from the footer only */}
+              <li>
+                <Link href={localePath(locale, SITEMAP_PATH)} className={`inline-flex items-center gap-2 ${linkClass}`}>
+                  <Map className="h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden="true" />
+                  {content.sitemap.label}
+                </Link>
+              </li>
             </ul>
           </nav>
 

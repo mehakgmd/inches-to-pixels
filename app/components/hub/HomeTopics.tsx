@@ -1,6 +1,7 @@
 import type { Locale } from "../../i18n/config";
 import { getMessages } from "../../i18n/messages";
 import { DataTable, SectionCard, TopicGrid } from "./parts";
+import LinkedText from "./LinkedText";
 
 const bodyClass = "mt-2 text-sm leading-relaxed text-ink-soft sm:text-base";
 
@@ -70,7 +71,9 @@ export default function HomeTopics({ locale }: { locale: Locale }) {
       </SectionCard>
 
       <SectionCard id="quick-table" title={reference.heading}>
-        <p className={bodyClass}>{reference.intro}</p>
+        <p className={bodyClass}>
+          <LinkedText text={reference.intro} locale={locale} />
+        </p>
         <DataTable table={reference.table} caption={reference.caption} />
         <p className="mt-3 text-xs text-ink-muted">{reference.footnote}</p>
       </SectionCard>

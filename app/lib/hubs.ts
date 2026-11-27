@@ -121,7 +121,7 @@ export const PRINT_SIZES: [number, number][] = [
   [4, 6],
   [5, 7],
   [8, 10],
-  [11, 14],
+  [8.5, 11],
 ];
 
 /* ---------- homepage converter defaults ---------- */
@@ -138,7 +138,7 @@ export const HUB_KEYS: HubKey[] = ["dpi", "software", "print", "sizes", "chart"]
 export const HUB_CONFIG: Record<HubKey, Pick<Hub, "path" | "calc" | "showRelated">> = {
   dpi: { path: "/inches-to-pixels-dpi-converter/", showRelated: false, calc: { mode: "in", w: 4, h: 6, dpi: 300 } },
   software: { path: "/inches-to-pixels-software/", calc: { mode: "in", w: 4, h: 6, dpi: 300 } },
-  print: { path: "/inches-to-pixels-for-print-and-photos/", calc: { mode: "in", w: 5, h: 7, dpi: 300 } },
+  print: { path: "/inches-to-pixels-for-print-and-photos/", calc: { mode: "in", w: 6, h: 4, dpi: 300 } },
   sizes: { path: "/common-sizes-in-pixels/", calc: { mode: "in", w: 8.5, h: 11, dpi: 300, presets: true } },
   chart: { path: "/inches-to-pixels-chart/", calc: { mode: "in", w: 2, h: 2, dpi: 300 } },
 };
@@ -158,7 +158,12 @@ export const SECTION_IDS: Record<HubKey, string[]> = {
     "apply-the-result-in-your-software",
     "avoid-common-conversion-mistakes",
   ],
-  print: ["printing", "photos-and-images"],
+  print: [
+    "how-to-convert-inches-to-pixels",
+    "formula-and-worked-examples",
+    "common-print-sizes-in-pixels",
+    "preparing-images-for-printing",
+  ],
   sizes: ["all-common-sizes-at-a-glance", ...COMMON_SIZES.map((s) => s.id)],
   chart: ["conversion-chart", ...CHART_HIGHLIGHTS.map((c) => c.id)],
 };
@@ -172,3 +177,52 @@ export const PAGE_PATH: Record<PageKey, string> = {
   home: "/",
   ...Object.fromEntries(HUB_KEYS.map((k) => [k, HUB_CONFIG[k].path])),
 } as Record<PageKey, string>;
+
+/* ---------- information pages (About Us, Privacy Policy) ---------- */
+
+export type InfoKey = "about" | "contact" | "privacy";
+
+/** Human-readable sitemap page (linked from the footer only). */
+export const SITEMAP_PATH = "/sitemap/";
+
+/** Order in the "More" menu and the footer. */
+export const INFO_KEYS: InfoKey[] = ["about", "contact", "privacy"];
+
+export const INFO_PATH: Record<InfoKey, string> = {
+  about: "/about-us/",
+  contact: "/contact-us/",
+  privacy: "/privacy-policy/",
+};
+
+/** Date shown as "Last updated" on each information page (YYYY-MM-DD). Change it when the text changes. */
+export const INFO_UPDATED: Record<InfoKey, string> = {
+  about: "2026-11-25",
+  contact: "2026-11-25",
+  privacy: "2026-11-25",
+};
+
+/** Words of an information page. */
+export interface InfoText {
+  h1: string;
+  /** Meta description for search results. */
+  description: string;
+  intro: string;
+  sections: HubSectionText[];
+}
+
+/** Section ids per information page, in section order. */
+export const INFO_SECTION_IDS: Record<InfoKey, string[]> = {
+  about: ["what-we-offer", "how-we-calculate", "our-approach", "free-and-multilingual", "privacy"],
+  // The contact page shows the form instead of text sections.
+  contact: [],
+  privacy: [
+    "information-you-enter",
+    "messages-you-send-us",
+    "information-stored-on-your-device",
+    "information-collected-automatically",
+    "analytics-advertising-and-third-parties",
+    "childrens-privacy",
+    "your-choices",
+    "changes-to-this-policy",
+  ],
+};

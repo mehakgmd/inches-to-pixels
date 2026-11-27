@@ -1,6 +1,6 @@
 /** Portuguese (Português). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const pt: Messages = {
       sections: { converter: "Conversor", visual: "Escala visual", slides: "Diapositivos", presets: "Tamanhos", guide: "Guia de DPI", faq: "FAQ" },
       language: "Idioma",
       languageAria: "Escolher idioma",
+      more: "Mais",
+      info: { about: "Sobre nós", contact: "Contacto", privacy: "Política de privacidade" },
     },
     theme: { toDark: "Mudar para modo escuro", toLight: "Mudar para modo claro", dark: "Modo escuro", light: "Modo claro" },
     footer: { languages: "Idiomas" },
+    contact: {
+      formTitle: "Envie-nos uma mensagem",
+      directTitle: "Escreva-nos por email",
+      directText: "Prefere usar a sua aplicação de email? Escreva-nos para",
+      name: "O seu nome",
+      email: "O seu email",
+      message: "Mensagem",
+      send: "Enviar mensagem",
+      sending: "A enviar…",
+      sent: "Obrigado! A sua mensagem foi enviada. Vamos responder para {email}.",
+      failed: "Lamentamos, de momento não foi possível enviar a mensagem. Escreva-nos diretamente para",
+      invalidName: "Introduza o seu nome.",
+      invalidEmail: "Introduza um endereço de email válido.",
+      invalidMessage: "Escreva uma mensagem com pelo menos 10 caracteres.",
+      privacyNote: "Usamos o seu nome e email apenas para lhe responder. Consulte a nossa",
+    },
     faq: { eyebrow: "Perguntas frequentes", title: "RESPOSTAS DE", highlight: "ESPECIALISTA" },
     hero: {
       badge: "A arte da escala digital",
@@ -334,6 +352,7 @@ export const pt: Messages = {
       related: "Páginas relacionadas",
       relatedHome: "Conversor de polegadas para píxeis",
       hubFaqDescription: "Respostas curtas às perguntas mais frequentes sobre este tema.",
+      lastUpdated: "Última atualização: {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const pt: Messages = {
       reference: {
         heading: "Tabela de referência de polegadas para píxeis",
         intro:
-          "Os cabeçalhos das colunas mostram a resolução de imagem em PPI; os valores por baixo são números de píxeis. Estas definições são exemplos, não requisitos universais.",
+          "Os cabeçalhos das colunas mostram a [resolução de imagem em PPI](print); os valores por baixo são números de píxeis. Estas definições são exemplos, não requisitos universais.",
         table: homeTable("pt", { corner: "Comprimento (polegadas)", col: "{ppi}" }),
         caption: "Polegadas para píxeis a 72, 96, 150 e 300 PPI",
         footnote: "Todos os valores da tabela são exatos para os dados indicados.",
@@ -438,6 +457,170 @@ export const pt: Messages = {
             "Sim. Divida cada dimensão em píxeis pela resolução de imagem pretendida. A 300 PPI, uma imagem de 1800 × 1200 píxeis corresponde a 6 × 4 polegadas. Recortar ou redimensionar na impressão pode alterar o tamanho final.",
         },
       ],
+    },
+    sitemap: {
+      label: "Mapa do site",
+      h1: "Mapa do site",
+      description: "A lista de todas as páginas do Inches to Pixel: conversores, guias, tabelas de referência e informações sobre o site.",
+      intro: "Todas as páginas do Inches to Pixel num só lugar. Escolha uma página para a abrir ou mude de língua abaixo.",
+      tools: "Conversores e guias",
+      info: "Sobre este site",
+      languages: "Outras línguas",
+    },
+    info: {
+      about: {
+        h1: "Sobre nós",
+        description:
+          "Inches to Pixel é uma ferramenta gratuita para converter polegadas em píxeis com qualquer PPI, com calculadoras, tabelas de referência e explicações claras para impressão e ecrã.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) é uma ferramenta online gratuita que converte medidas físicas em dimensões em píxeis. Ajuda designers, fotógrafos, programadores e qualquer pessoa que prepare imagens para impressão ou ecrã a saber exatamente de quantos píxeis precisa.",
+        sections: [
+          {
+            heading: "O que oferecemos",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "Um conversor de polegadas para píxeis para comprimentos simples e tamanhos completos de largura × altura.",
+                  "Calculadoras para DPI e PPI, software, impressão e fotografias, e formatos de papel comuns.",
+                  "Tabelas de referência e uma tabela de conversão completa de 1/8 a 96 polegadas.",
+                  "Explicações claras sobre PPI, DPI e píxeis CSS, com exemplos resolvidos.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "Como calculamos",
+            blocks: [
+              {
+                type: "p",
+                text: "Todos os resultados usam uma única fórmula: píxeis = polegadas × PPI. As nossas tabelas são calculadas com essa mesma fórmula, por isso os números coincidem em todas as páginas. Os exemplos mostram resultados exatos e indicam claramente quando um valor foi arredondado.",
+              },
+            ],
+          },
+          {
+            heading: "A nossa abordagem",
+            blocks: [
+              {
+                type: "p",
+                text: "As dimensões em píxeis dependem da resolução escolhida, por isso nunca apresentamos um único valor como universal. Explicamos a diferença entre a resolução de imagem (PPI) e a resolução da impressora (DPI), e recomendamos que siga os requisitos exatos da sua gráfica ou da plataforma onde vai carregar a imagem.",
+              },
+            ],
+          },
+          {
+            heading: "Gratuito e disponível em várias línguas",
+            blocks: [
+              {
+                type: "p",
+                text: "O site é gratuito, não precisa de conta e funciona em telemóveis, tablets e computadores. Está disponível em inglês, espanhol, russo, francês, alemão, italiano, português, indonésio, árabe e sueco, com modo claro e modo escuro.",
+              },
+            ],
+          },
+          {
+            heading: "A sua privacidade",
+            blocks: [
+              {
+                type: "p",
+                text: "O conversor funciona no seu navegador e os valores que introduz não nos são enviados nem guardados. A nossa Política de privacidade explica os pormenores.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Contacto",
+        description:
+          "Contacte o Inches to Pixel com perguntas, correções ou ideias. Envie uma mensagem pelo formulário ou escreva para contact@inchestopixel.com.",
+        intro:
+          "Tem uma pergunta sobre a conversão de polegadas para píxeis, encontrou um erro ou tem uma ideia para o site? Envie-nos uma mensagem pelo formulário abaixo e responderemos por email.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Política de privacidade",
+        description:
+          "Como o Inches to Pixel trata a informação: o conversor funciona no navegador, não há contas e os únicos dados pessoais que recebemos são os enviados pelo formulário de contacto.",
+        intro:
+          "Esta Política de privacidade explica que informação o Inches to Pixel (InchestoPixel.com) trata quando utiliza o site. Em resumo: o conversor funciona no seu navegador, não há contas e os únicos dados pessoais que recebemos são os que decide enviar-nos pelo formulário de contacto.",
+        sections: [
+          {
+            heading: "Informação que introduz",
+            blocks: [
+              {
+                type: "p",
+                text: "Os valores que escreve nos conversores, como polegadas, píxeis e DPI, são calculados no seu navegador. Não nos são enviados nem ficam guardados nos nossos servidores.",
+              },
+            ],
+          },
+          {
+            heading: "Mensagens que nos envia",
+            blocks: [
+              {
+                type: "p",
+                text: "Se usar o formulário de contacto, recebemos o seu nome, o seu endereço de email e a sua mensagem. Usamo-los apenas para ler e responder à mensagem, e guardamo-los apenas durante o tempo necessário para essa conversa.",
+              },
+              {
+                type: "p",
+                text: "As mensagens chegam à nossa caixa de correio através do nosso fornecedor de serviços de email, a Resend, que as trata em nosso nome apenas para as entregar. Se nos escrever diretamente por email, a sua mensagem é tratada da mesma forma pelo nosso fornecedor de email.",
+              },
+            ],
+          },
+          {
+            heading: "Informação guardada no seu dispositivo",
+            blocks: [
+              {
+                type: "p",
+                text: "Se alternar entre o modo claro e o modo escuro, o site guarda essa escolha no armazenamento local do navegador para usar o mesmo tema na próxima visita. Esta definição fica no seu dispositivo, não nos é enviada e não serve para o identificar. Pode removê-la a qualquer momento limpando os dados do site no navegador.",
+              },
+              { type: "p", text: "O site não usa cookies para publicidade ou rastreamento." },
+            ],
+          },
+          {
+            heading: "Informação recolhida automaticamente",
+            blocks: [
+              {
+                type: "p",
+                text: "Como na maioria dos sites, os servidores que entregam as nossas páginas podem registar informação técnica padrão, como o endereço IP, o tipo de navegador, a página pedida e a hora do pedido. Esta informação serve para disponibilizar o site, mantê-lo seguro e resolver problemas. Não a usamos para criar perfis de visitantes.",
+              },
+            ],
+          },
+          {
+            heading: "Análise, publicidade e terceiros",
+            blocks: [
+              {
+                type: "p",
+                text: "Atualmente, o site não usa ferramentas de análise, redes de publicidade nem rastreamento de redes sociais. As fontes são servidas a partir do nosso próprio site, por isso carregar uma página não envia a sua informação a um fornecedor de fontes. Não vendemos nem partilhamos dados pessoais. Se isso mudar, atualizaremos esta política antes de a alteração entrar em vigor.",
+              },
+            ],
+          },
+          {
+            heading: "Privacidade das crianças",
+            blocks: [
+              {
+                type: "p",
+                text: "O site é uma ferramenta de uso geral. Não recolhe conscientemente dados pessoais de crianças.",
+              },
+            ],
+          },
+          {
+            heading: "As suas escolhas",
+            blocks: [
+              {
+                type: "p",
+                text: "Se nos contactou e quer que apaguemos a sua mensagem, escreva para contact@inchestopixel.com e iremos removê-la. Para além das mensagens de contacto, não recolhemos dados pessoais através do site, por isso normalmente não há nada para consultar, corrigir ou eliminar. Pode apagar a qualquer momento a definição de tema guardada no navegador.",
+              },
+            ],
+          },
+          {
+            heading: "Alterações a esta política",
+            blocks: [
+              {
+                type: "p",
+                text: "Podemos atualizar esta Política de privacidade quando o site mudar. A data no topo desta página indica a última atualização.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const pt: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("pt", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Impressão e foto",
-        h1: "Polegadas para píxeis para impressão, fotografias e imagens",
+        h1: "Conversor de polegadas para píxeis para impressão e fotografias",
         description:
-          "Quantos píxeis precisa para uma impressão nítida: fotos de 4×6, 5×7, 8×10 e 11×14 polegadas a 150 e 300 DPI, com calculadora de tamanho de impressão.",
-        answer: "Para uma impressão nítida, precisa do tamanho de impressão × 300 píxeis em cada lado.",
-        printing: {
-          heading: "Impressão",
-          body: "Píxeis necessários = tamanho de impressão em polegadas × DPI de impressão. A maioria das gráficas aponta para 300 DPI.",
-          corner: "Tamanho de impressão",
-          row: "{w} × {h} pol",
-        },
-        photos: {
-          heading: "Fotografias e imagens",
-          body: "Uma fotografia com poucos píxeis fica suave quando impressa em grande. Compare o tamanho em píxeis da sua imagem com a tabela acima antes de encomendar impressões.",
-        },
-        faq: [
+          "Converta polegadas para píxeis para impressões e fotografias com o PPI necessário. Fórmula, exemplos resolvidos e os formatos 4×6, 5×7, 8×10 e 8,5×11 em píxeis.",
+        answer:
+          "Converta polegadas para píxeis em imagens e fotografias com a resolução necessária em píxeis por polegada (PPI). Píxeis = polegadas × PPI, por isso 1 polegada equivale a 300 píxeis a 300 PPI ou a 150 píxeis a 150 PPI. Sem uma resolução definida, uma polegada não tem um valor fixo em píxeis.",
+        sections: [
           {
-            question: "Posso ampliar uma fotografia pequena?",
-            answer: "Ampliar acrescenta píxeis, mas não detalhe, por isso as grandes ampliações ficam desfocadas.",
+            heading: "Como converter polegadas em píxeis",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Determine a largura e a altura de impressão pretendidas em polegadas.",
+                  "Escolha a resolução de imagem exigida pela gráfica ou pelo projeto.",
+                  "Calcule cada dimensão com o mesmo valor de PPI.",
+                  "Use a largura e a altura em píxeis obtidas ao preparar a imagem.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Mantenha a largura e a altura pela ordem correta: uma fotografia na horizontal é mais larga do que alta, e uma na vertical é mais alta do que larga.",
+              },
+            ],
+          },
+          {
+            heading: "Fórmula e exemplos resolvidos",
+            blocks: [
+              { type: "math", lines: ["Píxeis = polegadas × PPI"], large: true },
+              { type: "p", text: "Para uma imagem completa:" },
+              {
+                type: "math",
+                lines: ["Largura em píxeis = largura em polegadas × PPI", "Altura em píxeis = altura em polegadas × PPI"],
+              },
+              {
+                type: "p",
+                text: "«Polegadas» descreve a medida física pretendida. «PPI» significa píxeis por polegada. O resultado é o número de píxeis ao longo de cada lado, assumindo a mesma densidade de píxeis na horizontal e na vertical.",
+              },
+              {
+                type: "sub",
+                heading: "Uma fotografia de 6 × 4 polegadas a 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Largura: 6 × 300 = 1800 píxeis", "Altura: 4 × 300 = 1200 píxeis"] },
+                  { type: "p", text: "As dimensões de imagem necessárias são 1800 × 1200 píxeis." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Uma imagem de 8 × 10 polegadas a 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Largura: 8 × 150 = 1200 píxeis", "Altura: 10 × 150 = 1500 píxeis"] },
+                  {
+                    type: "p",
+                    text: "O resultado é 1200 × 1500 píxeis. A 300 PPI, o mesmo tamanho de impressão exige 2400 × 3000 píxeis — o dobro dos píxeis em cada lado.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Uma medida em frações de polegada",
+                blocks: [
+                  { type: "p", text: "Para um lado com 2,125 polegadas a 300 PPI:" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 píxeis"] },
+                  {
+                    type: "p",
+                    text: "Uma imagem usa píxeis inteiros, por isso arredondar ao píxel inteiro mais próximo dá 638 píxeis. A 300 PPI, isso representa cerca de 2,1267 polegadas.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "Arredonde só depois de multiplicar. Se uma especificação de impressão definir um mínimo de píxeis, arredonde para cima quando necessário. Siga as dimensões exatas em píxeis indicadas pela gráfica.",
+              },
+            ],
+          },
+          {
+            heading: "Tamanhos de impressão comuns em píxeis",
+            blocks: [
+              {
+                type: "p",
+                text: "Todos os valores são exatos para as dimensões e o PPI indicados. As medidas são largura × altura e não incluem margens nem sangria.",
+              },
+              {
+                type: "table",
+                caption: "Tamanhos de impressão comuns em píxeis a 150, 300 e 600 PPI",
+                table: printTable("pt", {
+                  corner: "Tamanho de impressão (polegadas)",
+                  cols: ["A 150 PPI (píxeis)", "A 300 PPI (píxeis)", "A 600 PPI (píxeis)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "Para a orientação horizontal, troque a largura e a altura." },
+            ],
+          },
+          {
+            heading: "Preparar imagens para impressão",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Use o PPI da imagem, não o DPI da impressora",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "O PPI descreve o número de píxeis de imagem atribuídos a cada polegada impressa. O DPI descreve os pontos por polegada produzidos pela impressora. Uma impressora pode usar vários pontos para reproduzir um só píxel, por isso a sua resolução DPI de hardware não é o valor a introduzir automaticamente ao calcular as dimensões da imagem.",
+                  },
+                  {
+                    type: "p",
+                    text: "Use a resolução de imagem indicada para o seu trabalho. Valores como 72, 96, 150, 300 ou 600 PPI dão resultados diferentes; nenhum é um fator de conversão universal.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Mantenha as proporções da fotografia",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Mantenha a proporção original entre largura e altura ao redimensionar uma fotografia. Alterar a largura e a altura separadamente pode deformar rostos e outros elementos.",
+                  },
+                  {
+                    type: "p",
+                    text: "Se as proporções da fotografia forem diferentes do tamanho de impressão, recorte-a para encaixar ou mantenha a fotografia completa com margens. Por exemplo, uma fotografia 6 × 4 tem uma proporção de 3:2, e uma impressão horizontal 10 × 8 tem 5:4. Para preencher essa impressão mantendo as proporções da imagem, é preciso recortar.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Verifique a imagem original antes de a ampliar",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "As dimensões calculadas descrevem um objetivo. Não indicam se uma fotografia existente tem detalhe suficiente.",
+                  },
+                  {
+                    type: "p",
+                    text: "Alterar os metadados de PPI sem reamostragem mantém as dimensões reais em píxeis. A reamostragem acrescenta ou remove píxeis, mas aumentar o número de píxeis não recupera automaticamente o detalhe em falta.",
+                  },
+                  { type: "p", text: "A nitidez da impressão depende também da focagem, da compressão e da qualidade da imagem original." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Até que tamanho posso imprimir uma fotografia existente?",
+            answer:
+              "Divida cada dimensão em píxeis pelo PPI pretendido:\nDimensão de impressão em polegadas = píxeis ÷ PPI\nUma imagem de 3000 × 2400 píxeis corresponde a 10 × 8 polegadas a 300 PPI, ou a 20 × 16 polegadas a 150 PPI, antes de recortes ou redimensionamentos na impressão. Um PPI mais baixo distribui os mesmos píxeis por uma área maior.",
+          },
+          {
+            question: "A imagem vai ser impressa no tamanho que aparece no ecrã?",
+            answer:
+              "Não necessariamente. O tamanho no ecrã depende do monitor e da escala de visualização. O tamanho impresso depende das dimensões em píxeis, da resolução de impressão escolhida e de qualquer redimensionamento aplicado na impressão. Verifique as dimensões físicas pretendidas nas definições de impressão.",
+          },
+          {
+            question: "As dimensões em píxeis indicam o tamanho do ficheiro?",
+            answer:
+              "Não. As dimensões em píxeis descrevem a largura e a altura da imagem, enquanto o tamanho do ficheiro mede o armazenamento em bytes, KB ou MB. Depende também do formato, da compressão, do conteúdo da imagem e da profundidade de cor.\nAs imagens JPEG, PNG, TIFF e WebP têm todas dimensões em píxeis. Só por si, essas dimensões não definem um tamanho de impressão físico.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "pt",
         {

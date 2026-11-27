@@ -1,6 +1,6 @@
 /** Swedish (Svenska). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const sv: Messages = {
       sections: { converter: "Omvandlare", visual: "Visuell skala", slides: "Bilder", presets: "Format", guide: "DPI-guide", faq: "Vanliga frågor" },
       language: "Språk",
       languageAria: "Välj språk",
+      more: "Mer",
+      info: { about: "Om oss", contact: "Kontakta oss", privacy: "Integritetspolicy" },
     },
     theme: { toDark: "Byt till mörkt läge", toLight: "Byt till ljust läge", dark: "Mörkt läge", light: "Ljust läge" },
     footer: { languages: "Språk" },
+    contact: {
+      formTitle: "Skicka ett meddelande",
+      directTitle: "Mejla oss",
+      directText: "Vill du hellre använda din egen e-postapp? Skriv till oss på",
+      name: "Ditt namn",
+      email: "Din e-postadress",
+      message: "Meddelande",
+      send: "Skicka meddelande",
+      sending: "Skickar…",
+      sent: "Tack! Ditt meddelande har skickats. Vi svarar till {email}.",
+      failed: "Tyvärr kunde ditt meddelande inte skickas just nu. Mejla oss direkt på",
+      invalidName: "Ange ditt namn.",
+      invalidEmail: "Ange en giltig e-postadress.",
+      invalidMessage: "Skriv ett meddelande på minst 10 tecken.",
+      privacyNote: "Vi använder ditt namn och din e-post bara för att svara dig. Läs vår",
+    },
     faq: { eyebrow: "Vanliga frågor", title: "EXPERT-", highlight: "SVAR" },
     hero: {
       badge: "Konsten att skala digitalt",
@@ -334,6 +352,7 @@ export const sv: Messages = {
       related: "Relaterade sidor",
       relatedHome: "Omvandlare från tum till pixlar",
       hubFaqDescription: "Korta svar på de vanligaste frågorna om ämnet.",
+      lastUpdated: "Senast uppdaterad: {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const sv: Messages = {
       reference: {
         heading: "Referenstabell för tum till pixlar",
         intro:
-          "Kolumnrubrikerna visar bildupplösning i PPI; värdena under dem är antal pixlar. Inställningarna är exempel, inte allmänna krav.",
+          "Kolumnrubrikerna visar [bildupplösning i PPI](print); värdena under dem är antal pixlar. Inställningarna är exempel, inte allmänna krav.",
         table: homeTable("sv", { corner: "Längd (tum)", col: "{ppi}" }),
         caption: "Tum till pixlar vid 72, 96, 150 och 300 PPI",
         footnote: "Alla tabellvärden är exakta för de angivna värdena.",
@@ -438,6 +457,170 @@ export const sv: Messages = {
             "Ja. Dela varje pixelmått med den avsedda bildupplösningen. Vid 300 PPI motsvarar en bild på 1 800 × 1 200 pixlar 6 × 4 tum. Beskärning eller skalning vid tryck kan ändra slutstorleken.",
         },
       ],
+    },
+    sitemap: {
+      label: "Webbplatskarta",
+      h1: "Webbplatskarta",
+      description: "En lista över alla sidor på Inches to Pixel: omvandlare, guider, referenstabeller och information om webbplatsen.",
+      intro: "Alla sidor på Inches to Pixel på ett ställe. Välj en sida för att öppna den eller byt språk nedan.",
+      tools: "Omvandlare och guider",
+      info: "Om webbplatsen",
+      languages: "Andra språk",
+    },
+    info: {
+      about: {
+        h1: "Om oss",
+        description:
+          "Inches to Pixel är ett kostnadsfritt verktyg för att omvandla tum till pixlar vid valfri PPI, med räknare, referenstabeller och tydliga förklaringar för tryck och skärm.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) är ett kostnadsfritt onlineverktyg som omvandlar fysiska mått till pixelmått. Det hjälper designers, fotografer, utvecklare och alla som förbereder bilder för tryck eller skärm att veta exakt hur många pixlar som behövs.",
+        sections: [
+          {
+            heading: "Vad vi erbjuder",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "En omvandlare från tum till pixlar för enskilda längder och hela mått i bredd × höjd.",
+                  "Räknare för DPI och PPI, program, tryck och foton samt vanliga pappersformat.",
+                  "Referenstabeller och en fullständig omräkningstabell från 1/8 tum till 96 tum.",
+                  "Tydliga förklaringar av PPI, DPI och CSS-pixlar, med räkneexempel.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "Så räknar vi",
+            blocks: [
+              {
+                type: "p",
+                text: "Varje resultat bygger på en enda formel: pixlar = tum × PPI. Våra tabeller räknas fram med samma formel, så siffrorna stämmer överens på alla sidor. Exemplen visar exakta resultat och anger tydligt när ett värde har avrundats.",
+              },
+            ],
+          },
+          {
+            heading: "Vårt förhållningssätt",
+            blocks: [
+              {
+                type: "p",
+                text: "Pixelmått beror på den upplösning du väljer, så vi presenterar aldrig ett enda värde som universellt. Vi förklarar skillnaden mellan bildupplösning (PPI) och skrivarupplösning (DPI) och rekommenderar att du följer de exakta kraven från ditt tryckeri eller den tjänst där du laddar upp bilden.",
+              },
+            ],
+          },
+          {
+            heading: "Kostnadsfritt och på många språk",
+            blocks: [
+              {
+                type: "p",
+                text: "Webbplatsen är kostnadsfri, kräver inget konto och fungerar på mobiler, surfplattor och datorer. Den finns på engelska, spanska, ryska, franska, tyska, italienska, portugisiska, indonesiska, arabiska och svenska, med ljust och mörkt läge.",
+              },
+            ],
+          },
+          {
+            heading: "Din integritet",
+            blocks: [
+              {
+                type: "p",
+                text: "Omvandlaren körs i din webbläsare, och värdena du anger skickas inte till oss och sparas inte. Vår integritetspolicy förklarar detaljerna.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Kontakta oss",
+        description:
+          "Kontakta Inches to Pixel med frågor, rättelser eller idéer. Skicka ett meddelande via formuläret eller mejla contact@inchestopixel.com.",
+        intro:
+          "Har du en fråga om att omvandla tum till pixlar, hittat ett fel eller har en idé till webbplatsen? Skicka ett meddelande via formuläret nedan så svarar vi via e-post.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Integritetspolicy",
+        description:
+          "Så hanterar Inches to Pixel information: omvandlaren körs i din webbläsare, det finns inga konton och de enda personuppgifter vi får är dem du skickar via kontaktformuläret.",
+        intro:
+          "Den här integritetspolicyn förklarar vilken information Inches to Pixel (InchestoPixel.com) hanterar när du använder webbplatsen. Kort sagt: omvandlaren körs i din webbläsare, det finns inga konton och de enda personuppgifter vi får är dem du själv väljer att skicka via kontaktformuläret.",
+        sections: [
+          {
+            heading: "Information du anger",
+            blocks: [
+              {
+                type: "p",
+                text: "Värdena du skriver i omvandlarna, till exempel tum, pixlar och DPI, räknas ut i din webbläsare. De skickas inte till oss och lagras inte på våra servrar.",
+              },
+            ],
+          },
+          {
+            heading: "Meddelanden du skickar till oss",
+            blocks: [
+              {
+                type: "p",
+                text: "Om du använder kontaktformuläret får vi ditt namn, din e-postadress och ditt meddelande. Vi använder dem bara för att läsa och svara på meddelandet och sparar dem bara så länge som behövs för den konversationen.",
+              },
+              {
+                type: "p",
+                text: "Meddelandena levereras till vår inkorg av vår e-posttjänst, Resend, som behandlar dem för vår räkning enbart för att leverera dem. Om du mejlar oss direkt hanteras ditt meddelande på samma sätt av vår e-postleverantör.",
+              },
+            ],
+          },
+          {
+            heading: "Information som sparas på din enhet",
+            blocks: [
+              {
+                type: "p",
+                text: "Om du växlar mellan ljust och mörkt läge sparar webbplatsen ditt val i webbläsarens lokala lagring så att samma tema används nästa gång du besöker oss. Inställningen stannar på din enhet, skickas inte till oss och används inte för att identifiera dig. Du kan ta bort den när som helst genom att rensa webbplatsdata i webbläsaren.",
+              },
+              { type: "p", text: "Webbplatsen använder inte kakor för annonsering eller spårning." },
+            ],
+          },
+          {
+            heading: "Information som samlas in automatiskt",
+            blocks: [
+              {
+                type: "p",
+                text: "Som på de flesta webbplatser kan servrarna som levererar våra sidor registrera teknisk standardinformation i serverloggar, till exempel din IP-adress, webbläsartyp, begärd sida och tidpunkt för begäran. Informationen används för att leverera webbplatsen, hålla den säker och åtgärda fel. Vi använder den inte för att skapa profiler över besökare.",
+              },
+            ],
+          },
+          {
+            heading: "Analys, annonsering och tredje parter",
+            blocks: [
+              {
+                type: "p",
+                text: "Webbplatsen använder för närvarande inga analysverktyg, annonsnätverk eller spårning från sociala medier. Typsnitt levereras från vår egen webbplats, så när en sida laddas skickas ingen information om dig till en typsnittsleverantör. Vi säljer eller delar inte personuppgifter. Om detta ändras uppdaterar vi policyn innan ändringen träder i kraft.",
+              },
+            ],
+          },
+          {
+            heading: "Barns integritet",
+            blocks: [
+              {
+                type: "p",
+                text: "Webbplatsen är ett allmänt verktyg. Den samlar inte medvetet in personuppgifter från barn.",
+              },
+            ],
+          },
+          {
+            heading: "Dina val",
+            blocks: [
+              {
+                type: "p",
+                text: "Om du har kontaktat oss och vill att vi raderar ditt meddelande, mejla contact@inchestopixel.com så tar vi bort det. Utöver kontaktmeddelanden samlar vi inte in personuppgifter via webbplatsen, så det finns normalt inget att ge tillgång till, rätta eller radera. Du kan när som helst ta bort temainställningen som sparats i din webbläsare.",
+              },
+            ],
+          },
+          {
+            heading: "Ändringar i policyn",
+            blocks: [
+              {
+                type: "p",
+                text: "Vi kan uppdatera integritetspolicyn när webbplatsen ändras. Datumet högst upp på sidan visar när den senast uppdaterades.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const sv: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("sv", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Tryck & foto",
-        h1: "Tum till pixlar för tryck, foton och bilder",
+        h1: "Omvandlare från tum till pixlar för tryck och foton",
         description:
-          "Hur många pixlar du behöver för ett skarpt tryck: foton i 4×6, 5×7, 8×10 och 11×14 tum vid 150 och 300 DPI, med en räknare för tryckstorlek.",
-        answer: "För ett skarpt tryck behöver du tryckstorlek × 300 pixlar på varje sida.",
-        printing: {
-          heading: "Tryck",
-          body: "Pixlar som krävs = tryckstorlek i tum × tryckets DPI. De flesta tryckerier siktar på 300 DPI.",
-          corner: "Tryckstorlek",
-          row: "{w} × {h} tum",
-        },
-        photos: {
-          heading: "Foton och bilder",
-          body: "Ett foto med för få pixlar ser oskarpt ut när det trycks stort. Jämför bildens pixelstorlek med tabellen ovan innan du beställer tryck.",
-        },
-        faq: [
+          "Omvandla tum till pixlar för tryck och foton med den PPI som krävs. Se formeln, räkneexempel och formaten 4×6, 5×7, 8×10 och 8,5×11 i pixlar.",
+        answer:
+          "Omvandla tum till pixlar för bilder och foton med den upplösning som krävs i pixlar per tum (PPI). Pixlar = tum × PPI, så 1 tum motsvarar 300 pixlar vid 300 PPI eller 150 pixlar vid 150 PPI. Utan angiven upplösning har en tum inget fast pixelvärde.",
+        sections: [
           {
-            question: "Kan jag förstora ett litet foto?",
-            answer: "Uppskalning lägger till pixlar men inga detaljer, så stora förstoringar ser suddiga ut.",
+            heading: "Så omvandlar du tum till pixlar",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Bestäm den tänkta tryckbredden och tryckhöjden i tum.",
+                  "Välj den bildupplösning som tryckeriet eller projektet kräver.",
+                  "Räkna ut varje mått med samma PPI-värde.",
+                  "Använd den bredd och höjd i pixlar du får fram när du förbereder bilden.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Håll bredd och höjd i rätt ordning: ett liggande foto är bredare än det är högt, medan ett stående foto är högre än det är brett.",
+              },
+            ],
+          },
+          {
+            heading: "Formel och räkneexempel",
+            blocks: [
+              { type: "math", lines: ["Pixlar = tum × PPI"], large: true },
+              { type: "p", text: "För en hel bild:" },
+              {
+                type: "math",
+                lines: ["Bredd i pixlar = bredd i tum × PPI", "Höjd i pixlar = höjd i tum × PPI"],
+              },
+              {
+                type: "p",
+                text: "”Tum” beskriver det tänkta fysiska måttet. ”PPI” betyder pixlar per tum. Resultatet är antalet pixlar längs varje kant, förutsatt samma pixeltäthet vågrätt och lodrätt.",
+              },
+              {
+                type: "sub",
+                heading: "Ett foto på 6 × 4 tum vid 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Bredd: 6 × 300 = 1 800 pixlar", "Höjd: 4 × 300 = 1 200 pixlar"] },
+                  { type: "p", text: "De bildmått som krävs är 1 800 × 1 200 pixlar." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "En bild på 8 × 10 tum vid 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Bredd: 8 × 150 = 1 200 pixlar", "Höjd: 10 × 150 = 1 500 pixlar"] },
+                  {
+                    type: "p",
+                    text: "Resultatet blir 1 200 × 1 500 pixlar. Vid 300 PPI kräver samma tryckstorlek 2 400 × 3 000 pixlar – dubbelt så många pixlar längs varje kant.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Ett mått med bråkdelar av en tum",
+                blocks: [
+                  { type: "p", text: "För en kant på 2,125 tum vid 300 PPI:" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 pixlar"] },
+                  {
+                    type: "p",
+                    text: "En bild består av hela pixlar, så avrundat till närmaste hela pixel blir det 638 pixlar. Vid 300 PPI motsvarar det ungefär 2,1267 tum.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "Avrunda först efter multiplikationen. Om en tryckspecifikation anger ett minsta antal pixlar, avrunda uppåt vid behov. Följ alla exakta pixelmått som tryckeriet anger.",
+              },
+            ],
+          },
+          {
+            heading: "Vanliga tryckformat i pixlar",
+            blocks: [
+              {
+                type: "p",
+                text: "Alla värden nedan är exakta för angivna mått och PPI. Måtten anges som bredd × höjd och omfattar inte ramar eller utfall.",
+              },
+              {
+                type: "table",
+                caption: "Vanliga tryckformat i pixlar vid 150, 300 och 600 PPI",
+                table: printTable("sv", {
+                  corner: "Tryckformat (tum)",
+                  cols: ["Vid 150 PPI (pixlar)", "Vid 300 PPI (pixlar)", "Vid 600 PPI (pixlar)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "För liggande format byter du plats på bredd och höjd." },
+            ],
+          },
+          {
+            heading: "Förbereda bilder för tryck",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Använd bildens PPI, inte skrivarens DPI",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "PPI anger hur många bildpixlar som hamnar på varje tryckt tum. DPI anger hur många punkter per tum skrivaren producerar. En skrivare kan använda flera punkter för att återge en enda bildpixel, så skrivarens hårdvaru-DPI är inte det värde du automatiskt ska ange när du räknar ut bildmått.",
+                  },
+                  {
+                    type: "p",
+                    text: "Använd det krav på bildupplösning som gäller för ditt jobb. Värden som 72, 96, 150, 300 eller 600 PPI ger olika resultat; inget av dem är en universell omräkningsfaktor.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Behåll fotots proportioner",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Behåll det ursprungliga förhållandet mellan bredd och höjd när du ändrar storlek på ett foto. Om du ändrar bredd och höjd var för sig kan ansikten och andra motiv dras ut.",
+                  },
+                  {
+                    type: "p",
+                    text: "Om fotots proportioner skiljer sig från tryckformatet kan du beskära det så att det passar, eller behålla hela fotot med marginaler. Ett foto på 6 × 4 har till exempel förhållandet 3:2, medan ett liggande tryck på 10 × 8 har 5:4. För att fylla det trycket och samtidigt behålla bildens proportioner måste du beskära.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Kontrollera originalbilden innan du förstorar den",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "De uträknade måtten beskriver ett mål. De visar inte om ett befintligt foto innehåller tillräckligt med detaljer.",
+                  },
+                  {
+                    type: "p",
+                    text: "Att ändra PPI-metadata utan omsampling lämnar de faktiska pixelmåtten oförändrade. Omsampling lägger till eller tar bort pixlar, men fler pixlar återskapar inte automatiskt detaljer som saknas.",
+                  },
+                  { type: "p", text: "Tryckets skärpa beror också på fokus, komprimering och källbildens kvalitet." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Hur stort kan jag skriva ut ett befintligt foto?",
+            answer:
+              "Dela varje pixelmått med den avsedda PPI:n:\nTryckmått i tum = pixlar ÷ PPI\nEn bild på 3 000 × 2 400 pixlar motsvarar 10 × 8 tum vid 300 PPI, eller 20 × 16 tum vid 150 PPI, före beskärning eller skalning vid tryck. En lägre PPI sprider samma pixlar över en större yta.",
+          },
+          {
+            question: "Skrivs bilden ut i den storlek den har på skärmen?",
+            answer:
+              "Inte nödvändigtvis. Storleken på skärmen beror på bildskärmen och visningsskalan. Tryckstorleken beror på pixelmåtten, den valda tryckupplösningen och eventuell skalning vid utskrift. Kontrollera de tänkta fysiska måtten i utskriftsinställningarna.",
+          },
+          {
+            question: "Visar pixelmåtten filstorleken?",
+            answer:
+              "Nej. Pixelmått beskriver bildens bredd och höjd, medan filstorleken mäter lagringsutrymme i byte, kB eller MB. Filstorleken beror också på format, komprimering, bildinnehåll och färgdjup.\nJPEG-, PNG-, TIFF- och WebP-bilder har alla pixelmått. Måtten i sig anger ingen fast fysisk tryckstorlek.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "sv",
         {

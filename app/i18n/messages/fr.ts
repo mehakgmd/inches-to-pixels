@@ -1,6 +1,6 @@
 /** French (Français). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const fr: Messages = {
       sections: { converter: "Convertisseur", visual: "Échelle visuelle", slides: "Diapositives", presets: "Formats", guide: "Guide DPI", faq: "FAQ" },
       language: "Langue",
       languageAria: "Choisir la langue",
+      more: "Plus",
+      info: { about: "À propos", contact: "Contact", privacy: "Politique de confidentialité" },
     },
     theme: { toDark: "Passer en mode sombre", toLight: "Passer en mode clair", dark: "Mode sombre", light: "Mode clair" },
     footer: { languages: "Langues" },
+    contact: {
+      formTitle: "Envoyez-nous un message",
+      directTitle: "Écrivez-nous par e-mail",
+      directText: "Vous préférez votre propre messagerie ? Écrivez-nous à",
+      name: "Votre nom",
+      email: "Votre e-mail",
+      message: "Message",
+      send: "Envoyer le message",
+      sending: "Envoi…",
+      sent: "Merci ! Votre message a bien été envoyé. Nous vous répondrons à {email}.",
+      failed: "Désolé, votre message n’a pas pu être envoyé pour le moment. Écrivez-nous directement à",
+      invalidName: "Veuillez saisir votre nom.",
+      invalidEmail: "Veuillez saisir une adresse e-mail valide.",
+      invalidMessage: "Veuillez écrire un message d’au moins 10 caractères.",
+      privacyNote: "Nous utilisons votre nom et votre e-mail uniquement pour vous répondre. Voir notre",
+    },
     faq: { eyebrow: "Questions fréquentes", title: "CONSEILS", highlight: "D’EXPERT" },
     hero: {
       badge: "L’art de l’échelle numérique",
@@ -334,6 +352,7 @@ export const fr: Messages = {
       related: "Pages associées",
       relatedHome: "Convertisseur de pouces en pixels",
       hubFaqDescription: "Des réponses courtes aux questions les plus fréquentes sur ce sujet.",
+      lastUpdated: "Dernière mise à jour : {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const fr: Messages = {
       reference: {
         heading: "Tableau de référence pouces-pixels",
         intro:
-          "Les en-têtes de colonne indiquent la résolution d’image en PPI ; les valeurs en dessous sont des nombres de pixels. Ces réglages sont des exemples, pas des exigences universelles.",
+          "Les en-têtes de colonne indiquent la [résolution d’image en PPI](print) ; les valeurs en dessous sont des nombres de pixels. Ces réglages sont des exemples, pas des exigences universelles.",
         table: homeTable("fr", { corner: "Longueur (pouces)", col: "{ppi}" }),
         caption: "Pouces en pixels à 72, 96, 150 et 300 PPI",
         footnote: "Toutes les valeurs du tableau sont exactes pour les données indiquées.",
@@ -438,6 +457,170 @@ export const fr: Messages = {
             "Oui. Divisez chaque dimension en pixels par la résolution d’image prévue. À 300 PPI, une image de 1 800 × 1 200 pixels correspond à 6 × 4 pouces. Un recadrage ou une mise à l’échelle à l’impression peut modifier la taille finale.",
         },
       ],
+    },
+    sitemap: {
+      label: "Plan du site",
+      h1: "Plan du site",
+      description: "La liste de toutes les pages d’Inches to Pixel : convertisseurs, guides, tableaux de référence et informations sur le site.",
+      intro: "Toutes les pages d’Inches to Pixel au même endroit. Choisissez une page pour l’ouvrir ou changez de langue ci-dessous.",
+      tools: "Convertisseurs et guides",
+      info: "À propos du site",
+      languages: "Autres langues",
+    },
+    info: {
+      about: {
+        h1: "À propos",
+        description:
+          "Inches to Pixel est un outil gratuit pour convertir des pouces en pixels à n’importe quel PPI, avec calculateurs, tableaux de référence et explications claires pour l’impression et l’écran.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) est un outil en ligne gratuit qui convertit des mesures physiques en dimensions en pixels. Il aide les graphistes, photographes, développeurs et toute personne qui prépare des images pour l’impression ou l’écran à savoir exactement combien de pixels il lui faut.",
+        sections: [
+          {
+            heading: "Ce que nous proposons",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "Un convertisseur de pouces en pixels pour une longueur seule ou un format complet largeur × hauteur.",
+                  "Des calculateurs pour le DPI et le PPI, les logiciels, l’impression et la photo, et les formats de papier courants.",
+                  "Des tableaux de référence et un tableau de conversion complet de 1/8 à 96 pouces.",
+                  "Des explications claires sur le PPI, le DPI et les pixels CSS, avec des exemples détaillés.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "Comment nous calculons",
+            blocks: [
+              {
+                type: "p",
+                text: "Chaque résultat repose sur une seule formule : pixels = pouces × PPI. Nos tableaux sont calculés avec cette même formule, si bien que les chiffres concordent sur toutes les pages. Les exemples donnent des résultats exacts et indiquent clairement quand une valeur a été arrondie.",
+              },
+            ],
+          },
+          {
+            heading: "Notre approche",
+            blocks: [
+              {
+                type: "p",
+                text: "Les dimensions en pixels dépendent de la résolution choisie : nous ne présentons donc jamais une valeur unique comme universelle. Nous expliquons la différence entre la résolution d’image (PPI) et la résolution d’imprimante (DPI), et nous vous invitons à suivre les exigences précises de votre imprimeur ou de la plateforme où vous publiez l’image.",
+              },
+            ],
+          },
+          {
+            heading: "Gratuit et disponible en plusieurs langues",
+            blocks: [
+              {
+                type: "p",
+                text: "Le site est gratuit, sans compte, et fonctionne sur téléphone, tablette et ordinateur. Il est disponible en anglais, espagnol, russe, français, allemand, italien, portugais, indonésien, arabe et suédois, avec un mode clair et un mode sombre.",
+              },
+            ],
+          },
+          {
+            heading: "Votre vie privée",
+            blocks: [
+              {
+                type: "p",
+                text: "Le convertisseur fonctionne dans votre navigateur, et les valeurs saisies ne nous sont pas envoyées ni conservées. Notre Politique de confidentialité donne tous les détails.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Contact",
+        description:
+          "Contactez Inches to Pixel pour vos questions, corrections ou idées. Envoyez un message via le formulaire ou écrivez à contact@inchestopixel.com.",
+        intro:
+          "Une question sur la conversion des pouces en pixels, une erreur repérée ou une idée pour le site ? Envoyez-nous un message avec le formulaire ci-dessous et nous vous répondrons par e-mail.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Politique de confidentialité",
+        description:
+          "Comment Inches to Pixel traite les informations : le convertisseur fonctionne dans votre navigateur, il n’y a pas de compte et les seules données personnelles reçues sont celles envoyées via le formulaire de contact.",
+        intro:
+          "Cette Politique de confidentialité explique quelles informations Inches to Pixel (InchestoPixel.com) traite lorsque vous utilisez le site. En bref : le convertisseur fonctionne dans votre navigateur, il n’y a pas de compte et les seules données personnelles que nous recevons sont celles que vous choisissez de nous envoyer via le formulaire de contact.",
+        sections: [
+          {
+            heading: "Informations que vous saisissez",
+            blocks: [
+              {
+                type: "p",
+                text: "Les valeurs que vous saisissez dans les convertisseurs, comme les pouces, les pixels et le DPI, sont calculées dans votre navigateur. Elles ne nous sont pas envoyées et ne sont pas stockées sur nos serveurs.",
+              },
+            ],
+          },
+          {
+            heading: "Messages que vous nous envoyez",
+            blocks: [
+              {
+                type: "p",
+                text: "Si vous utilisez le formulaire de contact, nous recevons votre nom, votre adresse e-mail et votre message. Nous les utilisons uniquement pour lire votre message et y répondre, et ne les conservons que le temps nécessaire à cet échange.",
+              },
+              {
+                type: "p",
+                text: "Les messages sont acheminés vers notre boîte de réception par notre prestataire d’e-mail, Resend, qui les traite pour notre compte uniquement afin de les livrer. Si vous nous écrivez directement par e-mail, votre message est traité de la même façon par notre fournisseur de messagerie.",
+              },
+            ],
+          },
+          {
+            heading: "Informations stockées sur votre appareil",
+            blocks: [
+              {
+                type: "p",
+                text: "Si vous passez du mode clair au mode sombre, le site enregistre ce choix dans le stockage local de votre navigateur afin d’utiliser le même thème lors de votre prochaine visite. Ce réglage reste sur votre appareil, ne nous est pas envoyé et ne sert pas à vous identifier. Vous pouvez le supprimer à tout moment en effaçant les données du site dans votre navigateur.",
+              },
+              { type: "p", text: "Le site n’utilise pas de cookies publicitaires ni de suivi." },
+            ],
+          },
+          {
+            heading: "Informations collectées automatiquement",
+            blocks: [
+              {
+                type: "p",
+                text: "Comme la plupart des sites, les serveurs qui distribuent nos pages peuvent enregistrer des informations techniques standard dans des journaux, comme votre adresse IP, le type de navigateur, la page demandée et l’heure de la demande. Ces informations servent à fournir le site, à le sécuriser et à corriger les problèmes. Nous ne les utilisons pas pour établir des profils de visiteurs.",
+              },
+            ],
+          },
+          {
+            heading: "Mesure d’audience, publicité et tiers",
+            blocks: [
+              {
+                type: "p",
+                text: "Le site n’utilise actuellement aucun outil de mesure d’audience, réseau publicitaire ou suivi de réseaux sociaux. Les polices sont servies depuis notre propre site : charger une page n’envoie donc pas vos informations à un fournisseur de polices. Nous ne vendons ni ne partageons de données personnelles. Si cela change, nous mettrons à jour cette politique avant que le changement ne prenne effet.",
+              },
+            ],
+          },
+          {
+            heading: "Protection des enfants",
+            blocks: [
+              {
+                type: "p",
+                text: "Le site est un outil à usage général. Il ne collecte pas sciemment de données personnelles concernant des enfants.",
+              },
+            ],
+          },
+          {
+            heading: "Vos choix",
+            blocks: [
+              {
+                type: "p",
+                text: "Si vous nous avez écrit et souhaitez que nous supprimions votre message, écrivez à contact@inchestopixel.com et nous le supprimerons. En dehors des messages de contact, nous ne collectons aucune donnée personnelle via le site : il n’y a donc en principe rien à consulter, corriger ou supprimer. Vous pouvez effacer à tout moment le réglage de thème enregistré dans votre navigateur.",
+              },
+            ],
+          },
+          {
+            heading: "Modifications de cette politique",
+            blocks: [
+              {
+                type: "p",
+                text: "Nous pouvons mettre à jour cette Politique de confidentialité lorsque le site évolue. La date en haut de cette page indique sa dernière mise à jour.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const fr: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("fr", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Impression et photo",
-        h1: "Pouces en pixels pour l’impression, les photos et les images",
+        h1: "Convertisseur de pouces en pixels pour l’impression et les photos",
         description:
-          "Combien de pixels pour un tirage net : photos 4×6, 5×7, 8×10 et 11×14 pouces à 150 et 300 DPI, avec un calculateur de taille d’impression.",
-        answer: "Pour un tirage net, il faut la taille d’impression × 300 pixels de chaque côté.",
-        printing: {
-          heading: "Impression",
-          body: "Pixels nécessaires = taille d’impression en pouces × DPI d’impression. La plupart des imprimeurs visent 300 DPI.",
-          corner: "Taille d’impression",
-          row: "{w} × {h} po",
-        },
-        photos: {
-          heading: "Photos et images",
-          body: "Une photo avec trop peu de pixels paraît floue en grand format. Comparez la taille en pixels de votre image au tableau ci-dessus avant de commander des tirages.",
-        },
-        faq: [
+          "Convertissez des pouces en pixels pour vos tirages et photos au PPI requis. Formule, exemples détaillés et formats 4×6, 5×7, 8×10 et 8,5×11 en pixels.",
+        answer:
+          "Convertissez des pouces en pixels pour vos images et photos avec la résolution requise en pixels par pouce (PPI). Pixels = pouces × PPI : 1 pouce vaut donc 300 pixels à 300 PPI ou 150 pixels à 150 PPI. Sans résolution définie, un pouce n’a pas de valeur fixe en pixels.",
+        sections: [
           {
-            question: "Peut-on agrandir une petite photo ?",
-            answer: "L’agrandissement ajoute des pixels mais pas de détail, d’où un rendu flou pour les grands agrandissements.",
+            heading: "Comment convertir des pouces en pixels",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Déterminez la largeur et la hauteur d’impression prévues en pouces.",
+                  "Choisissez la résolution d’image exigée par votre imprimeur ou votre projet.",
+                  "Calculez chaque dimension avec la même valeur de PPI.",
+                  "Utilisez la largeur et la hauteur en pixels obtenues pour préparer votre image.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Respectez l’ordre de la largeur et de la hauteur : une photo paysage est plus large que haute, une photo portrait plus haute que large.",
+              },
+            ],
+          },
+          {
+            heading: "Formule et exemples détaillés",
+            blocks: [
+              { type: "math", lines: ["Pixels = pouces × PPI"], large: true },
+              { type: "p", text: "Pour une image entière :" },
+              {
+                type: "math",
+                lines: ["Largeur en pixels = largeur en pouces × PPI", "Hauteur en pixels = hauteur en pouces × PPI"],
+              },
+              {
+                type: "p",
+                text: "« Pouces » désigne la mesure physique prévue. « PPI » signifie pixels par pouce. Le résultat est un nombre de pixels le long de chaque bord, en supposant la même densité de pixels à l’horizontale et à la verticale.",
+              },
+              {
+                type: "sub",
+                heading: "Une photo de 6 × 4 pouces à 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Largeur : 6 × 300 = 1 800 pixels", "Hauteur : 4 × 300 = 1 200 pixels"] },
+                  { type: "p", text: "Les dimensions d’image requises sont de 1 800 × 1 200 pixels." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Une image de 8 × 10 pouces à 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Largeur : 8 × 150 = 1 200 pixels", "Hauteur : 10 × 150 = 1 500 pixels"] },
+                  {
+                    type: "p",
+                    text: "Le résultat est de 1 200 × 1 500 pixels. À 300 PPI, le même format d’impression nécessite 2 400 × 3 000 pixels, soit deux fois plus de pixels sur chaque bord.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Une mesure en fraction de pouce",
+                blocks: [
+                  { type: "p", text: "Pour un bord de 2,125 pouces à 300 PPI :" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 pixels"] },
+                  {
+                    type: "p",
+                    text: "Une image se compose de pixels entiers : en arrondissant au pixel entier le plus proche, on obtient 638 pixels. À 300 PPI, cela représente environ 2,1267 pouces.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "N’arrondissez qu’après la multiplication. Si un cahier des charges impose un minimum de pixels, arrondissez vers le haut si nécessaire. Respectez toute dimension exacte en pixels fournie par votre imprimeur.",
+              },
+            ],
+          },
+          {
+            heading: "Formats d’impression courants en pixels",
+            blocks: [
+              {
+                type: "p",
+                text: "Toutes les valeurs sont exactes pour les dimensions et le PPI indiqués. Les mesures sont données en largeur × hauteur, sans bordures ni fond perdu.",
+              },
+              {
+                type: "table",
+                caption: "Formats d’impression courants en pixels à 150, 300 et 600 PPI",
+                table: printTable("fr", {
+                  corner: "Format d’impression (pouces)",
+                  cols: ["À 150 PPI (pixels)", "À 300 PPI (pixels)", "À 600 PPI (pixels)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "En orientation paysage, inversez la largeur et la hauteur." },
+            ],
+          },
+          {
+            heading: "Préparer des images pour l’impression",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Utilisez le PPI de l’image, pas le DPI de l’imprimante",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Le PPI décrit le nombre de pixels d’image attribués à chaque pouce imprimé. Le DPI décrit les points par pouce produits par l’imprimante. Une imprimante peut utiliser plusieurs points pour reproduire un seul pixel : sa résolution DPI matérielle n’est donc pas la valeur à saisir automatiquement pour calculer les dimensions d’une image.",
+                  },
+                  {
+                    type: "p",
+                    text: "Utilisez la résolution d’image demandée pour votre travail. Des valeurs comme 72, 96, 150, 300 ou 600 PPI donnent des résultats différents ; aucune n’est un facteur de conversion universel.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Conservez les proportions de la photo",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Gardez le rapport largeur-hauteur d’origine lorsque vous redimensionnez une photo. Modifier la largeur et la hauteur séparément peut déformer les visages et les autres sujets.",
+                  },
+                  {
+                    type: "p",
+                    text: "Si les proportions de la photo diffèrent du format d’impression, recadrez-la ou conservez la photo entière avec des bordures. Par exemple, une photo 6 × 4 a un rapport 3:2, et un tirage paysage 10 × 8 un rapport 5:4. Pour remplir ce tirage en conservant les proportions de l’image, il faut recadrer.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Vérifiez l’image d’origine avant de l’agrandir",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Les dimensions calculées décrivent une cible. Elles n’indiquent pas si une photo existante contient assez de détails.",
+                  },
+                  {
+                    type: "p",
+                    text: "Modifier les métadonnées PPI sans rééchantillonnage laisse les dimensions réelles en pixels inchangées. Le rééchantillonnage ajoute ou supprime des pixels, mais augmenter leur nombre ne restaure pas automatiquement les détails manquants.",
+                  },
+                  { type: "p", text: "La netteté du tirage dépend aussi de la mise au point, de la compression et de la qualité de l’image source." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Quelle taille d’impression pour une photo existante ?",
+            answer:
+              "Divisez chaque dimension en pixels par le PPI prévu :\nDimension d’impression en pouces = pixels ÷ PPI\nUne image de 3 000 × 2 400 pixels correspond à 10 × 8 pouces à 300 PPI, ou à 20 × 16 pouces à 150 PPI, avant recadrage ou mise à l’échelle. Un PPI plus faible répartit les mêmes pixels sur une plus grande surface.",
+          },
+          {
+            question: "Mon image sera-t-elle imprimée à la taille affichée à l’écran ?",
+            answer:
+              "Pas forcément. La taille à l’écran dépend de l’affichage et du niveau de zoom. La taille d’impression dépend des dimensions en pixels, de la résolution d’impression choisie et de toute mise à l’échelle appliquée à l’impression. Vérifiez les dimensions physiques prévues dans les réglages d’impression.",
+          },
+          {
+            question: "Les dimensions en pixels indiquent-elles la taille du fichier ?",
+            answer:
+              "Non. Les dimensions en pixels décrivent la largeur et la hauteur de l’image, tandis que la taille du fichier mesure l’espace de stockage en octets, Ko ou Mo. Elle dépend aussi du format, de la compression, du contenu de l’image et de la profondeur de couleur.\nLes images JPEG, PNG, TIFF et WebP ont toutes des dimensions en pixels. Ces dimensions seules ne fixent pas une taille d’impression physique.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "fr",
         {

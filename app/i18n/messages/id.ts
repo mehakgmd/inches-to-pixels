@@ -1,6 +1,6 @@
 /** Indonesian (Bahasa Indonesia). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const id: Messages = {
       sections: { converter: "Konverter", visual: "Skala visual", slides: "Slide", presets: "Ukuran", guide: "Panduan DPI", faq: "FAQ" },
       language: "Bahasa",
       languageAria: "Pilih bahasa",
+      more: "Lainnya",
+      info: { about: "Tentang Kami", contact: "Hubungi Kami", privacy: "Kebijakan Privasi" },
     },
     theme: { toDark: "Beralih ke mode gelap", toLight: "Beralih ke mode terang", dark: "Mode gelap", light: "Mode terang" },
     footer: { languages: "Bahasa" },
+    contact: {
+      formTitle: "Kirim pesan kepada kami",
+      directTitle: "Email kami",
+      directText: "Lebih suka memakai aplikasi email Anda sendiri? Kirim ke",
+      name: "Nama Anda",
+      email: "Email Anda",
+      message: "Pesan",
+      send: "Kirim pesan",
+      sending: "Mengirim…",
+      sent: "Terima kasih! Pesan Anda sudah terkirim. Kami akan membalas ke {email}.",
+      failed: "Maaf, pesan Anda belum dapat dikirim saat ini. Silakan kirim email langsung ke",
+      invalidName: "Masukkan nama Anda.",
+      invalidEmail: "Masukkan alamat email yang valid.",
+      invalidMessage: "Tulis pesan minimal 10 karakter.",
+      privacyNote: "Kami memakai nama dan email Anda hanya untuk membalas. Lihat",
+    },
     faq: { eyebrow: "Pertanyaan umum", title: "PANDUAN", highlight: "AHLI" },
     hero: {
       badge: "Seni skala digital",
@@ -334,6 +352,7 @@ export const id: Messages = {
       related: "Halaman terkait",
       relatedHome: "Konverter inci ke piksel",
       hubFaqDescription: "Jawaban singkat untuk pertanyaan yang paling sering diajukan tentang topik ini.",
+      lastUpdated: "Terakhir diperbarui: {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const id: Messages = {
       reference: {
         heading: "Tabel acuan inci ke piksel",
         intro:
-          "Judul kolom menunjukkan resolusi gambar dalam PPI; nilai di bawahnya adalah jumlah piksel. Pengaturan ini hanyalah contoh, bukan ketentuan universal.",
+          "Judul kolom menunjukkan [resolusi gambar dalam PPI](print); nilai di bawahnya adalah jumlah piksel. Pengaturan ini hanyalah contoh, bukan ketentuan universal.",
         table: homeTable("id", { corner: "Panjang (inci)", col: "{ppi}" }),
         caption: "Inci ke piksel pada 72, 96, 150, dan 300 PPI",
         footnote: "Semua nilai tabel tepat untuk masukan yang tercantum.",
@@ -438,6 +457,170 @@ export const id: Messages = {
             "Bisa. Bagi setiap dimensi piksel dengan resolusi gambar yang dimaksud. Pada 300 PPI, gambar 1.800 × 1.200 piksel setara dengan 6 × 4 inci. Pemangkasan atau penskalaan saat mencetak dapat mengubah ukuran akhir.",
         },
       ],
+    },
+    sitemap: {
+      label: "Peta Situs",
+      h1: "Peta Situs",
+      description: "Daftar semua halaman Inches to Pixel: konverter, panduan, tabel acuan, dan informasi situs.",
+      intro: "Semua halaman Inches to Pixel di satu tempat. Pilih halaman untuk membukanya, atau ganti bahasa di bawah.",
+      tools: "Konverter dan panduan",
+      info: "Tentang situs ini",
+      languages: "Bahasa lain",
+    },
+    info: {
+      about: {
+        h1: "Tentang Kami",
+        description:
+          "Inches to Pixel adalah alat gratis untuk mengonversi inci ke piksel pada PPI apa pun, dengan kalkulator, tabel acuan, dan penjelasan jelas untuk cetak dan layar.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) adalah alat online gratis untuk mengonversi ukuran fisik menjadi dimensi piksel. Alat ini membantu desainer, fotografer, pengembang, dan siapa pun yang menyiapkan gambar untuk cetak atau layar mengetahui dengan tepat berapa piksel yang dibutuhkan.",
+        sections: [
+          {
+            heading: "Yang kami sediakan",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "Konverter inci ke piksel untuk satu panjang maupun ukuran lengkap lebar × tinggi.",
+                  "Kalkulator untuk DPI dan PPI, perangkat lunak, cetak dan foto, serta ukuran kertas umum.",
+                  "Tabel acuan dan tabel konversi lengkap dari 1/8 inci sampai 96 inci.",
+                  "Penjelasan jelas tentang PPI, DPI, dan piksel CSS, lengkap dengan contoh perhitungan.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "Cara kami menghitung",
+            blocks: [
+              {
+                type: "p",
+                text: "Setiap hasil memakai satu rumus: piksel = inci × PPI. Tabel kami dihitung dengan rumus yang sama, sehingga angka di semua halaman selalu sesuai. Contoh menunjukkan hasil yang tepat dan menyebutkan dengan jelas jika suatu nilai dibulatkan.",
+              },
+            ],
+          },
+          {
+            heading: "Pendekatan kami",
+            blocks: [
+              {
+                type: "p",
+                text: "Dimensi piksel bergantung pada resolusi yang Anda pilih, jadi kami tidak pernah menyajikan satu nilai sebagai nilai universal. Kami menjelaskan perbedaan antara resolusi gambar (PPI) dan resolusi printer (DPI), dan menyarankan Anda mengikuti persyaratan persis dari percetakan atau tempat Anda mengunggah gambar.",
+              },
+            ],
+          },
+          {
+            heading: "Gratis dan tersedia dalam banyak bahasa",
+            blocks: [
+              {
+                type: "p",
+                text: "Situs ini gratis, tidak memerlukan akun, dan berfungsi di ponsel, tablet, serta komputer. Tersedia dalam bahasa Inggris, Spanyol, Rusia, Prancis, Jerman, Italia, Portugis, Indonesia, Arab, dan Swedia, dengan mode terang dan gelap.",
+              },
+            ],
+          },
+          {
+            heading: "Privasi Anda",
+            blocks: [
+              {
+                type: "p",
+                text: "Konverter berjalan di browser Anda, dan nilai yang Anda masukkan tidak dikirim kepada kami maupun disimpan. Kebijakan Privasi kami menjelaskan detailnya.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Hubungi Kami",
+        description:
+          "Hubungi Inches to Pixel untuk pertanyaan, koreksi, atau ide. Kirim pesan lewat formulir atau email ke contact@inchestopixel.com.",
+        intro:
+          "Punya pertanyaan tentang konversi inci ke piksel, menemukan kesalahan, atau punya ide untuk situs ini? Kirim pesan lewat formulir di bawah dan kami akan membalas melalui email.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Kebijakan Privasi",
+        description:
+          "Cara Inches to Pixel menangani informasi: konverter berjalan di browser, tidak ada akun, dan satu-satunya data pribadi yang kami terima adalah yang Anda kirim lewat formulir kontak.",
+        intro:
+          "Kebijakan Privasi ini menjelaskan informasi apa yang ditangani Inches to Pixel (InchestoPixel.com) saat Anda menggunakan situs. Singkatnya: konverter berjalan di browser Anda, tidak ada akun, dan satu-satunya data pribadi yang kami terima adalah yang Anda pilih untuk dikirim lewat formulir kontak.",
+        sections: [
+          {
+            heading: "Informasi yang Anda masukkan",
+            blocks: [
+              {
+                type: "p",
+                text: "Nilai yang Anda ketik di konverter, seperti inci, piksel, dan DPI, dihitung di browser Anda. Nilai tersebut tidak dikirim kepada kami dan tidak disimpan di server kami.",
+              },
+            ],
+          },
+          {
+            heading: "Pesan yang Anda kirim kepada kami",
+            blocks: [
+              {
+                type: "p",
+                text: "Jika Anda memakai formulir kontak, kami menerima nama, alamat email, dan pesan Anda. Kami menggunakannya hanya untuk membaca dan membalas pesan Anda, dan menyimpannya hanya selama diperlukan untuk percakapan tersebut.",
+              },
+              {
+                type: "p",
+                text: "Pesan dikirim ke kotak masuk kami oleh penyedia layanan email kami, Resend, yang memprosesnya atas nama kami hanya untuk mengirimkannya. Jika Anda mengirim email langsung, pesan Anda ditangani dengan cara yang sama oleh penyedia email kami.",
+              },
+            ],
+          },
+          {
+            heading: "Informasi yang disimpan di perangkat Anda",
+            blocks: [
+              {
+                type: "p",
+                text: "Jika Anda beralih antara mode terang dan gelap, situs menyimpan pilihan itu di penyimpanan lokal browser agar tema yang sama dipakai pada kunjungan berikutnya. Pengaturan ini tetap di perangkat Anda, tidak dikirim kepada kami, dan tidak digunakan untuk mengenali Anda. Anda dapat menghapusnya kapan saja dengan membersihkan data situs di browser.",
+              },
+              { type: "p", text: "Situs ini tidak menggunakan cookie untuk iklan atau pelacakan." },
+            ],
+          },
+          {
+            heading: "Informasi yang dikumpulkan secara otomatis",
+            blocks: [
+              {
+                type: "p",
+                text: "Seperti kebanyakan situs web, server yang mengirimkan halaman kami dapat mencatat informasi teknis standar di log server, seperti alamat IP, jenis browser, halaman yang diminta, dan waktu permintaan. Informasi ini digunakan untuk menyediakan situs, menjaga keamanannya, dan memperbaiki masalah. Kami tidak menggunakannya untuk membuat profil pengunjung.",
+              },
+            ],
+          },
+          {
+            heading: "Analitik, iklan, dan pihak ketiga",
+            blocks: [
+              {
+                type: "p",
+                text: "Saat ini situs tidak menggunakan alat analitik, jaringan iklan, atau pelacakan media sosial. Font disajikan dari situs kami sendiri, jadi memuat halaman tidak mengirim informasi Anda ke penyedia font. Kami tidak menjual atau membagikan data pribadi. Jika hal ini berubah, kami akan memperbarui kebijakan ini sebelum perubahan berlaku.",
+              },
+            ],
+          },
+          {
+            heading: "Privasi anak",
+            blocks: [
+              {
+                type: "p",
+                text: "Situs ini adalah alat serbaguna. Situs ini tidak dengan sengaja mengumpulkan data pribadi anak-anak.",
+              },
+            ],
+          },
+          {
+            heading: "Pilihan Anda",
+            blocks: [
+              {
+                type: "p",
+                text: "Jika Anda pernah menghubungi kami dan ingin pesan Anda dihapus, kirim email ke contact@inchestopixel.com dan kami akan menghapusnya. Selain pesan kontak, kami tidak mengumpulkan data pribadi melalui situs, jadi biasanya tidak ada yang perlu diakses, diperbaiki, atau dihapus. Anda dapat menghapus pengaturan tema yang tersimpan di browser kapan saja.",
+              },
+            ],
+          },
+          {
+            heading: "Perubahan kebijakan ini",
+            blocks: [
+              {
+                type: "p",
+                text: "Kami dapat memperbarui Kebijakan Privasi ini saat situs berubah. Tanggal di bagian atas halaman ini menunjukkan kapan terakhir diperbarui.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const id: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("id", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Cetak & foto",
-        h1: "Inci ke Piksel untuk Cetak, Foto, dan Gambar",
+        h1: "Konverter Inci ke Piksel untuk Cetak dan Foto",
         description:
-          "Berapa piksel yang dibutuhkan untuk cetakan tajam: foto 4×6, 5×7, 8×10, dan 11×14 inci pada 150 dan 300 DPI, dengan kalkulator ukuran cetak.",
-        answer: "Untuk cetakan tajam, Anda membutuhkan ukuran cetak × 300 piksel di setiap sisi.",
-        printing: {
-          heading: "Cetak",
-          body: "Piksel yang dibutuhkan = ukuran cetak dalam inci × DPI cetak. Sebagian besar percetakan menargetkan 300 DPI.",
-          corner: "Ukuran cetak",
-          row: "{w} × {h} inci",
-        },
-        photos: {
-          heading: "Foto dan gambar",
-          body: "Foto dengan piksel terlalu sedikit akan tampak buram saat dicetak besar. Bandingkan ukuran piksel gambar Anda dengan tabel di atas sebelum memesan cetakan.",
-        },
-        faq: [
+          "Konversi inci ke piksel untuk cetakan dan foto dengan PPI yang dibutuhkan. Lihat rumus, contoh perhitungan, dan ukuran 4×6, 5×7, 8×10, serta 8,5×11 dalam piksel.",
+        answer:
+          "Konversi inci ke piksel untuk gambar dan foto dengan resolusi yang dibutuhkan dalam piksel per inci (PPI). Piksel = inci × PPI, jadi 1 inci sama dengan 300 piksel pada 300 PPI atau 150 piksel pada 150 PPI. Tanpa resolusi yang ditentukan, satu inci tidak memiliki nilai piksel yang tetap.",
+        sections: [
           {
-            question: "Bisakah saya memperbesar foto kecil?",
-            answer: "Pembesaran menambah piksel tetapi tidak menambah detail, sehingga hasil pembesaran besar tampak buram.",
+            heading: "Cara mengonversi inci ke piksel",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Tentukan lebar dan tinggi cetak yang dimaksud dalam inci.",
+                  "Pilih resolusi gambar yang diminta percetakan atau proyek Anda.",
+                  "Hitung setiap dimensi dengan nilai PPI yang sama.",
+                  "Gunakan lebar dan tinggi piksel yang dihasilkan saat menyiapkan gambar Anda.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Jaga urutan lebar dan tinggi dengan benar: foto lanskap lebih lebar daripada tingginya, sedangkan foto potret lebih tinggi daripada lebarnya.",
+              },
+            ],
+          },
+          {
+            heading: "Rumus dan contoh perhitungan",
+            blocks: [
+              { type: "math", lines: ["Piksel = inci × PPI"], large: true },
+              { type: "p", text: "Untuk gambar utuh:" },
+              {
+                type: "math",
+                lines: ["Lebar dalam piksel = lebar dalam inci × PPI", "Tinggi dalam piksel = tinggi dalam inci × PPI"],
+              },
+              {
+                type: "p",
+                text: "“Inci” menggambarkan ukuran fisik yang dimaksud. “PPI” berarti piksel per inci. Hasilnya adalah jumlah piksel di sepanjang setiap sisi, dengan asumsi kerapatan piksel yang sama secara horizontal dan vertikal.",
+              },
+              {
+                type: "sub",
+                heading: "Foto 6 × 4 inci pada 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Lebar: 6 × 300 = 1.800 piksel", "Tinggi: 4 × 300 = 1.200 piksel"] },
+                  { type: "p", text: "Dimensi gambar yang dibutuhkan adalah 1.800 × 1.200 piksel." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Gambar 8 × 10 inci pada 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Lebar: 8 × 150 = 1.200 piksel", "Tinggi: 10 × 150 = 1.500 piksel"] },
+                  {
+                    type: "p",
+                    text: "Hasilnya 1.200 × 1.500 piksel. Pada 300 PPI, ukuran cetak yang sama membutuhkan 2.400 × 3.000 piksel—dua kali lipat piksel di setiap sisi.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Ukuran dengan pecahan inci",
+                blocks: [
+                  { type: "p", text: "Untuk sisi berukuran 2,125 inci pada 300 PPI:" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 piksel"] },
+                  {
+                    type: "p",
+                    text: "Gambar harus memakai piksel bulat, jadi membulatkan ke piksel bulat terdekat menghasilkan 638 piksel. Pada 300 PPI, itu setara dengan sekitar 2,1267 inci.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "Bulatkan hanya setelah mengalikan. Jika spesifikasi cetak menetapkan jumlah piksel minimum, bulatkan ke atas bila perlu untuk memenuhinya. Ikuti dimensi piksel persis yang diberikan percetakan Anda.",
+              },
+            ],
+          },
+          {
+            heading: "Ukuran cetak umum dalam piksel",
+            blocks: [
+              {
+                type: "p",
+                text: "Semua nilai di bawah tepat untuk dimensi dan PPI yang disebutkan. Ukuran ditulis lebar × tinggi dan tidak termasuk bingkai atau bleed.",
+              },
+              {
+                type: "table",
+                caption: "Ukuran cetak umum dalam piksel pada 150, 300, dan 600 PPI",
+                table: printTable("id", {
+                  corner: "Ukuran cetak (inci)",
+                  cols: ["Pada 150 PPI (piksel)", "Pada 300 PPI (piksel)", "Pada 600 PPI (piksel)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "Untuk orientasi lanskap, tukar lebar dan tinggi." },
+            ],
+          },
+          {
+            heading: "Menyiapkan gambar untuk dicetak",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Gunakan PPI gambar, bukan DPI printer",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "PPI menggambarkan jumlah piksel gambar untuk setiap inci yang dicetak. DPI menggambarkan titik per inci yang dihasilkan printer. Printer bisa memakai beberapa titik untuk mereproduksi satu piksel gambar, jadi resolusi DPI perangkat kerasnya bukan angka yang otomatis dimasukkan saat menghitung dimensi gambar.",
+                  },
+                  {
+                    type: "p",
+                    text: "Gunakan persyaratan resolusi gambar untuk pekerjaan Anda. Nilai seperti 72, 96, 150, 300, atau 600 PPI menghasilkan angka berbeda; tidak ada yang merupakan faktor konversi universal.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Pertahankan proporsi foto",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Pertahankan rasio lebar-tinggi asli saat mengubah ukuran foto. Mengubah lebar dan tinggi secara terpisah dapat meregangkan wajah dan objek lainnya.",
+                  },
+                  {
+                    type: "p",
+                    text: "Jika proporsi foto berbeda dari ukuran cetak, pangkas foto agar pas atau pertahankan foto utuh dengan bingkai. Misalnya, foto 6 × 4 memiliki rasio 3:2, sedangkan cetakan lanskap 10 × 8 memiliki rasio 5:4. Untuk memenuhi cetakan itu sambil mempertahankan proporsi gambar, foto harus dipangkas.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Periksa gambar asli sebelum memperbesarnya",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Dimensi hasil perhitungan menggambarkan target. Dimensi itu tidak menunjukkan apakah foto yang ada memiliki detail yang cukup.",
+                  },
+                  {
+                    type: "p",
+                    text: "Mengubah metadata PPI tanpa resampling tidak mengubah dimensi piksel sebenarnya. Resampling menambah atau mengurangi piksel, tetapi menambah jumlah piksel tidak otomatis memulihkan detail yang hilang.",
+                  },
+                  { type: "p", text: "Ketajaman cetakan juga bergantung pada fokus, kompresi, dan kualitas gambar sumber." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Seberapa besar saya bisa mencetak foto yang sudah ada?",
+            answer:
+              "Bagi setiap dimensi piksel dengan PPI yang dimaksud:\nDimensi cetak dalam inci = piksel ÷ PPI\nGambar 3.000 × 2.400 piksel setara dengan 10 × 8 inci pada 300 PPI, atau 20 × 16 inci pada 150 PPI, sebelum pemangkasan atau penskalaan saat mencetak. PPI yang lebih rendah menyebarkan piksel yang sama ke area yang lebih luas.",
+          },
+          {
+            question: "Apakah gambar saya akan tercetak seukuran tampilannya di layar?",
+            answer:
+              "Belum tentu. Ukuran di layar bergantung pada tampilan dan skala tayangan. Ukuran cetak bergantung pada dimensi piksel, resolusi cetak yang dipilih, dan penskalaan apa pun saat mencetak. Periksa dimensi fisik yang dimaksud di pengaturan cetak.",
+          },
+          {
+            question: "Apakah dimensi piksel menunjukkan ukuran file?",
+            answer:
+              "Tidak. Dimensi piksel menggambarkan lebar dan tinggi gambar, sedangkan ukuran file mengukur penyimpanan dalam byte, KB, atau MB. Ukuran file juga bergantung pada format, kompresi, isi gambar, dan kedalaman bit.\nGambar JPEG, PNG, TIFF, dan WebP semuanya memiliki dimensi piksel. Dimensi itu saja tidak menentukan ukuran cetak fisik yang tetap.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "id",
         {

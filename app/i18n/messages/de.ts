@@ -1,6 +1,6 @@
 /** German (Deutsch). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const de: Messages = {
       sections: { converter: "Rechner", visual: "Visueller Maßstab", slides: "Folien", presets: "Formate", guide: "DPI-Ratgeber", faq: "FAQ" },
       language: "Sprache",
       languageAria: "Sprache wählen",
+      more: "Mehr",
+      info: { about: "Über uns", contact: "Kontakt", privacy: "Datenschutzerklärung" },
     },
     theme: { toDark: "Zum dunklen Modus wechseln", toLight: "Zum hellen Modus wechseln", dark: "Dunkler Modus", light: "Heller Modus" },
     footer: { languages: "Sprachen" },
+    contact: {
+      formTitle: "Nachricht senden",
+      directTitle: "Per E-Mail",
+      directText: "Lieber mit dem eigenen E-Mail-Programm? Schreiben Sie uns an",
+      name: "Ihr Name",
+      email: "Ihre E-Mail-Adresse",
+      message: "Nachricht",
+      send: "Nachricht senden",
+      sending: "Wird gesendet…",
+      sent: "Vielen Dank! Ihre Nachricht wurde gesendet. Wir antworten an {email}.",
+      failed: "Leider konnte Ihre Nachricht gerade nicht gesendet werden. Bitte schreiben Sie uns direkt an",
+      invalidName: "Bitte geben Sie Ihren Namen ein.",
+      invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      invalidMessage: "Bitte schreiben Sie eine Nachricht mit mindestens 10 Zeichen.",
+      privacyNote: "Wir verwenden Ihren Namen und Ihre E-Mail-Adresse nur, um Ihnen zu antworten. Siehe unsere",
+    },
     faq: { eyebrow: "Häufige Fragen", title: "EXPERTEN-", highlight: "ANTWORTEN" },
     hero: {
       badge: "Die Kunst des digitalen Maßstabs",
@@ -334,6 +352,7 @@ export const de: Messages = {
       related: "Verwandte Seiten",
       relatedHome: "Zoll-in-Pixel-Rechner",
       hubFaqDescription: "Kurze Antworten auf die häufigsten Fragen zu diesem Thema.",
+      lastUpdated: "Zuletzt aktualisiert: {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const de: Messages = {
       reference: {
         heading: "Referenztabelle Zoll in Pixel",
         intro:
-          "Die Spaltenüberschriften zeigen die Bildauflösung in PPI; die Werte darunter sind Pixelanzahlen. Diese Einstellungen sind Beispiele, keine allgemeingültigen Vorgaben.",
+          "Die Spaltenüberschriften zeigen die [Bildauflösung in PPI](print); die Werte darunter sind Pixelanzahlen. Diese Einstellungen sind Beispiele, keine allgemeingültigen Vorgaben.",
         table: homeTable("de", { corner: "Länge (Zoll)", col: "{ppi}" }),
         caption: "Zoll in Pixel bei 72, 96, 150 und 300 PPI",
         footnote: "Alle Tabellenwerte sind für die angegebenen Eingaben exakt.",
@@ -438,6 +457,170 @@ export const de: Messages = {
             "Ja. Teilen Sie jede Pixelabmessung durch die vorgesehene Bildauflösung. Bei 300 PPI entspricht ein Bild mit 1.800 × 1.200 Pixeln 6 × 4 Zoll. Beschneiden oder Skalieren beim Drucken kann die Endgröße verändern.",
         },
       ],
+    },
+    sitemap: {
+      label: "Sitemap",
+      h1: "Sitemap",
+      description: "Alle Seiten von Inches to Pixel: Rechner, Ratgeber, Referenztabellen und Informationen zur Website.",
+      intro: "Alle Seiten von Inches to Pixel an einem Ort. Wählen Sie eine Seite oder wechseln Sie unten die Sprache.",
+      tools: "Rechner und Ratgeber",
+      info: "Über diese Website",
+      languages: "Andere Sprachen",
+    },
+    info: {
+      about: {
+        h1: "Über uns",
+        description:
+          "Inches to Pixel ist ein kostenloses Tool, um Zoll bei jeder PPI in Pixel umzurechnen – mit Rechnern, Referenztabellen und klaren Erklärungen für Druck und Bildschirm.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) ist ein kostenloses Online-Tool, das physische Maße in Pixelmaße umrechnet. Es hilft Designern, Fotografen, Entwicklern und allen, die Bilder für Druck oder Bildschirm vorbereiten, genau zu wissen, wie viele Pixel sie brauchen.",
+        sections: [
+          {
+            heading: "Was wir bieten",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "Einen Zoll-in-Pixel-Rechner für einzelne Längen und vollständige Formate Breite × Höhe.",
+                  "Rechner für DPI und PPI, Software, Druck und Fotos sowie gängige Papierformate.",
+                  "Referenztabellen und eine vollständige Umrechnungstabelle von 1/8 bis 96 Zoll.",
+                  "Klare Erklärungen zu PPI, DPI und CSS-Pixeln mit Rechenbeispielen.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "So rechnen wir",
+            blocks: [
+              {
+                type: "p",
+                text: "Jedes Ergebnis beruht auf einer Formel: Pixel = Zoll × PPI. Unsere Tabellen werden mit derselben Formel berechnet, daher stimmen die Zahlen auf allen Seiten überein. Beispiele zeigen exakte Ergebnisse und weisen klar darauf hin, wenn ein Wert gerundet wurde.",
+              },
+            ],
+          },
+          {
+            heading: "Unser Ansatz",
+            blocks: [
+              {
+                type: "p",
+                text: "Pixelmaße hängen von der gewählten Auflösung ab, daher stellen wir nie einen einzelnen Wert als allgemeingültig dar. Wir erklären den Unterschied zwischen Bildauflösung (PPI) und Druckerauflösung (DPI) und empfehlen, sich an die genauen Vorgaben Ihrer Druckerei oder Ihres Upload-Ziels zu halten.",
+              },
+            ],
+          },
+          {
+            heading: "Kostenlos und in vielen Sprachen",
+            blocks: [
+              {
+                type: "p",
+                text: "Die Website ist kostenlos, braucht kein Konto und funktioniert auf Smartphones, Tablets und Computern. Sie ist auf Englisch, Spanisch, Russisch, Französisch, Deutsch, Italienisch, Portugiesisch, Indonesisch, Arabisch und Schwedisch verfügbar, mit hellem und dunklem Modus.",
+              },
+            ],
+          },
+          {
+            heading: "Ihre Privatsphäre",
+            blocks: [
+              {
+                type: "p",
+                text: "Der Rechner läuft in Ihrem Browser, und die eingegebenen Werte werden weder an uns gesendet noch gespeichert. Einzelheiten finden Sie in unserer Datenschutzerklärung.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Kontakt",
+        description:
+          "Kontaktieren Sie Inches to Pixel mit Fragen, Korrekturen oder Ideen. Senden Sie eine Nachricht über das Formular oder schreiben Sie an contact@inchestopixel.com.",
+        intro:
+          "Sie haben eine Frage zur Umrechnung von Zoll in Pixel, einen Fehler entdeckt oder eine Idee für die Website? Senden Sie uns eine Nachricht über das Formular unten – wir antworten per E-Mail.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Datenschutzerklärung",
+        description:
+          "Wie Inches to Pixel mit Informationen umgeht: Der Rechner läuft in Ihrem Browser, es gibt keine Konten und personenbezogene Daten erhalten wir nur, wenn Sie das Kontaktformular nutzen.",
+        intro:
+          "Diese Datenschutzerklärung erläutert, welche Informationen Inches to Pixel (InchestoPixel.com) verarbeitet, wenn Sie die Website nutzen. Kurz gesagt: Der Rechner läuft in Ihrem Browser, es gibt keine Konten und die einzigen personenbezogenen Daten, die wir erhalten, sind die, die Sie uns über das Kontaktformular senden.",
+        sections: [
+          {
+            heading: "Von Ihnen eingegebene Informationen",
+            blocks: [
+              {
+                type: "p",
+                text: "Die Werte, die Sie in die Rechner eingeben, etwa Zoll, Pixel und DPI, werden in Ihrem Browser berechnet. Sie werden nicht an uns gesendet und nicht auf unseren Servern gespeichert.",
+              },
+            ],
+          },
+          {
+            heading: "Nachrichten, die Sie uns senden",
+            blocks: [
+              {
+                type: "p",
+                text: "Wenn Sie das Kontaktformular nutzen, erhalten wir Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht. Wir verwenden sie nur, um Ihre Nachricht zu lesen und zu beantworten, und bewahren sie nur so lange auf, wie es für diesen Austausch nötig ist.",
+              },
+              {
+                type: "p",
+                text: "Die Nachrichten werden von unserem E-Mail-Dienstleister Resend an unser Postfach zugestellt, der sie in unserem Auftrag nur zu diesem Zweck verarbeitet. Wenn Sie uns direkt eine E-Mail schreiben, wird Ihre Nachricht auf dieselbe Weise von unserem E-Mail-Anbieter verarbeitet.",
+              },
+            ],
+          },
+          {
+            heading: "Auf Ihrem Gerät gespeicherte Informationen",
+            blocks: [
+              {
+                type: "p",
+                text: "Wenn Sie zwischen hellem und dunklem Modus wechseln, speichert die Website diese Wahl im lokalen Speicher Ihres Browsers, damit beim nächsten Besuch dasselbe Design verwendet wird. Diese Einstellung bleibt auf Ihrem Gerät, wird nicht an uns gesendet und dient nicht dazu, Sie zu identifizieren. Sie können sie jederzeit löschen, indem Sie die Websitedaten in Ihrem Browser entfernen.",
+              },
+              { type: "p", text: "Die Website verwendet keine Cookies für Werbung oder Tracking." },
+            ],
+          },
+          {
+            heading: "Automatisch erfasste Informationen",
+            blocks: [
+              {
+                type: "p",
+                text: "Wie bei den meisten Websites können die Server, die unsere Seiten ausliefern, technische Standardinformationen in Server-Logs aufzeichnen, etwa Ihre IP-Adresse, den Browsertyp, die aufgerufene Seite und den Zeitpunkt des Aufrufs. Diese Informationen dienen dazu, die Website bereitzustellen, sie zu schützen und Fehler zu beheben. Wir nutzen sie nicht, um Profile von Besuchern zu erstellen.",
+              },
+            ],
+          },
+          {
+            heading: "Analyse, Werbung und Dritte",
+            blocks: [
+              {
+                type: "p",
+                text: "Die Website verwendet derzeit keine Analyse-Tools, Werbenetzwerke oder Social-Media-Tracking. Schriften werden von unserer eigenen Website geladen, sodass beim Aufruf einer Seite keine Informationen an einen Schriftanbieter gehen. Wir verkaufen oder teilen keine personenbezogenen Daten. Sollte sich das ändern, aktualisieren wir diese Erklärung, bevor die Änderung wirksam wird.",
+              },
+            ],
+          },
+          {
+            heading: "Datenschutz für Kinder",
+            blocks: [
+              {
+                type: "p",
+                text: "Die Website ist ein allgemeines Werkzeug. Sie erhebt nicht wissentlich personenbezogene Daten von Kindern.",
+              },
+            ],
+          },
+          {
+            heading: "Ihre Möglichkeiten",
+            blocks: [
+              {
+                type: "p",
+                text: "Wenn Sie uns geschrieben haben und möchten, dass wir Ihre Nachricht löschen, schreiben Sie an contact@inchestopixel.com – wir entfernen sie dann. Abgesehen von Kontaktnachrichten erheben wir über die Website keine personenbezogenen Daten, daher gibt es in der Regel nichts einzusehen, zu berichtigen oder zu löschen. Die im Browser gespeicherte Design-Einstellung können Sie jederzeit löschen.",
+              },
+            ],
+          },
+          {
+            heading: "Änderungen dieser Erklärung",
+            blocks: [
+              {
+                type: "p",
+                text: "Wir können diese Datenschutzerklärung aktualisieren, wenn sich die Website ändert. Das Datum oben auf dieser Seite zeigt, wann sie zuletzt aktualisiert wurde.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const de: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("de", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Druck & Foto",
-        h1: "Zoll in Pixel für Druck, Fotos und Bilder",
+        h1: "Zoll-in-Pixel-Rechner für Druck und Fotos",
         description:
-          "Wie viele Pixel Sie für einen scharfen Druck brauchen: Fotos in 4×6, 5×7, 8×10 und 11×14 Zoll bei 150 und 300 DPI, mit Druckgrößenrechner.",
-        answer: "Für einen scharfen Druck brauchen Sie Druckgröße × 300 Pixel auf jeder Seite.",
-        printing: {
-          heading: "Drucken",
-          body: "Benötigte Pixel = Druckgröße in Zoll × Druck-DPI. Die meisten Druckereien zielen auf 300 DPI.",
-          corner: "Druckgröße",
-          row: "{w} × {h} Zoll",
-        },
-        photos: {
-          heading: "Fotos und Bilder",
-          body: "Ein Foto mit zu wenigen Pixeln wirkt im Großdruck weich. Vergleichen Sie die Pixelgröße Ihres Bildes vor der Bestellung mit der Tabelle oben.",
-        },
-        faq: [
+          "Rechnen Sie Zoll für Drucke und Fotos mit der benötigten PPI in Pixel um. Mit Formel, Rechenbeispielen und den Formaten 4×6, 5×7, 8×10 und 8,5×11 in Pixeln.",
+        answer:
+          "Rechnen Sie Zoll für Bilder und Fotos mit der benötigten Auflösung in Pixeln pro Zoll (PPI) in Pixel um. Pixel = Zoll × PPI, also entspricht 1 Zoll 300 Pixeln bei 300 PPI oder 150 Pixeln bei 150 PPI. Ohne festgelegte Auflösung hat ein Zoll keinen festen Pixelwert.",
+        sections: [
           {
-            question: "Kann ich ein kleines Foto vergrößern?",
-            answer: "Hochskalieren fügt Pixel hinzu, aber keine Details – starke Vergrößerungen wirken deshalb unscharf.",
+            heading: "So rechnen Sie Zoll in Pixel um",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Legen Sie die geplante Druckbreite und -höhe in Zoll fest.",
+                  "Wählen Sie die Bildauflösung, die Ihre Druckerei oder Ihr Projekt verlangt.",
+                  "Berechnen Sie jede Abmessung mit demselben PPI-Wert.",
+                  "Verwenden Sie die ermittelte Breite und Höhe in Pixeln, wenn Sie Ihr Bild vorbereiten.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Achten Sie auf die richtige Reihenfolge von Breite und Höhe: Ein Querformatfoto ist breiter als hoch, ein Hochformatfoto höher als breit.",
+              },
+            ],
+          },
+          {
+            heading: "Formel und Rechenbeispiele",
+            blocks: [
+              { type: "math", lines: ["Pixel = Zoll × PPI"], large: true },
+              { type: "p", text: "Für ein vollständiges Bild:" },
+              {
+                type: "math",
+                lines: ["Breite in Pixeln = Breite in Zoll × PPI", "Höhe in Pixeln = Höhe in Zoll × PPI"],
+              },
+              {
+                type: "p",
+                text: "„Zoll“ beschreibt das geplante physische Maß. „PPI“ bedeutet Pixel pro Zoll. Das Ergebnis ist die Pixelanzahl entlang jeder Kante, bei gleicher Pixeldichte horizontal und vertikal.",
+              },
+              {
+                type: "sub",
+                heading: "Ein Foto mit 6 × 4 Zoll bei 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Breite: 6 × 300 = 1.800 Pixel", "Höhe: 4 × 300 = 1.200 Pixel"] },
+                  { type: "p", text: "Die benötigten Bildmaße sind 1.800 × 1.200 Pixel." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Ein Bild mit 8 × 10 Zoll bei 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Breite: 8 × 150 = 1.200 Pixel", "Höhe: 10 × 150 = 1.500 Pixel"] },
+                  {
+                    type: "p",
+                    text: "Das Ergebnis ist 1.200 × 1.500 Pixel. Bei 300 PPI braucht dieselbe Druckgröße 2.400 × 3.000 Pixel – doppelt so viele Pixel an jeder Kante.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Ein Maß mit Bruchteilen eines Zolls",
+                blocks: [
+                  { type: "p", text: "Für eine Kante mit 2,125 Zoll bei 300 PPI:" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 Pixel"] },
+                  {
+                    type: "p",
+                    text: "Ein Bild besteht aus ganzen Pixeln, daher ergibt das Runden auf den nächsten ganzen Pixel 638 Pixel. Bei 300 PPI entspricht das etwa 2,1267 Zoll.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "Runden Sie erst nach dem Multiplizieren. Schreibt eine Druckvorgabe eine Mindestpixelzahl vor, runden Sie bei Bedarf auf. Halten Sie sich an exakte Pixelmaße, die Ihre Druckerei vorgibt.",
+              },
+            ],
+          },
+          {
+            heading: "Gängige Druckformate in Pixeln",
+            blocks: [
+              {
+                type: "p",
+                text: "Alle Werte sind für die angegebenen Maße und PPI exakt. Die Maße sind Breite × Höhe, ohne Rand oder Beschnitt.",
+              },
+              {
+                type: "table",
+                caption: "Gängige Druckformate in Pixeln bei 150, 300 und 600 PPI",
+                table: printTable("de", {
+                  corner: "Druckformat (Zoll)",
+                  cols: ["Bei 150 PPI (Pixel)", "Bei 300 PPI (Pixel)", "Bei 600 PPI (Pixel)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "Für das Querformat tauschen Sie Breite und Höhe." },
+            ],
+          },
+          {
+            heading: "Bilder für den Druck vorbereiten",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Bild-PPI verwenden, nicht die DPI des Druckers",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "PPI beschreibt, wie viele Bildpixel auf jeden gedruckten Zoll kommen. DPI beschreibt die Ausgabepunkte pro Zoll des Druckers. Ein Drucker kann mehrere Punkte für einen Bildpixel verwenden, daher ist seine Hardware-DPI nicht der Wert, den Sie bei der Berechnung der Bildmaße automatisch eintragen sollten.",
+                  },
+                  {
+                    type: "p",
+                    text: "Verwenden Sie die für Ihren Auftrag geforderte Bildauflösung. Werte wie 72, 96, 150, 300 oder 600 PPI führen zu unterschiedlichen Ergebnissen; keiner ist ein allgemeingültiger Umrechnungsfaktor.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Die Proportionen des Fotos erhalten",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Behalten Sie beim Skalieren eines Fotos das ursprüngliche Verhältnis von Breite zu Höhe bei. Werden Breite und Höhe unabhängig geändert, können Gesichter und andere Motive verzerrt werden.",
+                  },
+                  {
+                    type: "p",
+                    text: "Weichen die Proportionen des Fotos von der Druckgröße ab, beschneiden Sie es passend oder behalten Sie das ganze Foto mit Rand. Ein Foto mit 6 × 4 hat zum Beispiel ein Verhältnis von 3:2, ein Querformatdruck mit 10 × 8 eines von 5:4. Um diesen Druck bei gleichen Bildproportionen zu füllen, muss beschnitten werden.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Das Originalbild vor dem Vergrößern prüfen",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Die berechneten Maße beschreiben ein Ziel. Sie sagen nichts darüber, ob ein vorhandenes Foto genug Details enthält.",
+                  },
+                  {
+                    type: "p",
+                    text: "Werden PPI-Metadaten ohne Neuberechnung geändert, bleiben die tatsächlichen Pixelmaße gleich. Resampling fügt Pixel hinzu oder entfernt sie, doch mehr Pixel stellen fehlende Details nicht automatisch wieder her.",
+                  },
+                  { type: "p", text: "Die Druckschärfe hängt auch von Fokus, Komprimierung und der Qualität des Ausgangsbildes ab." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Wie groß kann ich ein vorhandenes Foto drucken?",
+            answer:
+              "Teilen Sie jede Pixelabmessung durch den vorgesehenen PPI-Wert:\nDruckmaß in Zoll = Pixel ÷ PPI\nEin Bild mit 3.000 × 2.400 Pixeln entspricht 10 × 8 Zoll bei 300 PPI oder 20 × 16 Zoll bei 150 PPI, vor Beschnitt oder Skalierung beim Druck. Ein niedrigerer PPI-Wert verteilt dieselben Pixel auf eine größere Fläche.",
+          },
+          {
+            question: "Wird mein Bild so groß gedruckt, wie es auf dem Bildschirm erscheint?",
+            answer:
+              "Nicht unbedingt. Die Größe auf dem Bildschirm hängt vom Display und der Ansichtsskalierung ab. Die Druckgröße hängt von den Pixelmaßen, der gewählten Druckauflösung und einer eventuellen Skalierung beim Drucken ab. Prüfen Sie die geplanten physischen Maße in den Druckeinstellungen.",
+          },
+          {
+            question: "Verraten Pixelmaße die Dateigröße?",
+            answer:
+              "Nein. Pixelmaße beschreiben Breite und Höhe eines Bildes, die Dateigröße dagegen den Speicherplatz in Bytes, KB oder MB. Die Dateigröße hängt außerdem von Format, Komprimierung, Bildinhalt und Farbtiefe ab.\nJPEG-, PNG-, TIFF- und WebP-Bilder haben alle Pixelmaße. Diese Maße allein legen keine feste physische Druckgröße fest.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "de",
         {

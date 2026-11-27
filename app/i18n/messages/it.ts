@@ -1,6 +1,6 @@
 /** Italian (Italiano). Same shape as en.ts. */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 import type { Messages } from "./en";
 
 const sizeLabels = [
@@ -38,9 +38,27 @@ export const it: Messages = {
       sections: { converter: "Convertitore", visual: "Scala visiva", slides: "Slide", presets: "Formati", guide: "Guida DPI", faq: "FAQ" },
       language: "Lingua",
       languageAria: "Scegli la lingua",
+      more: "Altro",
+      info: { about: "Chi siamo", contact: "Contatti", privacy: "Informativa sulla privacy" },
     },
     theme: { toDark: "Passa alla modalità scura", toLight: "Passa alla modalità chiara", dark: "Modalità scura", light: "Modalità chiara" },
     footer: { languages: "Lingue" },
+    contact: {
+      formTitle: "Inviaci un messaggio",
+      directTitle: "Scrivici via email",
+      directText: "Preferisci usare la tua app di posta? Scrivici a",
+      name: "Il tuo nome",
+      email: "La tua email",
+      message: "Messaggio",
+      send: "Invia messaggio",
+      sending: "Invio in corso…",
+      sent: "Grazie! Il tuo messaggio è stato inviato. Ti risponderemo a {email}.",
+      failed: "Spiacenti, al momento non è stato possibile inviare il messaggio. Scrivici direttamente a",
+      invalidName: "Inserisci il tuo nome.",
+      invalidEmail: "Inserisci un indirizzo email valido.",
+      invalidMessage: "Scrivi un messaggio di almeno 10 caratteri.",
+      privacyNote: "Usiamo nome ed email solo per risponderti. Leggi la nostra",
+    },
     faq: { eyebrow: "Domande frequenti", title: "RISPOSTE", highlight: "ESPERTE" },
     hero: {
       badge: "L’arte della scala digitale",
@@ -334,6 +352,7 @@ export const it: Messages = {
       related: "Pagine correlate",
       relatedHome: "Convertitore da pollici a pixel",
       hubFaqDescription: "Risposte brevi alle domande più frequenti su questo argomento.",
+      lastUpdated: "Ultimo aggiornamento: {date}",
     },
     footer: {
       blurb:
@@ -392,7 +411,7 @@ export const it: Messages = {
       reference: {
         heading: "Tabella di riferimento da pollici a pixel",
         intro:
-          "Le intestazioni delle colonne indicano la risoluzione d’immagine in PPI; i valori sotto sono numeri di pixel. Queste impostazioni sono esempi, non requisiti universali.",
+          "Le intestazioni delle colonne indicano la [risoluzione d’immagine in PPI](print); i valori sotto sono numeri di pixel. Queste impostazioni sono esempi, non requisiti universali.",
         table: homeTable("it", { corner: "Lunghezza (pollici)", col: "{ppi}" }),
         caption: "Pollici in pixel a 72, 96, 150 e 300 PPI",
         footnote: "Tutti i valori della tabella sono esatti per i dati indicati.",
@@ -438,6 +457,170 @@ export const it: Messages = {
             "Sì. Dividi ogni dimensione in pixel per la risoluzione d’immagine prevista. A 300 PPI, un’immagine di 1.800 × 1.200 pixel corrisponde a 6 × 4 pollici. Ritagli o ridimensionamenti in fase di stampa possono cambiare la dimensione finale.",
         },
       ],
+    },
+    sitemap: {
+      label: "Mappa del sito",
+      h1: "Mappa del sito",
+      description: "L’elenco di tutte le pagine di Inches to Pixel: convertitori, guide, tabelle di riferimento e informazioni sul sito.",
+      intro: "Tutte le pagine di Inches to Pixel in un unico posto. Scegli una pagina per aprirla o cambia lingua qui sotto.",
+      tools: "Convertitori e guide",
+      info: "Informazioni sul sito",
+      languages: "Altre lingue",
+    },
+    info: {
+      about: {
+        h1: "Chi siamo",
+        description:
+          "Inches to Pixel è uno strumento gratuito per convertire pollici in pixel a qualsiasi PPI, con calcolatori, tabelle di riferimento e spiegazioni chiare per stampa e schermo.",
+        intro:
+          "Inches to Pixel (InchestoPixel.com) è uno strumento online gratuito che converte misure fisiche in dimensioni in pixel. Aiuta designer, fotografi, sviluppatori e chiunque prepari immagini per la stampa o lo schermo a sapere esattamente quanti pixel servono.",
+        sections: [
+          {
+            heading: "Cosa offriamo",
+            blocks: [
+              {
+                type: "list",
+                items: [
+                  "Un convertitore da pollici a pixel per lunghezze singole e dimensioni complete larghezza × altezza.",
+                  "Calcolatori per DPI e PPI, software, stampa e foto, e formati di carta comuni.",
+                  "Tabelle di riferimento e una tabella di conversione completa da 1/8 a 96 pollici.",
+                  "Spiegazioni chiare su PPI, DPI e pixel CSS, con esempi svolti.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "Come calcoliamo",
+            blocks: [
+              {
+                type: "p",
+                text: "Ogni risultato si basa su una sola formula: pixel = pollici × PPI. Le nostre tabelle sono calcolate con la stessa formula, quindi i numeri coincidono su tutte le pagine. Gli esempi mostrano risultati esatti e indicano chiaramente quando un valore è stato arrotondato.",
+              },
+            ],
+          },
+          {
+            heading: "Il nostro approccio",
+            blocks: [
+              {
+                type: "p",
+                text: "Le dimensioni in pixel dipendono dalla risoluzione scelta, perciò non presentiamo mai un unico valore come universale. Spieghiamo la differenza tra risoluzione dell’immagine (PPI) e risoluzione della stampante (DPI) e ti invitiamo a seguire i requisiti precisi del tuo stampatore o della piattaforma su cui carichi l’immagine.",
+              },
+            ],
+          },
+          {
+            heading: "Gratuito e disponibile in molte lingue",
+            blocks: [
+              {
+                type: "p",
+                text: "Il sito è gratuito, non richiede un account e funziona su smartphone, tablet e computer. È disponibile in inglese, spagnolo, russo, francese, tedesco, italiano, portoghese, indonesiano, arabo e svedese, con modalità chiara e scura.",
+              },
+            ],
+          },
+          {
+            heading: "La tua privacy",
+            blocks: [
+              {
+                type: "p",
+                text: "Il convertitore funziona nel tuo browser e i valori inseriti non ci vengono inviati né vengono salvati. La nostra Informativa sulla privacy spiega i dettagli.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
+      contact: {
+        h1: "Contatti",
+        description:
+          "Contatta Inches to Pixel per domande, correzioni o idee. Invia un messaggio con il modulo o scrivi a contact@inchestopixel.com.",
+        intro:
+          "Hai una domanda sulla conversione da pollici a pixel, hai trovato un errore o hai un’idea per il sito? Inviaci un messaggio con il modulo qui sotto e ti risponderemo via email.",
+        sections: [],
+      } as InfoText,
+      privacy: {
+        h1: "Informativa sulla privacy",
+        description:
+          "Come Inches to Pixel gestisce le informazioni: il convertitore funziona nel browser, non ci sono account e gli unici dati personali che riceviamo sono quelli inviati con il modulo di contatto.",
+        intro:
+          "Questa Informativa sulla privacy spiega quali informazioni tratta Inches to Pixel (InchestoPixel.com) quando usi il sito. In breve: il convertitore funziona nel tuo browser, non ci sono account e gli unici dati personali che riceviamo sono quelli che scegli di inviarci con il modulo di contatto.",
+        sections: [
+          {
+            heading: "Informazioni che inserisci",
+            blocks: [
+              {
+                type: "p",
+                text: "I valori che digiti nei convertitori, come pollici, pixel e DPI, vengono calcolati nel tuo browser. Non ci vengono inviati e non sono memorizzati sui nostri server.",
+              },
+            ],
+          },
+          {
+            heading: "Messaggi che ci invii",
+            blocks: [
+              {
+                type: "p",
+                text: "Se usi il modulo di contatto, riceviamo il tuo nome, il tuo indirizzo email e il tuo messaggio. Li usiamo solo per leggere il messaggio e risponderti, e li conserviamo solo per il tempo necessario a quella conversazione.",
+              },
+              {
+                type: "p",
+                text: "I messaggi arrivano nella nostra casella tramite il nostro fornitore di servizi email, Resend, che li tratta per nostro conto al solo scopo di consegnarli. Se ci scrivi direttamente via email, il tuo messaggio viene gestito allo stesso modo dal nostro fornitore di posta.",
+              },
+            ],
+          },
+          {
+            heading: "Informazioni salvate sul tuo dispositivo",
+            blocks: [
+              {
+                type: "p",
+                text: "Se passi dalla modalità chiara a quella scura, il sito salva la scelta nella memoria locale del browser, così alla visita successiva viene usato lo stesso tema. Questa impostazione resta sul tuo dispositivo, non ci viene inviata e non serve a identificarti. Puoi eliminarla in qualsiasi momento cancellando i dati del sito nel browser.",
+              },
+              { type: "p", text: "Il sito non usa cookie pubblicitari o di tracciamento." },
+            ],
+          },
+          {
+            heading: "Informazioni raccolte automaticamente",
+            blocks: [
+              {
+                type: "p",
+                text: "Come la maggior parte dei siti, i server che distribuiscono le nostre pagine possono registrare informazioni tecniche standard nei log, come indirizzo IP, tipo di browser, pagina richiesta e ora della richiesta. Queste informazioni servono a fornire il sito, proteggerlo e risolvere i problemi. Non le usiamo per creare profili dei visitatori.",
+              },
+            ],
+          },
+          {
+            heading: "Analisi, pubblicità e terze parti",
+            blocks: [
+              {
+                type: "p",
+                text: "Al momento il sito non usa strumenti di analisi, reti pubblicitarie o tracciamento dei social network. I caratteri sono forniti dal nostro sito, quindi caricare una pagina non invia le tue informazioni a un fornitore di font. Non vendiamo né condividiamo dati personali. Se questo cambierà, aggiorneremo l’informativa prima che la modifica abbia effetto.",
+              },
+            ],
+          },
+          {
+            heading: "Privacy dei minori",
+            blocks: [
+              {
+                type: "p",
+                text: "Il sito è uno strumento di uso generale. Non raccoglie consapevolmente dati personali di minori.",
+              },
+            ],
+          },
+          {
+            heading: "Le tue scelte",
+            blocks: [
+              {
+                type: "p",
+                text: "Se ci hai scritto e vuoi che cancelliamo il tuo messaggio, invia un’email a contact@inchestopixel.com e lo elimineremo. A parte i messaggi di contatto, non raccogliamo dati personali tramite il sito, quindi di norma non c’è nulla da consultare, correggere o cancellare. Puoi eliminare in qualsiasi momento l’impostazione del tema salvata nel browser.",
+              },
+            ],
+          },
+          {
+            heading: "Modifiche a questa informativa",
+            blocks: [
+              {
+                type: "p",
+                text: "Possiamo aggiornare questa Informativa sulla privacy quando il sito cambia. La data in cima a questa pagina indica l’ultimo aggiornamento.",
+              },
+            ],
+          },
+        ],
+      } as InfoText,
     },
     hubs: {
       dpi: {
@@ -816,29 +999,169 @@ export const it: Messages = {
           },
         ],
       } as HubText,
-      print: printHub("it", {
+      // Content: Content/Inches to Pixels for Images.docx
+      print: {
         nav: "Stampa e foto",
-        h1: "Da pollici a pixel per stampa, foto e immagini",
+        h1: "Convertitore da pollici a pixel per stampa e foto",
         description:
-          "Quanti pixel servono per una stampa nitida: foto 4×6, 5×7, 8×10 e 11×14 pollici a 150 e 300 DPI, con calcolatore della dimensione di stampa.",
-        answer: "Per una stampa nitida servono dimensione di stampa × 300 pixel per lato.",
-        printing: {
-          heading: "Stampa",
-          body: "Pixel necessari = dimensione di stampa in pollici × DPI di stampa. La maggior parte degli stampatori punta a 300 DPI.",
-          corner: "Dimensione di stampa",
-          row: "{w} × {h} poll",
-        },
-        photos: {
-          heading: "Foto e immagini",
-          body: "Una foto con troppo pochi pixel appare morbida se stampata in grande. Confronta la dimensione in pixel della tua immagine con la tabella sopra prima di ordinare le stampe.",
-        },
-        faq: [
+          "Converti pollici in pixel per stampe e foto ai PPI richiesti. Formula, esempi svolti e i formati 4×6, 5×7, 8×10 e 8,5×11 in pixel.",
+        answer:
+          "Converti pollici in pixel per immagini e foto con la risoluzione richiesta in pixel per pollice (PPI). Pixel = pollici × PPI, quindi 1 pollice corrisponde a 300 pixel a 300 PPI o a 150 pixel a 150 PPI. Senza una risoluzione indicata, un pollice non ha un valore fisso in pixel.",
+        sections: [
           {
-            question: "Posso ingrandire una foto piccola?",
-            answer: "L’ingrandimento aggiunge pixel ma non dettaglio, quindi i grandi ingrandimenti appaiono sfocati.",
+            heading: "Come convertire pollici in pixel",
+            blocks: [
+              {
+                type: "steps",
+                items: [
+                  "Stabilisci la larghezza e l’altezza di stampa previste in pollici.",
+                  "Scegli la risoluzione d’immagine richiesta dallo stampatore o dal progetto.",
+                  "Calcola ogni dimensione con lo stesso valore di PPI.",
+                  "Usa la larghezza e l’altezza in pixel ottenute per preparare l’immagine.",
+                ],
+              },
+              {
+                type: "note",
+                text: "Mantieni larghezza e altezza nell’ordine giusto: una foto orizzontale è più larga che alta, mentre una foto verticale è più alta che larga.",
+              },
+            ],
+          },
+          {
+            heading: "Formula ed esempi svolti",
+            blocks: [
+              { type: "math", lines: ["Pixel = pollici × PPI"], large: true },
+              { type: "p", text: "Per un’immagine completa:" },
+              {
+                type: "math",
+                lines: ["Larghezza in pixel = larghezza in pollici × PPI", "Altezza in pixel = altezza in pollici × PPI"],
+              },
+              {
+                type: "p",
+                text: "«Pollici» indica la misura fisica prevista. «PPI» significa pixel per pollice. Il risultato è il numero di pixel lungo ogni lato, assumendo la stessa densità di pixel in orizzontale e in verticale.",
+              },
+              {
+                type: "sub",
+                heading: "Una foto di 6 × 4 pollici a 300 PPI",
+                blocks: [
+                  { type: "math", lines: ["Larghezza: 6 × 300 = 1.800 pixel", "Altezza: 4 × 300 = 1.200 pixel"] },
+                  { type: "p", text: "Le dimensioni d’immagine necessarie sono 1.800 × 1.200 pixel." },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Un’immagine di 8 × 10 pollici a 150 PPI",
+                blocks: [
+                  { type: "math", lines: ["Larghezza: 8 × 150 = 1.200 pixel", "Altezza: 10 × 150 = 1.500 pixel"] },
+                  {
+                    type: "p",
+                    text: "Il risultato è 1.200 × 1.500 pixel. A 300 PPI, lo stesso formato di stampa richiede 2.400 × 3.000 pixel: il doppio dei pixel su ogni lato.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Una misura in frazioni di pollice",
+                blocks: [
+                  { type: "p", text: "Per un lato di 2,125 pollici a 300 PPI:" },
+                  { type: "math", lines: ["2,125 × 300 = 637,5 pixel"] },
+                  {
+                    type: "p",
+                    text: "Un’immagine usa pixel interi, quindi arrotondando al pixel intero più vicino si ottengono 638 pixel. A 300 PPI corrispondono a circa 2,1267 pollici.",
+                  },
+                ],
+              },
+              {
+                type: "note",
+                text: "Arrotonda solo dopo la moltiplicazione. Se una specifica di stampa fissa un numero minimo di pixel, arrotonda per eccesso quando serve. Segui le dimensioni esatte in pixel fornite dal tuo stampatore.",
+              },
+            ],
+          },
+          {
+            heading: "Formati di stampa comuni in pixel",
+            blocks: [
+              {
+                type: "p",
+                text: "Tutti i valori sono esatti per le dimensioni e i PPI indicati. Le misure sono larghezza × altezza ed escludono bordi e abbondanze.",
+              },
+              {
+                type: "table",
+                caption: "Formati di stampa comuni in pixel a 150, 300 e 600 PPI",
+                table: printTable("it", {
+                  corner: "Formato di stampa (pollici)",
+                  cols: ["A 150 PPI (pixel)", "A 300 PPI (pixel)", "A 600 PPI (pixel)"],
+                  row: "{w} × {h}",
+                }),
+              },
+              { type: "p", text: "Per l’orientamento orizzontale, inverti larghezza e altezza." },
+            ],
+          },
+          {
+            heading: "Preparare le immagini per la stampa",
+            blocks: [
+              {
+                type: "sub",
+                heading: "Usa i PPI dell’immagine, non i DPI della stampante",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "I PPI indicano quanti pixel d’immagine sono assegnati a ogni pollice stampato. I DPI indicano i punti per pollice prodotti dalla stampante. Una stampante può usare più punti per riprodurre un solo pixel, quindi la sua risoluzione DPI hardware non è il valore da inserire automaticamente nel calcolo delle dimensioni.",
+                  },
+                  {
+                    type: "p",
+                    text: "Usa la risoluzione d’immagine richiesta per il tuo lavoro. Valori come 72, 96, 150, 300 o 600 PPI danno risultati diversi; nessuno è un fattore di conversione universale.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Mantieni le proporzioni della foto",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Mantieni il rapporto originale tra larghezza e altezza quando ridimensioni una foto. Cambiare larghezza e altezza separatamente può deformare volti e altri soggetti.",
+                  },
+                  {
+                    type: "p",
+                    text: "Se le proporzioni della foto non corrispondono al formato di stampa, ritagliala oppure mantieni l’intera foto con dei bordi. Per esempio, una foto 6 × 4 ha un rapporto 3:2, mentre una stampa orizzontale 10 × 8 ha un rapporto 5:4. Per riempire quella stampa mantenendo le proporzioni dell’immagine bisogna ritagliare.",
+                  },
+                ],
+              },
+              {
+                type: "sub",
+                heading: "Controlla l’immagine originale prima di ingrandirla",
+                blocks: [
+                  {
+                    type: "p",
+                    text: "Le dimensioni calcolate descrivono un obiettivo. Non stabiliscono se una foto esistente contiene abbastanza dettaglio.",
+                  },
+                  {
+                    type: "p",
+                    text: "Modificare i metadati PPI senza ricampionare lascia invariate le dimensioni reali in pixel. Il ricampionamento aggiunge o toglie pixel, ma aumentarne il numero non recupera automaticamente il dettaglio mancante.",
+                  },
+                  { type: "p", text: "La nitidezza della stampa dipende anche dalla messa a fuoco, dalla compressione e dalla qualità dell’immagine di partenza." },
+                ],
+              },
+            ],
           },
         ],
-      }),
+        faq: [
+          {
+            question: "Quanto grande posso stampare una foto esistente?",
+            answer:
+              "Dividi ogni dimensione in pixel per i PPI previsti:\nDimensione di stampa in pollici = pixel ÷ PPI\nUn’immagine di 3.000 × 2.400 pixel corrisponde a 10 × 8 pollici a 300 PPI, oppure a 20 × 16 pollici a 150 PPI, prima di ritagli o ridimensionamenti in stampa. PPI più bassi distribuiscono gli stessi pixel su un’area più ampia.",
+          },
+          {
+            question: "La mia immagine verrà stampata alla dimensione che vedo sullo schermo?",
+            answer:
+              "Non necessariamente. La dimensione a schermo dipende dal display e dal livello di zoom. La dimensione di stampa dipende dalle dimensioni in pixel, dalla risoluzione di stampa scelta e da eventuali ridimensionamenti applicati in stampa. Controlla le dimensioni fisiche previste nelle impostazioni di stampa.",
+          },
+          {
+            question: "Le dimensioni in pixel indicano la dimensione del file?",
+            answer:
+              "No. Le dimensioni in pixel descrivono larghezza e altezza dell’immagine, mentre la dimensione del file misura lo spazio occupato in byte, KB o MB. Dipende anche da formato, compressione, contenuto dell’immagine e profondità di colore.\nLe immagini JPEG, PNG, TIFF e WebP hanno tutte dimensioni in pixel. Da sole, queste dimensioni non stabiliscono una dimensione di stampa fisica.",
+          },
+        ],
+      } as HubText,
       sizes: sizesHub(
         "it",
         {

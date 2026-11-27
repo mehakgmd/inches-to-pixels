@@ -15,8 +15,9 @@ import {
   X,
 } from "lucide-react";
 import { useI18n } from "../i18n/client";
-import { PAGE_KEYS, PAGE_PATH } from "../lib/hubs";
-import { PAGE_ICONS } from "./hub/icons";
+import { INFO_KEYS, INFO_PATH, PAGE_KEYS, PAGE_PATH } from "../lib/hubs";
+import { INFO_ICONS, PAGE_ICONS } from "./hub/icons";
+import MoreMenu from "./MoreMenu";
 import ThemeToggle from "./ThemeToggle";
 import LanguageMenu, { useEnglishPath } from "./LanguageMenu";
 
@@ -136,6 +137,7 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <MoreMenu currentPath={pathname} />
         </nav>
 
         {/* Right controls */}
@@ -192,6 +194,27 @@ export default function Navbar() {
                     >
                       <Icon className="h-4 w-4 shrink-0 text-brand-600" aria-hidden="true" />
                       {t.common.pageNames[key]}
+                    </Link>
+                  </li>
+                );
+              })}
+              {INFO_KEYS.map((key) => {
+                const Icon = INFO_ICONS[key];
+                const active = pathname === normalize(INFO_PATH[key]);
+                return (
+                  <li key={key}>
+                    <Link
+                      href={href(INFO_PATH[key])}
+                      onClick={() => setMenuOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={`flex items-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition-colors ${
+                        active
+                          ? "border-brand-400/50 bg-brand-400/10 text-brand-700"
+                          : "border-line bg-surface-muted text-ink-soft hover:border-brand-400/40"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4 shrink-0 text-brand-600" aria-hidden="true" />
+                      {t.nav.info[key]}
                     </Link>
                   </li>
                 );

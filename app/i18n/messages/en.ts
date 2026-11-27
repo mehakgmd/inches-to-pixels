@@ -5,8 +5,8 @@
  * `ui` is sent to the browser for the interactive parts; `content` stays on the server.
  * {name} marks a value filled in by the page.
  */
-import type { HubText } from "../../lib/hubs";
-import { chartHub, dpiTable, homeTable, printHub, sizesHub, softwareTable } from "../build";
+import type { HubText, InfoText } from "../../lib/hubs";
+import { chartHub, dpiTable, homeTable, printTable, sizesHub, softwareTable } from "../build";
 
 const sizeLabels = [
   "8.5 × 11 inches (Letter)",
@@ -65,6 +65,8 @@ const ui = {
     },
     language: "Language",
     languageAria: "Choose language",
+    more: "More",
+    info: { about: "About Us", contact: "Contact Us", privacy: "Privacy Policy" },
   },
   theme: {
     toDark: "Switch to dark mode",
@@ -74,6 +76,22 @@ const ui = {
   },
   footer: {
     languages: "Languages",
+  },
+  contact: {
+    formTitle: "Send us a message",
+    directTitle: "Email us",
+    directText: "Prefer to use your own email app? Write to us at",
+    name: "Your name",
+    email: "Your email",
+    message: "Message",
+    send: "Send message",
+    sending: "Sending…",
+    sent: "Thank you! Your message has been sent. We will reply to {email}.",
+    failed: "Sorry, your message could not be sent right now. Please email us instead at",
+    invalidName: "Please enter your name.",
+    invalidEmail: "Please enter a valid email address.",
+    invalidMessage: "Please write a message of at least 10 characters.",
+    privacyNote: "We use your name and email only to reply to you. See our",
   },
   faq: {
     eyebrow: "Frequently Asked Questions",
@@ -376,6 +394,7 @@ const content = {
     related: "Related pages",
     relatedHome: "Inches to pixels converter",
     hubFaqDescription: "Short answers to the questions people ask most on this topic.",
+    lastUpdated: "Last updated: {date}",
   },
   footer: {
     blurb:
@@ -434,7 +453,7 @@ const content = {
     reference: {
       heading: "Inches to pixels reference table",
       intro:
-        "The column headings show image resolution in PPI; the values below them are pixel counts. These settings are examples, not universal requirements.",
+        "The column headings show [image resolution in PPI](print); the values below them are pixel counts. These settings are examples, not universal requirements.",
       table: homeTable("en", { corner: "Length (inches)", col: "{ppi}" }),
       caption: "Inches to pixels at 72, 96, 150 and 300 PPI",
       footnote: "All table values are exact for the listed inputs.",
@@ -480,6 +499,170 @@ const content = {
           "Yes. Divide each pixel dimension by the intended image resolution. At 300 PPI, a 1,800 × 1,200-pixel image corresponds to 6 × 4 inches. Cropping or scaling during printing can change the final output size.",
       },
     ],
+  },
+  sitemap: {
+    label: "Sitemap",
+    h1: "Sitemap",
+    description: "A list of every page on Inches to Pixel: converters, guides, reference tables and website information.",
+    intro: "Every page on Inches to Pixel in one place. Pick a page to open it, or switch to another language below.",
+    tools: "Converters and guides",
+    info: "About this website",
+    languages: "Other languages",
+  },
+  info: {
+    about: {
+      h1: "About Us",
+      description:
+        "Inches to Pixel is a free tool for converting inches to pixels at any PPI, with calculators, reference tables and clear explanations for print and screen.",
+      intro:
+        "Inches to Pixel (InchestoPixel.com) is a free online tool for converting physical measurements into pixel dimensions. It helps designers, photographers, developers and anyone preparing images for print or screen work out exactly how many pixels they need.",
+      sections: [
+        {
+          heading: "What we offer",
+          blocks: [
+            {
+              type: "list",
+              items: [
+                "An inches to pixels converter for single lengths and full width × height sizes.",
+                "Calculators for DPI and PPI, software, printing and photos, and common paper sizes.",
+                "Reference tables and a full conversion chart from 1/8 inch to 96 inches.",
+                "Clear explanations of PPI, DPI and CSS pixels, with worked examples.",
+              ],
+            },
+          ],
+        },
+        {
+          heading: "How we calculate",
+          blocks: [
+            {
+              type: "p",
+              text: "Every result uses one formula: pixels = inches × PPI. Our tables are calculated from that same formula, so the numbers on every page agree. Examples show exact results and say clearly when a value has been rounded.",
+            },
+          ],
+        },
+        {
+          heading: "Our approach",
+          blocks: [
+            {
+              type: "p",
+              text: "Pixel dimensions depend on the resolution you choose, so we never present one value as universal. We explain the difference between image resolution (PPI) and printer resolution (DPI), and we encourage you to follow the exact requirements of your print provider or upload destination.",
+            },
+          ],
+        },
+        {
+          heading: "Free and available in many languages",
+          blocks: [
+            {
+              type: "p",
+              text: "The website is free to use, needs no account and works on phones, tablets and computers. It is available in English, Spanish, Russian, French, German, Italian, Portuguese, Indonesian, Arabic and Swedish, with a light and a dark mode.",
+            },
+          ],
+        },
+        {
+          heading: "Your privacy",
+          blocks: [
+            {
+              type: "p",
+              text: "The converter runs in your browser, and the values you enter are not sent to us or stored. Our Privacy Policy explains the details.",
+            },
+          ],
+        },
+      ],
+    } as InfoText,
+    contact: {
+      h1: "Contact Us",
+      description:
+        "Contact Inches to Pixel with questions, corrections or ideas. Send a message with the form or email contact@inchestopixel.com.",
+      intro:
+        "Have a question about converting inches to pixels, spotted a mistake, or have an idea for the website? Send us a message using the form below and we will reply by email.",
+      sections: [],
+    } as InfoText,
+    privacy: {
+      h1: "Privacy Policy",
+      description:
+        "How Inches to Pixel handles information: the converter runs in your browser, there are no accounts, and the only personal information we receive is what you send through the contact form.",
+      intro:
+        "This Privacy Policy explains what information Inches to Pixel (InchestoPixel.com) handles when you use the website. In short: the converter runs in your browser, there are no accounts, and the only personal information we receive is what you choose to send us through the contact form.",
+      sections: [
+        {
+          heading: "Information you enter",
+          blocks: [
+            {
+              type: "p",
+              text: "The values you type into the converters, such as inches, pixels and DPI, are calculated in your browser. They are not sent to us and are not stored on our servers.",
+            },
+          ],
+        },
+        {
+          heading: "Messages you send us",
+          blocks: [
+            {
+              type: "p",
+              text: "If you use the contact form, we receive your name, your email address and your message. We use them only to read and reply to your message, and we keep them only as long as needed for that conversation.",
+            },
+            {
+              type: "p",
+              text: "Messages are delivered to our inbox by our email service provider, Resend, which processes them on our behalf only to deliver them. If you email us directly, your message is handled by our email provider in the same way.",
+            },
+          ],
+        },
+        {
+          heading: "Information stored on your device",
+          blocks: [
+            {
+              type: "p",
+              text: "If you switch between light and dark mode, the website saves that choice in your browser’s local storage so the same theme is used on your next visit. This setting stays on your device, is not sent to us and is not used to identify you. You can remove it at any time by clearing your browser’s site data.",
+            },
+            { type: "p", text: "The website does not use cookies for advertising or tracking." },
+          ],
+        },
+        {
+          heading: "Information collected automatically",
+          blocks: [
+            {
+              type: "p",
+              text: "Like most websites, the servers that deliver our pages may record standard technical information in server logs, such as your IP address, browser type, the page requested and the time of the request. This information is used to deliver the website, keep it secure and fix problems. We do not use it to build profiles of visitors.",
+            },
+          ],
+        },
+        {
+          heading: "Analytics, advertising and third parties",
+          blocks: [
+            {
+              type: "p",
+              text: "The website does not currently use analytics tools, advertising networks or social media tracking. Fonts are served from our own website, so loading a page does not send your information to a font provider. We do not sell or share personal information. If this changes, we will update this policy before the change takes effect.",
+            },
+          ],
+        },
+        {
+          heading: "Children’s privacy",
+          blocks: [
+            {
+              type: "p",
+              text: "The website is a general-purpose tool. It does not knowingly collect personal information from children.",
+            },
+          ],
+        },
+        {
+          heading: "Your choices",
+          blocks: [
+            {
+              type: "p",
+              text: "If you have contacted us and want us to delete your message, email contact@inchestopixel.com and we will remove it. Apart from contact messages, we do not collect personal information through the website, so there is normally nothing to access, correct or delete. You can clear the theme setting stored in your browser at any time.",
+            },
+          ],
+        },
+        {
+          heading: "Changes to this policy",
+          blocks: [
+            {
+              type: "p",
+              text: "We may update this Privacy Policy when the website changes. The date at the top of this page shows when it was last updated.",
+            },
+          ],
+        },
+      ],
+    } as InfoText,
   },
   hubs: {
     // Content: Content/Inches to Pixels by DPI Content.docx
@@ -860,29 +1043,169 @@ const content = {
         },
       ],
     } as HubText,
-    print: printHub("en", {
+    // Content: Content/Inches to Pixels for Images.docx
+    print: {
       nav: "Print & photo",
-      h1: "Inches to Pixels for Printing, Photos and Images",
+      h1: "Inches to Pixels Converter for Printing and Photos",
       description:
-        "How many pixels you need for a sharp print: 4×6, 5×7, 8×10 and 11×14 inch photos at 150 and 300 DPI, with a print size calculator.",
-      answer: "For a sharp print, you need print size × 300 pixels on each side.",
-      printing: {
-        heading: "Printing",
-        body: "Pixels needed = print size in inches × print DPI. Most printers aim for 300 DPI.",
-        corner: "Print size",
-        row: "{w} × {h} in",
-      },
-      photos: {
-        heading: "Photos and images",
-        body: "A photo with too few pixels looks soft when printed large. Check your image’s pixel size against the table above before ordering prints.",
-      },
-      faq: [
+        "Convert inches to pixels for prints and photos at your required PPI. See the formula, worked examples and 4×6, 5×7, 8×10 and 8.5×11 print sizes in pixels.",
+      answer:
+        "Convert inches to pixels for images and photos using your required resolution in pixels per inch (PPI). Pixels = inches × PPI, so 1 inch equals 300 pixels at 300 PPI or 150 pixels at 150 PPI. There is no fixed pixel value for an inch without a specified resolution.",
+      sections: [
         {
-          question: "Can I enlarge a small photo?",
-          answer: "Upscaling adds pixels but not detail, so large enlargements look blurry.",
+          heading: "How to convert inches to pixels",
+          blocks: [
+            {
+              type: "steps",
+              items: [
+                "Determine the intended print width and height in inches.",
+                "Choose the image resolution required by your print provider or project.",
+                "Calculate each dimension using the same PPI value.",
+                "Use the resulting pixel width and height when preparing your image.",
+              ],
+            },
+            {
+              type: "note",
+              text: "Keep width and height in the correct order: a landscape photo is wider than it is tall, while a portrait photo is taller than it is wide.",
+            },
+          ],
+        },
+        {
+          heading: "Formula and worked examples",
+          blocks: [
+            { type: "math", lines: ["Pixels = inches × PPI"], large: true },
+            { type: "p", text: "For a complete image:" },
+            {
+              type: "math",
+              lines: ["Width in pixels = width in inches × PPI", "Height in pixels = height in inches × PPI"],
+            },
+            {
+              type: "p",
+              text: "“Inches” describes the intended physical measurement. “PPI” means pixels per inch. The result is a pixel count along each edge, assuming the same pixel density horizontally and vertically.",
+            },
+            {
+              type: "sub",
+              heading: "A 6 × 4-inch photo at 300 PPI",
+              blocks: [
+                { type: "math", lines: ["Width: 6 × 300 = 1,800 pixels", "Height: 4 × 300 = 1,200 pixels"] },
+                { type: "p", text: "The required image dimensions are 1,800 × 1,200 pixels." },
+              ],
+            },
+            {
+              type: "sub",
+              heading: "An 8 × 10-inch image at 150 PPI",
+              blocks: [
+                { type: "math", lines: ["Width: 8 × 150 = 1,200 pixels", "Height: 10 × 150 = 1,500 pixels"] },
+                {
+                  type: "p",
+                  text: "The result is 1,200 × 1,500 pixels. At 300 PPI, the same print size requires 2,400 × 3,000 pixels—twice as many pixels along each edge.",
+                },
+              ],
+            },
+            {
+              type: "sub",
+              heading: "A fractional-inch measurement",
+              blocks: [
+                { type: "p", text: "For an edge measuring 2.125 inches at 300 PPI:" },
+                { type: "math", lines: ["2.125 × 300 = 637.5 pixels"] },
+                {
+                  type: "p",
+                  text: "An image must use whole pixels, so rounding to the nearest whole pixel gives 638 pixels. At 300 PPI, that represents approximately 2.1267 inches.",
+                },
+              ],
+            },
+            {
+              type: "note",
+              text: "Round only after multiplying. If a print specification defines a minimum pixel count, round upward when necessary to meet it. Follow any exact pixel dimensions supplied by your print provider.",
+            },
+          ],
+        },
+        {
+          heading: "Common print sizes in pixels",
+          blocks: [
+            {
+              type: "p",
+              text: "All values below are exact for the stated dimensions and PPI. Measurements are width × height and exclude borders or bleed.",
+            },
+            {
+              type: "table",
+              caption: "Common print sizes in pixels at 150, 300 and 600 PPI",
+              table: printTable("en", {
+                corner: "Print size (inches)",
+                cols: ["At 150 PPI (pixels)", "At 300 PPI (pixels)", "At 600 PPI (pixels)"],
+                row: "{w} × {h}",
+              }),
+            },
+            { type: "p", text: "For landscape orientation, swap the width and height." },
+          ],
+        },
+        {
+          heading: "Preparing images for printing",
+          blocks: [
+            {
+              type: "sub",
+              heading: "Use image PPI, not the printer’s DPI rating",
+              blocks: [
+                {
+                  type: "p",
+                  text: "PPI describes the number of image pixels assigned to each printed inch. DPI describes the printer’s output dots per inch. A printer may use multiple dots to reproduce one image pixel, so its hardware DPI rating is not the number to enter automatically when calculating image dimensions.",
+                },
+                {
+                  type: "p",
+                  text: "Use the image-resolution requirement supplied for your job. Values such as 72, 96, 150, 300, or 600 PPI produce different results; none is a universal conversion factor.",
+                },
+              ],
+            },
+            {
+              type: "sub",
+              heading: "Preserve the photo’s proportions",
+              blocks: [
+                {
+                  type: "p",
+                  text: "Keep the original width-to-height ratio when resizing a photo. Changing width and height independently can stretch faces and other subjects.",
+                },
+                {
+                  type: "p",
+                  text: "If the photo’s proportions differ from the print size, crop it to fit or retain the full photo with borders. A 6 × 4 photo, for example, has a 3:2 ratio; a 10 × 8 landscape print has a 5:4 ratio. Filling that print requires cropping if you want to preserve the image’s proportions.",
+                },
+              ],
+            },
+            {
+              type: "sub",
+              heading: "Check the original image before enlarging it",
+              blocks: [
+                {
+                  type: "p",
+                  text: "The calculated dimensions describe a target. They do not establish whether an existing photo contains enough detail.",
+                },
+                {
+                  type: "p",
+                  text: "Changing PPI metadata without resampling leaves the actual pixel dimensions unchanged. Resampling adds or removes pixels, but increasing the pixel count does not automatically recover missing detail.",
+                },
+                { type: "p", text: "Print sharpness also depends on focus, compression, and the quality of the source image." },
+              ],
+            },
+          ],
         },
       ],
-    }),
+      faq: [
+        {
+          question: "How large can I print an existing photo?",
+          answer:
+            "Divide each pixel dimension by the intended PPI:\nPrint dimension in inches = pixels ÷ PPI\nA 3,000 × 2,400-pixel image corresponds to 10 × 8 inches at 300 PPI, or 20 × 16 inches at 150 PPI, before cropping or print scaling. The lower PPI spreads the same pixels over a larger area.",
+        },
+        {
+          question: "Will my image print at the size it appears on screen?",
+          answer:
+            "Not necessarily. Screen size depends on the display and viewing scale. Print size depends on pixel dimensions, the chosen print resolution, and any scaling applied during printing. Check the intended physical dimensions in your print settings.",
+        },
+        {
+          question: "Do pixel dimensions tell me the file size?",
+          answer:
+            "No. Pixel dimensions describe image width and height, while file size measures storage in bytes, KB, or MB. File size also depends on format, compression, image content, and bit depth.\nJPEG, PNG, TIFF, and WebP images all have pixel dimensions. Those dimensions alone do not specify a fixed physical print size.",
+        },
+      ],
+    } as HubText,
     sizes: sizesHub(
       "en",
       {
